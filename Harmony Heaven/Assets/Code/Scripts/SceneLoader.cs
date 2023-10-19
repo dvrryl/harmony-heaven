@@ -1,11 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void LoadGameplayScene()
+    public void OnExitButtonClicked()
     {
-        // Memuat scene gameplay dengan nama "Gameplay" (gantilah dengan nama yang sesuai)
-        SceneManager.LoadScene("Gameplay");
+        Application.Quit();
     }
 }

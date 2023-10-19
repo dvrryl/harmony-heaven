@@ -9,6 +9,7 @@ public class ScenePlayLoader : MonoBehaviour
     {
         // Memuat scene gameplay dengan nama "Gameplay" (gantilah dengan nama yang sesuai)
         SceneManager.LoadScene("Gameplay");
+        Debug.Log("Gameplay");
     }
 
 }
