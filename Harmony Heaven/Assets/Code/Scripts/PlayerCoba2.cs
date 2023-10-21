@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCoba2 : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth = 1000;
     public int currentHealth;
     public HealthBar healthBar;
     void Start(){
