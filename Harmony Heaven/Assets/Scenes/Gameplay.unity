@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9684c8ef1616c1f4dac92bf8704dcc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 300976591}
   gradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.062460557, b: 0, a: 1}
@@ -1628,7 +1628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9684c8ef1616c1f4dac92bf8704dcc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 1901174000}
   gradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.062460557, b: 0, a: 1}
