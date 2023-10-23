@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PopUp : MonoBehaviour
+public class PopUpManual : MonoBehaviour
 {
     public Button buttonPrefab;
     public Transform popUpLocation; // Objek Transform yang akan dijadikan titik pop-up

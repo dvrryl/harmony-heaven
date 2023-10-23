@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonPopUp : MonoBehaviour
+public class ButtonPopUpImage : MonoBehaviour
 {
     public Button buttonPrefab;
     public Transform popUpLocation; // Objek Transform yang akan dijadikan titik pop-up
-    public float interval = 5.0f; // Interval waktu (dalam detik)
+    public float interval; // Interval waktu (dalam detik)
     
     private Button currentButton; // Tombol yang sedang muncul
 
