@@ -558,7 +558,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396197124}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e27ee07c0f031e46aab31686d5e7828, type: 3}
   m_Name: 
@@ -715,6 +715,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 366139794}
     m_Modifications:
+    - target: {fileID: 194457430092473222, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 2965962023693147055, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -781,11 +785,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5973529274179378333, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5973529274179378333, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5973529274179378333, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_LocalRotation.z
@@ -801,11 +805,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5973529274179378333, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5973529274179378333, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 5973529274179378333, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1171,8 +1175,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874324868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0243, y: 0.01, z: 369.8896}
-  m_LocalScale: {x: 0.90671176, y: 0.92643154, z: 1}
+  m_LocalPosition: {x: -0.0361, y: 0.01, z: 369.8896}
+  m_LocalScale: {x: 0.89063305, y: 0.92643154, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1989,6 +1993,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 366139794}
     m_Modifications:
+    - target: {fileID: 194457430092473222, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 2965962023693147055, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
