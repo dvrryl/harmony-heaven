@@ -7,6 +7,7 @@ public class KeyboardDisplay : MonoBehaviour
 {
     public Image[] imageComponents;
     public Sprite[] imageSprites;
+    public Sprite[] imageSprites22;
 
     private void Start()
     {
