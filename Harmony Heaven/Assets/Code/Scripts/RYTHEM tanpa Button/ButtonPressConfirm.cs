@@ -8,6 +8,8 @@ public class ButtonPressConfirm : MonoBehaviour
     public KeyCodeConfirmation keyCodeConfirmation; // Referensi ke script KeyCodeConfirmation
     private List<KeyCode> currentInputSequence = new List<KeyCode>(); // Untuk menyimpan input yang diterima
     private List<GameObject> objectsToControl = new List<GameObject>(); // Objek-objek yang akan dikontrol
+    public delegate void CorrectSequenceAction();
+    public static event CorrectSequenceAction OnCorrectSequence;
 
     private void Start()
     {
@@ -67,6 +69,10 @@ public class ButtonPressConfirm : MonoBehaviour
             // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
             currentInputSequence.Clear();
             Debug.Log("Urutan Benar! Resetting...");
+            if (OnCorrectSequence != null)
+            {
+                OnCorrectSequence();
+            }
         }
         else
         {

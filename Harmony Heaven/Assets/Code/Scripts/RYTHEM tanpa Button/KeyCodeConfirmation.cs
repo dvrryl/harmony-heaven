@@ -12,6 +12,12 @@ public class KeyCodeConfirmation : MonoBehaviour
 
     void Start()
     {
+        // Panggil fungsi CompileConfirmation dengan penundaan 1 detik.
+        Invoke("CompileConfirmation", 1f);
+    }
+
+    void CompileConfirmation()
+    {
         if (fixedkeyboardDisplay != null && fixedkeyCodeKeyboard != null)
         {
             Debug.Log("Mendapatkan informasi ImageComponent...");

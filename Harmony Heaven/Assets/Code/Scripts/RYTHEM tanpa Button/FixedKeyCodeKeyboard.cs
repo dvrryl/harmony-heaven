@@ -7,7 +7,7 @@ public class FixedKeyCodeKeyboard : MonoBehaviour
 {
     public FixedkeyboardDisplay keyboardDisplay; // Mengubah referensi ke FixedkeyboardDisplay
     public KeyCode[] keyboardCodes;
-    private KeyCode[] defaultKeyboardCodes = new KeyCode[5] { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D, KeyCode.F };
+    private KeyCode[] defaultKeyboardCodes = new KeyCode[5] { KeyCode.W, KeyCode.A, KeyCode.D, KeyCode.S, KeyCode.F };
 
     private void Start()
     {

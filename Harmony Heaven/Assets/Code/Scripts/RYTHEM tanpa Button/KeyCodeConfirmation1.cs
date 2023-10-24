@@ -8,15 +8,16 @@ public class KeyCodeConfirmation1 : MonoBehaviour
     public FixedkeyboardDisplay fixedkeyboardDisplay; // Referensi ke script KeyboardDisplay
     public FixedKeyCodeKeyboard1 fixedkeyCodeKeyboard1; // Referensi ke script KeyCodeKeyboard
 
+    private List<GameObject> objectsToControl = new List<GameObject>(); // Objek-objek yang akan dikontrol
+
     void Start()
     {
-        StartCoroutine(StartWithDelay());
+        // Panggil fungsi CompileConfirmation dengan penundaan 1 detik.
+        Invoke("CompileConfirmation", 1f);
     }
 
-    private IEnumerator StartWithDelay()
+    void CompileConfirmation()
     {
-        yield return new WaitForSeconds(2.0f); // Tunggu selama 2 detik
-
         if (fixedkeyboardDisplay != null && fixedkeyCodeKeyboard1 != null)
         {
             Debug.Log("Mendapatkan informasi ImageComponent...");
@@ -86,5 +87,17 @@ public class KeyCodeConfirmation1 : MonoBehaviour
             Debug.LogWarning("Indeks sprite tidak valid: " + spriteIndex);
             return KeyCode.None; // Kode tombol default jika indeks tidak valid
         }
+    }
+
+    // Metode untuk mengembalikan objek-objek yang akan dikontrol
+    public List<GameObject> GetObjectsToControl()
+    {
+        // Anda perlu mengisi daftar objek-objek yang akan dikontrol sesuai dengan kebutuhan Anda
+        // Contoh sederhana: Daftar objek yang akan dikontrol adalah objek di bawah script ini
+        foreach (Transform child in transform)
+        {
+            objectsToControl.Add(child.gameObject);
+        }
+        return objectsToControl;
     }
 }
