@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KeyCodeConfirmation : MonoBehaviour
+public class KeyCodeConfirmation1 : MonoBehaviour
 {
     public FixedkeyboardDisplay fixedkeyboardDisplay; // Referensi ke script KeyboardDisplay
-    public FixedKeyCodeKeyboard fixedkeyCodeKeyboard; // Referensi ke script KeyCodeKeyboard
+    public FixedKeyCodeKeyboard1 fixedkeyCodeKeyboard1; // Referensi ke script KeyCodeKeyboard
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class KeyCodeConfirmation : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f); // Tunggu selama 2 detik
 
-        if (fixedkeyboardDisplay != null && fixedkeyCodeKeyboard != null)
+        if (fixedkeyboardDisplay != null && fixedkeyCodeKeyboard1 != null)
         {
             Debug.Log("Mendapatkan informasi ImageComponent...");
             int numberOfImageComponents = fixedkeyboardDisplay.imageComponents.Length;
@@ -77,9 +77,9 @@ public class KeyCodeConfirmation : MonoBehaviour
 
     private KeyCode FindKeyCode(int spriteIndex)
     {
-        if (spriteIndex >= 0 && spriteIndex < fixedkeyCodeKeyboard.keyboardCodes.Length)
+        if (spriteIndex >= 0 && spriteIndex < fixedkeyCodeKeyboard1.keyboardCodes.Length)
         {
-            return fixedkeyCodeKeyboard.keyboardCodes[spriteIndex];
+            return fixedkeyCodeKeyboard1.keyboardCodes[spriteIndex];
         }
         else
         {
