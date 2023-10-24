@@ -495,6 +495,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 396197125}
+  - component: {fileID: 396197129}
+  - component: {fileID: 396197128}
+  - component: {fileID: 396197127}
+  - component: {fileID: 396197126}
+  - component: {fileID: 396197130}
   m_Layer: 0
   m_Name: RythemDisplay
   m_TagString: Untagged
@@ -518,6 +523,83 @@ Transform:
   m_Father: {fileID: 366139794}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &396197126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396197124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ce5ddffa63541046aa09045e7ba4064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedkeyboardDisplay: {fileID: 396197129}
+  fixedkeyCodeKeyboard: {fileID: 396197128}
+--- !u!114 &396197127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396197124}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2ca364efe30094d9a6e6dee1fcd6e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hierarchyRoots: []
+  interval: 5
+--- !u!114 &396197128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396197124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e27ee07c0f031e46aab31686d5e7828, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardDisplay: {fileID: 0}
+  keyboardCodes: 
+--- !u!114 &396197129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396197124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e668c4649888e94db8afb25ab604a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageComponents:
+  - {fileID: 1032150159}
+  - {fileID: 862572042}
+  - {fileID: 1801160323}
+  - {fileID: 738025060}
+  imageSprites:
+  - {fileID: -480586206, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
+  - {fileID: -2061882434, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
+  - {fileID: 1394473662, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
+  - {fileID: -1461353881, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
+--- !u!114 &396197130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396197124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70efb3829178acf4f9694c7d32d28f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyCodeConfirmation: {fileID: 396197126}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,6 +1524,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1260427459}
+  - component: {fileID: 1260427463}
+  - component: {fileID: 1260427462}
+  - component: {fileID: 1260427461}
+  - component: {fileID: 1260427460}
+  - component: {fileID: 1260427464}
   m_Layer: 0
   m_Name: RythemDisplay2
   m_TagString: Untagged
@@ -1465,6 +1552,83 @@ Transform:
   m_Father: {fileID: 366139794}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1260427460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260427458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52ccc1095cfb314fa7783fce1af4f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixedkeyboardDisplay: {fileID: 1260427463}
+  fixedkeyCodeKeyboard1: {fileID: 1260427462}
+--- !u!114 &1260427461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260427458}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2ca364efe30094d9a6e6dee1fcd6e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hierarchyRoots: []
+  interval: 5
+--- !u!114 &1260427462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260427458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053035e8575c27a48a2acb1421d151d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardDisplay: {fileID: 0}
+  keyboardCodes: 
+--- !u!114 &1260427463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260427458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e668c4649888e94db8afb25ab604a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageComponents:
+  - {fileID: 2015089127}
+  - {fileID: 1879763835}
+  - {fileID: 1533779894}
+  - {fileID: 1460820261}
+  imageSprites:
+  - {fileID: -1461353881, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
+  - {fileID: 1394473662, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
+  - {fileID: -480586206, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
+  - {fileID: -2061882434, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
+--- !u!114 &1260427464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260427458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059aa649fdce56742b48543cc70d3bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyCodeConfirmation1: {fileID: 1260427460}
 --- !u!1 &1325517603
 GameObject:
   m_ObjectHideFlags: 0
