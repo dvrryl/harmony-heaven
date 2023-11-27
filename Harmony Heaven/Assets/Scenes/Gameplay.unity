@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e27ee07c0f031e46aab31686d5e7828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyboardDisplay: {fileID: 0}
+  keyboardDisplay: {fileID: 396197129}
   keyboardCodes: 
 --- !u!114 &396197129
 MonoBehaviour:
@@ -1596,7 +1596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 053035e8575c27a48a2acb1421d151d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyboardDisplay: {fileID: 0}
+  keyboardDisplay: {fileID: 1260427463}
   keyboardCodes: 
 --- !u!114 &1260427463
 MonoBehaviour:
