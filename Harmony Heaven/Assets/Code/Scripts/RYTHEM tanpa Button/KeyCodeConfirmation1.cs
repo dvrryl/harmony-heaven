@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class KeyCodeConfirmation1 : MonoBehaviour
 {
-    public FixedkeyboardDisplay fixedkeyboardDisplay; // Referensi ke script KeyboardDisplay
-    public FixedKeyCodeKeyboard1 fixedkeyCodeKeyboard1; // Referensi ke script KeyCodeKeyboard
+    public FixedKeyCodeKeyboard1 fixedKeyCodeKeyboard1; // Referensi ke script FixedKeyCodeKeyboard1
+    public FixedkeyboardDisplay fixedkeyboardDisplay; // Referensi ke script FixedkeyboardDisplay
 
     private List<GameObject> objectsToControl = new List<GameObject>(); // Objek-objek yang akan dikontrol
 
@@ -18,11 +18,13 @@ public class KeyCodeConfirmation1 : MonoBehaviour
 
     void CompileConfirmation()
     {
-        if (fixedkeyboardDisplay != null && fixedkeyCodeKeyboard1 != null)
+        if (fixedkeyboardDisplay != null && fixedKeyCodeKeyboard1 != null)
         {
             Debug.Log("Mendapatkan informasi ImageComponent...");
             int numberOfImageComponents = fixedkeyboardDisplay.imageComponents.Length;
             Debug.Log("Jumlah ImageComponent: " + numberOfImageComponents);
+
+            List<KeyCode> expectedKeyCodeSequence = new List<KeyCode>();
 
             for (int i = 0; i < numberOfImageComponents; i++)
             {
@@ -39,6 +41,9 @@ public class KeyCodeConfirmation1 : MonoBehaviour
                     {
                         KeyCode keyCode = FindKeyCode(spriteIndex);
                         Debug.Log("ImageSprite " + i + " - Keycode: " + keyCode);
+
+                        // Menambahkan ke urutan key code yang diharapkan
+                        expectedKeyCodeSequence.Add(keyCode);
                     }
                     else
                     {
@@ -50,10 +55,21 @@ public class KeyCodeConfirmation1 : MonoBehaviour
                     Debug.LogWarning("Nama Sprite tidak ditemukan untuk ImageSprite " + i);
                 }
             }
+
+            // Setelah selesai, berikan urutan key code yang diharapkan ke ButtonPressConfirm1
+            ButtonPressConfirm1 buttonPressConfirm1 = FindObjectOfType<ButtonPressConfirm1>();
+            if (buttonPressConfirm1 != null)
+            {
+                buttonPressConfirm1.SetExpectedKeyCodeSequence(expectedKeyCodeSequence);
+            }
+            else
+            {
+                Debug.LogError("Script ButtonPressConfirm1 tidak ditemukan.");
+            }
         }
         else
         {
-            Debug.LogError("Script KeyboardDisplay atau KeyCodeKeyboard tidak ditemukan.");
+            Debug.LogError("Script FixedkeyboardDisplay atau FixedKeyCodeKeyboard1 tidak ditemukan.");
         }
     }
 
@@ -78,26 +94,14 @@ public class KeyCodeConfirmation1 : MonoBehaviour
 
     private KeyCode FindKeyCode(int spriteIndex)
     {
-        if (spriteIndex >= 0 && spriteIndex < fixedkeyCodeKeyboard1.keyboardCodes.Length)
+        if (spriteIndex >= 0 && spriteIndex < fixedKeyCodeKeyboard1.keyboardCodes.Length)
         {
-            return fixedkeyCodeKeyboard1.keyboardCodes[spriteIndex];
+            return fixedKeyCodeKeyboard1.keyboardCodes[spriteIndex];
         }
         else
         {
             Debug.LogWarning("Indeks sprite tidak valid: " + spriteIndex);
             return KeyCode.None; // Kode tombol default jika indeks tidak valid
         }
-    }
-
-    // Metode untuk mengembalikan objek-objek yang akan dikontrol
-    public List<GameObject> GetObjectsToControl()
-    {
-        // Anda perlu mengisi daftar objek-objek yang akan dikontrol sesuai dengan kebutuhan Anda
-        // Contoh sederhana: Daftar objek yang akan dikontrol adalah objek di bawah script ini
-        foreach (Transform child in transform)
-        {
-            objectsToControl.Add(child.gameObject);
-        }
-        return objectsToControl;
     }
 }
