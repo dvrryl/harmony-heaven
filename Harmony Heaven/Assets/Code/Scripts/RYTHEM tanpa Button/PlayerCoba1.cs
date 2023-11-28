@@ -1,13 +1,25 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ScenePlayLoader : MonoBehaviour
+public class PlayerCoba1 : MonoBehaviour
 {
-   public void LoadGameplayScene()
-    {
-        // Memuat scene gameplay dengan nama "Gameplay" (gantilah dengan nama yang sesuai)
-        SceneManager.LoadScene("Gameplay");
-        Debug.Log("Gameplay");
+    public int b;
+    public int maxHealth = 500;
+    public int currentHealth;
+    public HealthBar healthBar;
+    void Start(){
+      currentHealth = maxHealth;
+      healthBar.SetMaxHealth(maxHealth);
     }
 
+    void Update(){
+       if (b = 1){
+         TakeDamage(20);
+       }
+    }
+
+    void TakeDamage(int damage){
+      currentHealth -= damage;
+      healthBar.SetHealth(currentHealth);
+    }
 }

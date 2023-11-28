@@ -7,16 +7,17 @@ public class GameController : MonoBehaviour
     public int B = 0; // Menambah variabel B
     public GameObject RythemDisplay;
     public GameObject RythemDisplay1;
-
+    public PlayerCoba1 pc1;
     private float timestampPlayer1;
     private float timestampPlayer2;
 
     // Event untuk memberi tahu bahwa urutan benar dicapai oleh Player 1
-    public delegate void CorrectSequencePlayer1Action();
-    public static event CorrectSequencePlayer1Action OnCorrectSequencePlayer;
+    //public delegate void CorrectSequencePlayer1Action();
+    //public static event CorrectSequencePlayer1Action OnCorrectSequencePlayer;
 
     void Start()
     {
+        
         // Berlangganan event dari kedua ButtonPressConfirm
         ButtonPressConfirm.OnCorrectSequence += HandleCorrectSequencePlayer1;
         ButtonPressConfirm1.OnCorrectSequence += HandleCorrectSequencePlayer2;
@@ -29,12 +30,9 @@ public class GameController : MonoBehaviour
 
         // Lakukan verifikasi atau logika lainnya untuk pemain 1
         CheckAndDeactivatePlayers(timestampPlayer1, RythemDisplay, RythemDisplay1);
+        pc1.b = 1;
 
-        // Panggil event OnCorrectSequencePlayer1
-        if (OnCorrectSequencePlayer != null)
-        {
-            OnCorrectSequencePlayer1();
-        }
+        
     }
 
     void HandleCorrectSequencePlayer2()
@@ -45,11 +43,9 @@ public class GameController : MonoBehaviour
         // Lakukan verifikasi atau logika lainnya untuk pemain 2
         CheckAndDeactivatePlayers(timestampPlayer2, RythemDisplay1, RythemDisplay);
 
+
         // Panggil event OnCorrectSequencePlayer2
-        if (OnCorrectSequencePlayer != null)
-        {
-            OnCorrectSequencePlayer();
-        }
+        
     }
 
     void CheckAndDeactivatePlayers(float timestamp, GameObject winner, GameObject loser)
