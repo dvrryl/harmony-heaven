@@ -10,7 +10,7 @@ public class PlayerCoba2 : MonoBehaviour
 
     // Event untuk menerima pesan "Urutan Benar! Resetting..."
     public delegate void CorrectSequenceAction();
-    public static event CorrectSequenceAction OnCorrectSequence;
+    //public static event CorrectSequenceAction OnCorrectSequence;
 
     void Start()
     {

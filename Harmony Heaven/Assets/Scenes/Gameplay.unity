@@ -1568,8 +1568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52ccc1095cfb314fa7783fce1af4f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fixedKeyCodeKeyboard1: {fileID: 1260427462}
   fixedkeyboardDisplay: {fileID: 1260427463}
-  fixedkeyCodeKeyboard1: {fileID: 1260427462}
 --- !u!114 &1260427461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1632,7 +1632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 059aa649fdce56742b48543cc70d3bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyCodeConfirmation1: {fileID: 1260427460}
+  A: 0
 --- !u!1 &1325517603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,6 +2008,10 @@ PrefabInstance:
     - target: {fileID: 4094233133390536583, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_Name
       value: PlayerHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094233133390536583, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5973529274179378333, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_Pivot.x

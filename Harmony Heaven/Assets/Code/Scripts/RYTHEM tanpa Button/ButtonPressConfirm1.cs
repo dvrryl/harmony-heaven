@@ -6,6 +6,7 @@ public class ButtonPressConfirm1 : MonoBehaviour
 {
     private List<KeyCode> expectedKeyCodeSequence = new List<KeyCode>(); // Urutan key code yang diharapkan
     private List<KeyCode> currentInputSequence = new List<KeyCode>(); // Urutan key code yang sedang diinput
+    public int A;
 
     private void Start()
     {
@@ -44,14 +45,15 @@ public class ButtonPressConfirm1 : MonoBehaviour
 
         if (isCorrectSequence)
         {
+            A = 1;
             // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
             currentInputSequence.Clear();
             Debug.Log("Urutan Benar! Resetting...");
         }
         else
         {
+            A = 0;
             // Jika salah, matikan hirarki objek yang dikendalikan
-            DeactivateObjects();
             Debug.Log("Urutan Salah! Matikan objek-objek...");
         }
     }
@@ -83,6 +85,5 @@ public class ButtonPressConfirm1 : MonoBehaviour
     private void DeactivateObjects()
     {
         // Matikan hirarki objek yang dikendalikan
-        // ...
     }
 }
