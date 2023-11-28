@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonPressConfirm : MonoBehaviour
 {
+    public int A = 0;
     public KeyCodeConfirmation keyCodeConfirmation; // Referensi ke script KeyCodeConfirmation
     private List<KeyCode> currentInputSequence = new List<KeyCode>(); // Untuk menyimpan input yang diterima
     private List<GameObject> objectsToControl = new List<GameObject>(); // Objek-objek yang akan dikontrol
@@ -69,17 +70,19 @@ public class ButtonPressConfirm : MonoBehaviour
             // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
             currentInputSequence.Clear();
             Debug.Log("Urutan Benar! Resetting...");
+            A = 1;
+
             if (OnCorrectSequence != null)
             {
                 OnCorrectSequence();
             }
         }
-        else
-        {
+        //else
+        //{
             // Jika salah, matikan hirarki objek yang dikendalikan
-            DeactivateObjects();
-            Debug.Log("Urutan Salah! Matikan objek-objek...");
-        }
+          //  DeactivateObjects();
+           // Debug.Log("Urutan Salah! Matikan objek-objek...");
+        //}
     }
 
     private List<KeyCode> GetExpectedSequence()

@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5973529274179378333}
-  - component: {fileID: 194457430092473222}
+  - component: {fileID: 8338849842091724426}
   m_Layer: 5
   m_Name: PlayerHealthBar
   m_TagString: Untagged
@@ -107,14 +107,14 @@ RectTransform:
   m_Children:
   - {fileID: 8664261583352258395}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -148, y: -237}
   m_SizeDelta: {x: 1003, y: 114.88}
   m_Pivot: {x: 0.49999997, y: 0.49999997}
---- !u!114 &194457430092473222
+--- !u!114 &8338849842091724426
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,12 +123,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4094233133390536583}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34b481cc128aae944939eb9fe40931e3, type: 3}
+  m_Script: {fileID: 11500000, guid: 799b9dd6f8d06234b800b5d6c12a8378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 500
   currentHealth: 0
-  healthBar: {fileID: 3899598570319106703}
+  healthBar: {fileID: 0}
 --- !u!1 &6535270987288642267
 GameObject:
   m_ObjectHideFlags: 0

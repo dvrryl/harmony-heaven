@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ButtonPressConfirm1 : MonoBehaviour
 {
+    public int A = 0;
     private List<KeyCode> expectedKeyCodeSequence = new List<KeyCode>(); // Urutan key code yang diharapkan
     private List<KeyCode> currentInputSequence = new List<KeyCode>(); // Urutan key code yang sedang diinput
-    public int A;
+    public delegate void CorrectSequenceAction();
+    public static event CorrectSequenceAction OnCorrectSequence;
 
     private void Start()
     {
@@ -49,6 +51,10 @@ public class ButtonPressConfirm1 : MonoBehaviour
             // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
             currentInputSequence.Clear();
             Debug.Log("Urutan Benar! Resetting...");
+            if (OnCorrectSequence != null)
+            {
+                OnCorrectSequence();
+            }
         }
         else
         {

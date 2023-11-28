@@ -8,17 +8,14 @@ public class PlayerCoba2 : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
 
-    // Event untuk menerima pesan "Urutan Benar! Resetting..."
+    // Event untuk memberi tahu GameController bahwa urutan benar dicapai oleh PlayerCoba2
     public delegate void CorrectSequenceAction();
-    //public static event CorrectSequenceAction OnCorrectSequence;
+    public static event CorrectSequenceAction OnCorrectSequencePlayer2;
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-
-        // Berlangganan event dari ButtonPressConfirm
-        ButtonPressConfirm.OnCorrectSequence += HandleCorrectSequence;
     }
 
     void Update()
@@ -26,6 +23,12 @@ public class PlayerCoba2 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
+
+            // Memberi tahu GameController bahwa urutan benar dicapai oleh PlayerCoba2
+            if (OnCorrectSequencePlayer2 != null)
+            {
+                OnCorrectSequencePlayer2();
+            }
         }
     }
 
@@ -33,11 +36,5 @@ public class PlayerCoba2 : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
-    }
-
-    void HandleCorrectSequence()
-    {
-        // Menjalankan fitur TakeDamage(50) setelah menerima pesan "Urutan Benar! Resetting..."
-        TakeDamage(50);
     }
 }
