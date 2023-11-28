@@ -395,6 +395,7 @@ GameObject:
   - component: {fileID: 396197127}
   - component: {fileID: 396197126}
   - component: {fileID: 396197130}
+  - component: {fileID: 396197131}
   m_Layer: 0
   m_Name: RythemDisplay
   m_TagString: Untagged
@@ -496,6 +497,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   A: 0
   keyCodeConfirmation: {fileID: 396197126}
+--- !u!114 &396197131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396197124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a11283eca767a4ca8212862e3c94dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RythemDisplay: {fileID: 396197124}
+  RythemDisplay1: {fileID: 1260427458}
+  B: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,6 +1476,7 @@ GameObject:
   - component: {fileID: 1260427461}
   - component: {fileID: 1260427460}
   - component: {fileID: 1260427464}
+  - component: {fileID: 1260427465}
   m_Layer: 0
   m_Name: RythemDisplay2
   m_TagString: Untagged
@@ -1560,6 +1577,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   A: 0
+--- !u!114 &1260427465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260427458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a11283eca767a4ca8212862e3c94dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RythemDisplay: {fileID: 396197124}
+  RythemDisplay1: {fileID: 1260427458}
+  B: 0
 --- !u!1 &1325517603
 GameObject:
   m_ObjectHideFlags: 0
