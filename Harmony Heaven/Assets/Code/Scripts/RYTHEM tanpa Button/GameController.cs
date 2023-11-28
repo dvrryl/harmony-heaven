@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public int B = 0; // Menambah variabel B
     public GameObject RythemDisplay;
     public GameObject RythemDisplay1;
 
     private float timestampPlayer1;
     private float timestampPlayer2;
 
-    public int B; // Menambah variabel B
-
     // Event untuk memberi tahu bahwa urutan benar dicapai oleh Player 1
     public delegate void CorrectSequencePlayer1Action();
-    public static event CorrectSequencePlayer1Action OnCorrectSequencePlayer1;
-
-    // Event untuk memberi tahu bahwa urutan benar dicapai oleh Player 2
-    public delegate void CorrectSequencePlayer2Action();
-    public static event CorrectSequencePlayer2Action OnCorrectSequencePlayer2;
+    public static event CorrectSequencePlayer1Action OnCorrectSequencePlayer;
 
     void Start()
     {
@@ -36,7 +31,7 @@ public class GameController : MonoBehaviour
         CheckAndDeactivatePlayers(timestampPlayer1, RythemDisplay, RythemDisplay1);
 
         // Panggil event OnCorrectSequencePlayer1
-        if (OnCorrectSequencePlayer1 != null)
+        if (OnCorrectSequencePlayer != null)
         {
             OnCorrectSequencePlayer1();
         }
@@ -51,9 +46,9 @@ public class GameController : MonoBehaviour
         CheckAndDeactivatePlayers(timestampPlayer2, RythemDisplay1, RythemDisplay);
 
         // Panggil event OnCorrectSequencePlayer2
-        if (OnCorrectSequencePlayer2 != null)
+        if (OnCorrectSequencePlayer != null)
         {
-            OnCorrectSequencePlayer2();
+            OnCorrectSequencePlayer();
         }
     }
 
