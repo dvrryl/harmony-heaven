@@ -509,9 +509,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a11283eca767a4ca8212862e3c94dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  B: 0
   RythemDisplay: {fileID: 396197124}
   RythemDisplay1: {fileID: 1260427458}
-  B: 0
+  pc1: {fileID: 1407219663}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,9 +1579,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a11283eca767a4ca8212862e3c94dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  B: 0
   RythemDisplay: {fileID: 396197124}
   RythemDisplay1: {fileID: 1260427458}
-  B: 0
+  pc1: {fileID: 0}
 --- !u!1 &1325517603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,6 +1672,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5973529274179378333, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
   m_PrefabInstance: {fileID: 1568263054}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1407219663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8338849842091724426, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
+  m_PrefabInstance: {fileID: 1568263054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799b9dd6f8d06234b800b5d6c12a8378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1448361739 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5973529274179378333, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
