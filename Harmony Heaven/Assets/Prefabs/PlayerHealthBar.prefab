@@ -85,7 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5973529274179378333}
-  - component: {fileID: 8338849842091724426}
+  - component: {fileID: 5097435357083943559}
   m_Layer: 5
   m_Name: PlayerHealthBar
   m_TagString: Untagged
@@ -114,7 +114,7 @@ RectTransform:
   m_AnchoredPosition: {x: -148, y: -237}
   m_SizeDelta: {x: 1003, y: 114.88}
   m_Pivot: {x: 0.49999997, y: 0.49999997}
---- !u!114 &8338849842091724426
+--- !u!114 &5097435357083943559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 799b9dd6f8d06234b800b5d6c12a8378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  b: 0
   maxHealth: 500
   currentHealth: 0
   healthBar: {fileID: 0}

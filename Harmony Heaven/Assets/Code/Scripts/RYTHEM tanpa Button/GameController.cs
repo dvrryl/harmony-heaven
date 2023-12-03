@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
 
         // Lakukan verifikasi atau logika lainnya untuk pemain 1
         CheckAndDeactivatePlayers(timestampPlayer1, RythemDisplay, RythemDisplay1);
-        pc1.ProcessBValue(1);
+        
     }
 
     void HandleCorrectSequencePlayer2()
@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
 
         // Lakukan verifikasi atau logika lainnya untuk pemain 2
         CheckAndDeactivatePlayers(timestampPlayer2, RythemDisplay1, RythemDisplay);
+        pc1.ProcessBValue(1);
 
 
         // Panggil event OnCorrectSequencePlayer2

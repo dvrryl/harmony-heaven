@@ -509,7 +509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a11283eca767a4ca8212862e3c94dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  B: 0
   RythemDisplay: {fileID: 396197124}
   RythemDisplay1: {fileID: 1260427458}
   pc1: {fileID: 1407219663}
@@ -632,6 +631,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 2038651362801283853, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1314648201}
     - target: {fileID: 2965962023693147055, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -644,6 +647,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2HealthBar
       objectReference: {fileID: 0}
+    - target: {fileID: 5097435357083943559, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1314648201}
     - target: {fileID: 5973529274179378333, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_Pivot.x
       value: 0.49999997
@@ -1579,10 +1586,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a11283eca767a4ca8212862e3c94dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  B: 0
   RythemDisplay: {fileID: 396197124}
   RythemDisplay1: {fileID: 1260427458}
-  pc1: {fileID: 0}
+  pc1: {fileID: 1407219663}
+--- !u!114 &1314648201 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3899598570319106703, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
+  m_PrefabInstance: {fileID: 592486511}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9684c8ef1616c1f4dac92bf8704dcc8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1325517603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1674,7 +1691,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1407219663 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8338849842091724426, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5097435357083943559, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
   m_PrefabInstance: {fileID: 1568263054}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1958,6 +1975,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 2038651362801283853, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1782130970}
     - target: {fileID: 2965962023693147055, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1974,6 +1995,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5097435357083943559, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1782130970}
     - target: {fileID: 5973529274179378333, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2166,6 +2191,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1782130970 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3899598570319106703, guid: 967ecfa6aaebb7840820276eda82cf58, type: 3}
+  m_PrefabInstance: {fileID: 1568263054}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9684c8ef1616c1f4dac92bf8704dcc8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1801160320
 GameObject:
   m_ObjectHideFlags: 0

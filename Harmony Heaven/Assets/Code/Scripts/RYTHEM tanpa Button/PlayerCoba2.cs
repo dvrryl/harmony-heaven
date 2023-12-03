@@ -8,10 +8,6 @@ public class PlayerCoba2 : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
 
-    // Event untuk memberi tahu GameController bahwa urutan benar dicapai oleh PlayerCoba2
-    public delegate void CorrectSequenceAction();
-    public static event CorrectSequenceAction OnCorrectSequencePlayer2;
-
     void Start()
     {
         currentHealth = maxHealth;
@@ -23,12 +19,6 @@ public class PlayerCoba2 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
-
-            // Memberi tahu GameController bahwa urutan benar dicapai oleh PlayerCoba2
-            if (OnCorrectSequencePlayer2 != null)
-            {
-                OnCorrectSequencePlayer2();
-            }
         }
     }
 
