@@ -11,9 +11,13 @@ public class PlayerCoba1 : MonoBehaviour
       currentHealth = maxHealth;
       healthBar.SetMaxHealth(maxHealth);
     }
+    public void ProcessBValue(int bValue)
+    {
+        b = bValue;
+    }
 
     void Update(){
-       if (b = 1){
+       if (b == 1){
          TakeDamage(20);
        }
     }

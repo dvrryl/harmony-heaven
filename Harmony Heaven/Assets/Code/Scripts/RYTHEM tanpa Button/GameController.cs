@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public int B = 0; // Menambah variabel B
+    //public int B = 0; // Menambah variabel B
     public GameObject RythemDisplay;
     public GameObject RythemDisplay1;
     public PlayerCoba1 pc1;
@@ -30,9 +30,7 @@ public class GameController : MonoBehaviour
 
         // Lakukan verifikasi atau logika lainnya untuk pemain 1
         CheckAndDeactivatePlayers(timestampPlayer1, RythemDisplay, RythemDisplay1);
-        pc1.b = 1;
-
-        
+        pc1.ProcessBValue(1);
     }
 
     void HandleCorrectSequencePlayer2()
@@ -53,9 +51,9 @@ public class GameController : MonoBehaviour
         // Lakukan pengecekan apakah pemain ini yang pertama kali mencapai urutan benar
         if (IsWinner(timestamp))
         {
-            B = winner.name == "RythemDisplay" ? 1 : -1; // Menentukan nilai B berdasarkan nama winner
+            //B = winner.name == "RythemDisplay" ? 1 : -1; // Menentukan nilai B berdasarkan nama winner
             Debug.Log("Urutan benar dicapai oleh " + winner.name + ". Mematikan objek " + loser.name + "...");
-            Debug.Log("Nilai B yang dikirim: " + B); // Menampilkan nilai B dalam debug
+            //Debug.Log("Nilai B yang dikirim: " + B); // Menampilkan nilai B dalam debug
             loser.SetActive(false);
         }
     }
