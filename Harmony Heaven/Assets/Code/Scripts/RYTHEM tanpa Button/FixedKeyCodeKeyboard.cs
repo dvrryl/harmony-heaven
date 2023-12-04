@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class FixedKeyCodeKeyboard : MonoBehaviour
 {
-    public FixedkeyboardDisplay keyboardDisplay; // Mengubah referensi ke FixedkeyboardDisplay
+    public FixedkeyboardDisplay keyboardDisplay;
     public KeyCode[] keyboardCodes;
     private KeyCode[] defaultKeyboardCodes = new KeyCode[5] { KeyCode.W, KeyCode.A, KeyCode.D, KeyCode.S, KeyCode.F };
 
     private void Start()
     {
-        keyboardDisplay = GetComponent<FixedkeyboardDisplay>(); // Mengubah referensi ke FixedkeyboardDisplay.
+        keyboardDisplay = GetComponent<FixedkeyboardDisplay>();
 
         if (keyboardDisplay != null && keyboardDisplay.imageSprites != null)
         {
@@ -24,7 +24,7 @@ public class FixedKeyCodeKeyboard : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Script FixedkeyboardDisplay atau imageSprites tidak ditemukan atau belum diinisialisasi.");
+            Debug.LogError("Script FixedkeyboardDisplay1 atau imageSprites tidak ditemukan atau belum diinisialisasi.");
         }
     }
 
@@ -34,7 +34,29 @@ public class FixedKeyCodeKeyboard : MonoBehaviour
 
         for (int i = 0; i < numberOfSprites; i++)
         {
-            keyboardCodes[i] = defaultKeyboardCodes[i]; // Inisialisasi sesuai dengan default atau kebutuhan Anda.
+            // Membaca nama sprite
+            string spriteName = keyboardDisplay.imageSprites[i].name;
+
+            // Menetapkan KeyCode berdasarkan nama sprite
+            switch (spriteName)
+            {
+                case "11":
+                    keyboardCodes[i] = KeyCode.W;
+                    break;
+                case "12":
+                    keyboardCodes[i] = KeyCode.A;
+                    break;
+                case "10":
+                    keyboardCodes[i] = KeyCode.S;
+                    break;
+                case "13":
+                    keyboardCodes[i] = KeyCode.D;
+                    break;
+                default:
+                    // Default KeyCode jika tidak ada kecocokan
+                    keyboardCodes[i] = defaultKeyboardCodes[i];
+                    break;
+            }
         }
     }
 }
