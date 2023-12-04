@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class FixedKeyCodeKeyboard1 : MonoBehaviour
 {
-    public FixedkeyboardDisplay keyboardDisplay; // Mengubah referensi ke FixedkeyboardDisplay
+    public FixedkeyboardDisplay keyboardDisplay;
     public KeyCode[] keyboardCodes;
     private KeyCode[] defaultKeyboardCodes = new KeyCode[5] { KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.UpArrow, KeyCode.RightArrow, KeyCode.F };
 
     private void Start()
     {
-        keyboardDisplay = GetComponent<FixedkeyboardDisplay>(); // Mengubah referensi ke FixedkeyboardDisplay.
+        keyboardDisplay = GetComponent<FixedkeyboardDisplay>();
 
         if (keyboardDisplay != null && keyboardDisplay.imageSprites != null)
         {
@@ -34,7 +34,29 @@ public class FixedKeyCodeKeyboard1 : MonoBehaviour
 
         for (int i = 0; i < numberOfSprites; i++)
         {
-            keyboardCodes[i] = defaultKeyboardCodes[i]; // Inisialisasi sesuai dengan default atau kebutuhan Anda.
+            // Membaca nama sprite
+            string spriteName = keyboardDisplay.imageSprites[i].name;
+
+            // Menetapkan KeyCode berdasarkan nama sprite
+            switch (spriteName)
+            {
+                case "11":
+                    keyboardCodes[i] = KeyCode.DownArrow;
+                    break;
+                case "12":
+                    keyboardCodes[i] = KeyCode.UpArrow;
+                    break;
+                case "10":
+                    keyboardCodes[i] = KeyCode.LeftArrow;
+                    break;
+                case "13":
+                    keyboardCodes[i] = KeyCode.RightArrow;
+                    break;
+                default:
+                    // Default KeyCode jika tidak ada kecocokan
+                    keyboardCodes[i] = defaultKeyboardCodes[i];
+                    break;
+            }
         }
     }
 }
