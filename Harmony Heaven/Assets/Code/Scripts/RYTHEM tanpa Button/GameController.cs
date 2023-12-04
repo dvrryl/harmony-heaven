@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public GameObject RythemDisplay;
     public GameObject RythemDisplay1;
     public PlayerCoba1 pc1;
+    public PlayerCoba2 pc2;
     private float timestampPlayer1;
     private float timestampPlayer2;
 
@@ -30,6 +31,7 @@ public class GameController : MonoBehaviour
 
         // Lakukan verifikasi atau logika lainnya untuk pemain 1
         CheckAndDeactivatePlayers(timestampPlayer1, RythemDisplay, RythemDisplay1);
+        pc2.ProcessCValue(1);
         
     }
 

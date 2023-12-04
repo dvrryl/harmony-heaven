@@ -507,6 +507,7 @@ MonoBehaviour:
   RythemDisplay: {fileID: 396197124}
   RythemDisplay1: {fileID: 1260427458}
   pc1: {fileID: 5097435358249388297}
+  pc2: {fileID: 5973529274694204659}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,6 +1444,7 @@ MonoBehaviour:
   RythemDisplay: {fileID: 396197124}
   RythemDisplay1: {fileID: 1260427458}
   pc1: {fileID: 5097435358249388297}
+  pc2: {fileID: 5973529274694204659}
 --- !u!1 &1325517603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2858,7 +2860,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5973529274694204658}
-  - component: {fileID: 5097435356602688232}
+  - component: {fileID: 5973529274694204659}
   m_Layer: 5
   m_Name: Player2HealthBar
   m_TagString: Untagged
@@ -2883,22 +2885,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5097435356602688232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4094233132800163816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 799b9dd6f8d06234b800b5d6c12a8378, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  b: 0
-  maxHealth: 500
-  currentHealth: 0
-  healthBar: {fileID: 3899598570833933024}
 --- !u!114 &5097435358249388297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3017,6 +3003,22 @@ RectTransform:
   m_AnchoredPosition: {x: 328, y: -75}
   m_SizeDelta: {x: 600.34, y: 38.57}
   m_Pivot: {x: 0.49999997, y: 0.49999997}
+--- !u!114 &5973529274694204659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4094233132800163816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34b481cc128aae944939eb9fe40931e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  c: 0
+  maxHealth: 500
+  currentHealth: 0
+  healthBar: {fileID: 3899598570833933024}
 --- !u!1 &6535270986298181973
 GameObject:
   m_ObjectHideFlags: 0
