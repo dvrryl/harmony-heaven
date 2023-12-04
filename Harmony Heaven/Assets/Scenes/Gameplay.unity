@@ -474,10 +474,10 @@ MonoBehaviour:
   - {fileID: 1801160323}
   - {fileID: 738025060}
   imageSprites:
+  - {fileID: -1461353881, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
+  - {fileID: 1394473662, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
   - {fileID: -480586206, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
   - {fileID: -2061882434, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
-  - {fileID: 1394473662, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
-  - {fileID: -1461353881, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
 --- !u!114 &396197130
 MonoBehaviour:
   m_ObjectHideFlags: 0

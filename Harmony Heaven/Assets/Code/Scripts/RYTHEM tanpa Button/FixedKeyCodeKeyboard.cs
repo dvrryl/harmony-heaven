@@ -40,16 +40,16 @@ public class FixedKeyCodeKeyboard : MonoBehaviour
             // Menetapkan KeyCode berdasarkan nama sprite
             switch (spriteName)
             {
-                case "11":
+                case "ArrowKey_0":
                     keyboardCodes[i] = KeyCode.W;
                     break;
-                case "12":
+                case "ArrowKey_2":
                     keyboardCodes[i] = KeyCode.A;
                     break;
-                case "10":
+                case "ArrowKey_3":
                     keyboardCodes[i] = KeyCode.S;
                     break;
-                case "13":
+                case "ArrowKey_1":
                     keyboardCodes[i] = KeyCode.D;
                     break;
                 default:

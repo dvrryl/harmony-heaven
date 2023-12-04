@@ -1,27 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ButtonPressConfirm : MonoBehaviour
 {
     public int A = 0;
-    public KeyCodeConfirmation keyCodeConfirmation; // Referensi ke script KeyCodeConfirmation
-    private List<KeyCode> currentInputSequence = new List<KeyCode>(); // Untuk menyimpan input yang diterima
-    private List<GameObject> objectsToControl = new List<GameObject>(); // Objek-objek yang akan dikontrol
+    private List<KeyCode> expectedKeyCodeSequence = new List<KeyCode>(); // Urutan key code yang diharapkan
+    private List<KeyCode> currentInputSequence = new List<KeyCode>(); // Urutan key code yang sedang diinput
     public delegate void CorrectSequenceAction();
     public static event CorrectSequenceAction OnCorrectSequence;
+    public KeyCodeConfirmation keyCodeConfirmation; // Referensi ke script KeyCodeConfirmation
 
     private void Start()
     {
-        if (keyCodeConfirmation != null)
+        // Inisialisasi expectedKeyCodeSequence, misalnya dengan urutan WASD
+        expectedKeyCodeSequence = new List<KeyCode> { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
+
+        // Mengatur referensi ke KeyCodeConfirmation jika belum diatur
+        if (keyCodeConfirmation == null)
         {
-            // Akses objek-objek yang akan dikontrol dari KeyCodeConfirmation
-            objectsToControl = keyCodeConfirmation.GetObjectsToControl();
-        }
-        else
-        {
-            Debug.LogError("Script KeyCodeConfirmation tidak ditemukan.");
+            keyCodeConfirmation = FindObjectOfType<KeyCodeConfirmation>();
+            if (keyCodeConfirmation == null)
+            {
+                Debug.LogError("Script KeyCodeConfirmation tidak ditemukan.");
+            }
         }
     }
 
@@ -29,7 +31,7 @@ public class ButtonPressConfirm : MonoBehaviour
     {
         if (keyCodeConfirmation != null)
         {
-            // Loop melalui setiap kode tombol yang ditemukan oleh KeyCodeConfirmation
+            // Loop melalui setiap kode tombol yang diharapkan
             for (int i = 0; i < keyCodeConfirmation.fixedkeyCodeKeyboard.keyboardCodes.Length; i++)
             {
                 KeyCode expectedKeyCode = keyCodeConfirmation.fixedkeyCodeKeyboard.keyboardCodes[i];
@@ -51,45 +53,40 @@ public class ButtonPressConfirm : MonoBehaviour
     {
         // Menyatakan input yang diterima
         currentInputSequence.Add(input);
-        
-        // Menyatakan urutan key code yang seharusnya ditekan
-        List<KeyCode> expectedSequence = GetExpectedSequence();
-        
+
         // Debugging: Cetak urutan input saat ini dan urutan yang diharapkan
         string currentSequenceStr = string.Join(", ", currentInputSequence);
-        string expectedSequenceStr = string.Join(", ", expectedSequence);
+        string expectedSequenceStr = string.Join(", ", expectedKeyCodeSequence);
         Debug.Log("Urutan Input Saat Ini: " + currentSequenceStr);
         Debug.Log("Urutan yang Diharapkan: " + expectedSequenceStr);
 
         // Memverifikasi apakah input yang diterima sesuai dengan urutan kode tombol yang seharusnya ditekan
-        bool isCorrectSequence = CheckSequence(currentInputSequence, expectedSequence);
+        bool isCorrectSequence = CheckSequence(currentInputSequence, expectedKeyCodeSequence);
         Debug.Log("Urutan Benar? " + isCorrectSequence);
 
         if (isCorrectSequence)
         {
+            A = 1;
             // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
             currentInputSequence.Clear();
             Debug.Log("Urutan Benar! Resetting...");
-            A = 1;
-
             if (OnCorrectSequence != null)
             {
                 OnCorrectSequence();
             }
         }
-        //else
-        //{
+        else
+        {
+            A = 0;
             // Jika salah, matikan hirarki objek yang dikendalikan
-          //  DeactivateObjects();
-           // Debug.Log("Urutan Salah! Matikan objek-objek...");
-        //}
+            Debug.Log("Urutan Salah! Matikan objek-objek...");
+        }
     }
 
-    private List<KeyCode> GetExpectedSequence()
+    // Metode untuk mengatur urutan key code yang diharapkan
+    public void SetExpectedKeyCodeSequence(List<KeyCode> sequence)
     {
-        // Anda perlu mengimplementasikan logika untuk mendapatkan urutan key code yang sesuai
-        // Contoh sederhana: Urutan WASD
-        return new List<KeyCode> { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
+        expectedKeyCodeSequence = sequence;
     }
 
     private bool CheckSequence(List<KeyCode> current, List<KeyCode> expected)
@@ -113,9 +110,5 @@ public class ButtonPressConfirm : MonoBehaviour
     private void DeactivateObjects()
     {
         // Matikan hirarki objek yang dikendalikan
-        foreach (GameObject obj in objectsToControl)
-        {
-            obj.SetActive(false);
-        }
     }
 }
