@@ -435,13 +435,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396197124}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f2ca364efe30094d9a6e6dee1fcd6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hierarchyRoots: []
-  interval: 5
+  d: 0
+  RythemDisplay1: {fileID: 396197124}
+  RythemDisplay2: {fileID: 1260427458}
 --- !u!114 &396197128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,7 +450,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396197124}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e27ee07c0f031e46aab31686d5e7828, type: 3}
   m_Name: 
@@ -508,6 +509,7 @@ MonoBehaviour:
   RythemDisplay1: {fileID: 1260427458}
   pc1: {fileID: 5097435358249388297}
   pc2: {fileID: 5973529274694204659}
+  die: {fileID: 5973529273319954196}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,8 +1380,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2ca364efe30094d9a6e6dee1fcd6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hierarchyRoots: []
-  interval: 5
+  d: 0
+  RythemDisplay1: {fileID: 396197124}
+  RythemDisplay2: {fileID: 1260427458}
 --- !u!114 &1260427462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1445,6 +1448,7 @@ MonoBehaviour:
   RythemDisplay1: {fileID: 1260427458}
   pc1: {fileID: 5097435358249388297}
   pc2: {fileID: 5973529274694204659}
+  die: {fileID: 5973529274694204660}
 --- !u!1 &1325517603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2861,6 +2865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5973529274694204658}
   - component: {fileID: 5973529274694204659}
+  - component: {fileID: 5973529274694204660}
   m_Layer: 5
   m_Name: Player2HealthBar
   m_TagString: Untagged
@@ -2878,6 +2883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5973529273319954195}
   - component: {fileID: 5097435358249388297}
+  - component: {fileID: 5973529273319954196}
   m_Layer: 5
   m_Name: PlayerHealthBar
   m_TagString: Untagged
@@ -2982,6 +2988,21 @@ RectTransform:
   m_AnchoredPosition: {x: -328, y: -75}
   m_SizeDelta: {x: 357.61, y: 50}
   m_Pivot: {x: 0.5, y: 0.50000036}
+--- !u!114 &5973529273319954196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4094233134241502217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2ca364efe30094d9a6e6dee1fcd6e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  d: 0
+  RythemDisplay1: {fileID: 396197124}
+  RythemDisplay2: {fileID: 1260427458}
 --- !u!224 &5973529274694204658
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3019,6 +3040,21 @@ MonoBehaviour:
   maxHealth: 500
   currentHealth: 0
   healthBar: {fileID: 3899598570833933024}
+--- !u!114 &5973529274694204660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4094233132800163816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2ca364efe30094d9a6e6dee1fcd6e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  d: 0
+  RythemDisplay1: {fileID: 396197124}
+  RythemDisplay2: {fileID: 1260427458}
 --- !u!1 &6535270986298181973
 GameObject:
   m_ObjectHideFlags: 0

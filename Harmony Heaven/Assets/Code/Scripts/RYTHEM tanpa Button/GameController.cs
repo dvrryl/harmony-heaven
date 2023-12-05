@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public GameObject RythemDisplay1;
     public PlayerCoba1 pc1;
     public PlayerCoba2 pc2;
+    public FixedHierarchyController die;
     private float timestampPlayer1;
     private float timestampPlayer2;
 
@@ -32,6 +33,7 @@ public class GameController : MonoBehaviour
         // Lakukan verifikasi atau logika lainnya untuk pemain 1
         CheckAndDeactivatePlayers(timestampPlayer1, RythemDisplay, RythemDisplay1);
         pc2.ProcessCValue(1);
+        die.ProcessDValue(1);
         
     }
 
@@ -43,6 +45,7 @@ public class GameController : MonoBehaviour
         // Lakukan verifikasi atau logika lainnya untuk pemain 2
         CheckAndDeactivatePlayers(timestampPlayer2, RythemDisplay1, RythemDisplay);
         pc1.ProcessBValue(1);
+        die.ProcessDValue(1);
 
 
         // Panggil event OnCorrectSequencePlayer2
