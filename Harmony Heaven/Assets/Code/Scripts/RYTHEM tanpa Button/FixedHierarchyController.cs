@@ -20,8 +20,8 @@ public class FixedHierarchyController : MonoBehaviour
     private void Start()
     {
         // Jalankan coroutine untuk mengubah status hirarki setiap interval
-        e = 2;
-        f = 2;
+        e = 1;
+        f = 1;
         g = 1;
         d = 2;
         //Debug.Log("Start - Value of d: " + d);
@@ -52,25 +52,26 @@ public class FixedHierarchyController : MonoBehaviour
     }
     private IEnumerator VerifDie()
     {
-        Debug.Log("Update - d is 1, waiting for 2 seconds...");
-        yield return new WaitForSeconds(intervalDurati);
+        //Debug.Log("Update - d is 1, waiting for 2 seconds...");
+        //yield return new WaitForSeconds(intervalDurati);
 
         while (g == 1)
         {
-            if (e == 1)
+            Debug.Log("Update - d is 1, waiting for 2 seconds...");
+            if (e == 2)
             {
                 RythemDisplay1.SetActive(false);
             }
-            else if (f == 1)
+            else if (f == 2)
             {
                 RythemDisplay2.SetActive(false);
             }
-            else if (e == 1 && f == 1)
+            else if (e == 2 && f == 2)
             {
                 d = 1;
             }
-
-            yield return null; // Ini dibutuhkan agar coroutine dapat melanjutkan pada setiap frame
+            yield break;
+            //yield return null; // Ini dibutuhkan agar coroutine dapat melanjutkan pada setiap frame
         }
     }
     private IEnumerator IntervalFunction(){
