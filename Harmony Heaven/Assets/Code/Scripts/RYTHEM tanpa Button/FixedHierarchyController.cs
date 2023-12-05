@@ -7,6 +7,9 @@ using UnityEngine;
 public class FixedHierarchyController : MonoBehaviour
 {
     public int d;
+    public int e;
+    public int f;
+    public int g;
     public GameObject RythemDisplay1;
     public GameObject RythemDisplay2;
     private float intervalDuration = 2.0f;
@@ -17,37 +20,74 @@ public class FixedHierarchyController : MonoBehaviour
     private void Start()
     {
         // Jalankan coroutine untuk mengubah status hirarki setiap interval
-        
+        e = 2;
+        f = 2;
+        g = 1;
         d = 2;
-        Debug.Log("Start - Value of d: " + d);
+        //Debug.Log("Start - Value of d: " + d);
     }
 
     public void ProcessDValue(int dValue)
     {
         d = dValue;
-        Debug.Log("ProcessDValue - Value of d set to: " + d);
+        //Debug.Log("ProcessDValue - Value of d set to: " + d);
     }
-
+    public void ProcessEValue(int eValue)
+    {
+        e = eValue;
+        //Debug.Log("ProcessDValue - Value of d set to: " + d);
+    }
+    public void ProcessFValue(int fValue)
+    {
+        f = fValue;
+        //Debug.Log("ProcessDValue - Value of d set to: " + d);
+    }
+    
     void Update()
     {
+        ProcessFValue(f);
+        ProcessEValue(e);
         ProcessDValue(d);
         StartCoroutine(IntervalFunction());
     }
-     private IEnumerator IntervalFunction(){
-         while(d == 1)
-         {
-            Debug.Log("Update - d is 1, waiting for 2 seconds...");
-            yield return new WaitForSeconds(intervalDurati);
-            DisableGameObject();
-            Debug.Log("Update - Disabled game objects, waiting for 5 seconds...");
-            yield return new WaitForSeconds(intervalDuration);
-            d = 0;
-            Debug.Log("Update - Value of d set to 0");
-            EnableGameObject();
-            Debug.Log("Update - Enabled game objects");
-            break;    
-         }   
-     }
+    private IEnumerator VerifDie()
+    {
+        Debug.Log("Update - d is 1, waiting for 2 seconds...");
+        yield return new WaitForSeconds(intervalDurati);
+
+        while (g == 1)
+        {
+            if (e == 1)
+            {
+                RythemDisplay1.SetActive(false);
+            }
+            else if (f == 1)
+            {
+                RythemDisplay2.SetActive(false);
+            }
+            else if (e == 1 && f == 1)
+            {
+                d = 1;
+            }
+
+            yield return null; // Ini dibutuhkan agar coroutine dapat melanjutkan pada setiap frame
+        }
+    }
+    private IEnumerator IntervalFunction(){
+       yield return new WaitForSeconds(intervalDurati);
+       while(d == 1)
+       {
+          //Debug.Log("Update - d is 1, waiting for 2 seconds...");
+          DisableGameObject();
+          //Debug.Log("Update - Disabled game objects, waiting for 5 seconds...");
+          yield return new WaitForSeconds(intervalDuration);
+          d = 2;
+          //Debug.Log("Update - Value of d set to 0");
+          EnableGameObject();
+          //Debug.Log("Update - Enabled game objects");
+          break;    
+       }   
+    }
 
     public void DisableGameObject()
     {

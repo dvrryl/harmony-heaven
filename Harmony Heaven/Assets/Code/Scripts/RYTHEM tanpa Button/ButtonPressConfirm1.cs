@@ -5,6 +5,7 @@ using UnityEngine;
 public class ButtonPressConfirm1 : MonoBehaviour
 {
     public int A = 0;
+    public FixedHierarchyController salah;
     private List<KeyCode> expectedKeyCodeSequence = new List<KeyCode>(); // Urutan key code yang diharapkan
     private List<KeyCode> currentInputSequence = new List<KeyCode>(); // Urutan key code yang sedang diinput
     public delegate void CorrectSequenceAction();
@@ -61,6 +62,8 @@ public class ButtonPressConfirm1 : MonoBehaviour
             A = 0;
             // Jika salah, matikan hirarki objek yang dikendalikan
             Debug.Log("Urutan Salah! Matikan objek-objek...");
+            salah.ProcessEValue(1);
+            
         }
     }
 
