@@ -47,7 +47,7 @@ public class FixedHierarchyController : MonoBehaviour
     {
         ProcessFValue(f);
         ProcessEValue(e);
-        ProcessDValue(e);
+        ProcessDValue(d);
         StartCoroutine(VerifDie());
         StartCoroutine(IntervalFunction());
     }
