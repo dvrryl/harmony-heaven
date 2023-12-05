@@ -47,7 +47,8 @@ public class FixedHierarchyController : MonoBehaviour
     {
         ProcessFValue(f);
         ProcessEValue(e);
-        ProcessDValue(d);
+        ProcessDValue(e);
+        StartCoroutine(VerifDie());
         StartCoroutine(IntervalFunction());
     }
     private IEnumerator VerifDie()
@@ -57,18 +58,21 @@ public class FixedHierarchyController : MonoBehaviour
 
         while (g == 1)
         {
-            Debug.Log("Update - d is 1, waiting for 2 seconds...");
+            Debug.Log("sudah ada di VerifDie");
             if (e == 2)
             {
                 RythemDisplay1.SetActive(false);
+                Debug.Log("matiin rythemdisplay1 di VerifDie");
             }
             else if (f == 2)
             {
                 RythemDisplay2.SetActive(false);
+                Debug.Log("matiin rythemdisplay2 di VerifDie");
             }
             else if (e == 2 && f == 2)
             {
                 d = 1;
+                Debug.Log("d menjadi 1 di VerifDie");
             }
             yield break;
             //yield return null; // Ini dibutuhkan agar coroutine dapat melanjutkan pada setiap frame
@@ -80,11 +84,13 @@ public class FixedHierarchyController : MonoBehaviour
        {
           //Debug.Log("Update - d is 1, waiting for 2 seconds...");
           DisableGameObject();
+          Debug.Log("DisableGameObject di IntervalFunction");
           //Debug.Log("Update - Disabled game objects, waiting for 5 seconds...");
           yield return new WaitForSeconds(intervalDuration);
           d = 2;
           //Debug.Log("Update - Value of d set to 0");
           EnableGameObject();
+          Debug.Log("EnableGameObject di IntervalFunction");
           //Debug.Log("Update - Enabled game objects");
           break;    
        }   
