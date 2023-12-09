@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FixedHierarchyController : MonoBehaviour
+public class FixedHierarchyController1 : MonoBehaviour
 {
     public int d;
     public int e;
@@ -59,10 +59,10 @@ public class FixedHierarchyController : MonoBehaviour
         while (g == 1)
         {
             Debug.Log("sudah ada di VerifDie");
-            if (f == 2)
+            if (e == 2)
             {
-                RythemDisplay1.SetActive(false);
-                Debug.Log("matiin rythemdisplay2 di VerifDie");
+                RythemDisplay2.SetActive(false);
+                Debug.Log("matiin rythemdisplay1 di VerifDie");
             }
             else if (e == 2 && f == 2)
             {

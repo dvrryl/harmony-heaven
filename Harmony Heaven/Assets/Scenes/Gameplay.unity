@@ -630,7 +630,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   A: 0
-  salah: {fileID: 5973529273319954196}
+  pelayer1: {fileID: 5973529273319954196}
+  pelayer2: {fileID: 5973529274694204660}
   keyCodeConfirmation: {fileID: 396197126}
 --- !u!114 &396197131
 MonoBehaviour:
@@ -2731,7 +2732,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   A: 0
-  salah: {fileID: 5973529274694204660}
+  pelayer1: {fileID: 5973529273319954196}
+  pelayer2: {fileID: 5973529274694204660}
 --- !u!114 &1260427465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2748,7 +2750,7 @@ MonoBehaviour:
   RythemDisplay1: {fileID: 1260427458}
   pc1: {fileID: 5097435358249388297}
   pc2: {fileID: 5973529274694204659}
-  die: {fileID: 5973529274694204660}
+  die: {fileID: 0}
 --- !u!1 &1325517603
 GameObject:
   m_ObjectHideFlags: 0
@@ -4487,7 +4489,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4094233132800163816}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2ca364efe30094d9a6e6dee1fcd6e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7d4fba1a54e7f2f4ab498e94a1df2db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   d: 0
