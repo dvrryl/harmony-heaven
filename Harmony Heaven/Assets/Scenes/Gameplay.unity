@@ -659,7 +659,6 @@ GameObject:
   - component: {fileID: 396197125}
   - component: {fileID: 396197129}
   - component: {fileID: 396197128}
-  - component: {fileID: 396197127}
   - component: {fileID: 396197126}
   - component: {fileID: 396197130}
   - component: {fileID: 396197131}
@@ -700,24 +699,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixedkeyboardDisplay: {fileID: 396197129}
   fixedkeyCodeKeyboard: {fileID: 396197128}
---- !u!114 &396197127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396197124}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2ca364efe30094d9a6e6dee1fcd6e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  d: 0
-  e: 0
-  f: 0
-  g: 0
-  RythemDisplay1: {fileID: 396197124}
-  RythemDisplay2: {fileID: 1260427458}
 --- !u!114 &396197128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -769,6 +750,7 @@ MonoBehaviour:
   A: 0
   pelayer1: {fileID: 5973529273319954196}
   pelayer2: {fileID: 5973529274694204660}
+  expectedKeyCodeSequence: 77000000610000007300000064000000
   keyCodeConfirmation: {fileID: 396197126}
 --- !u!114 &396197131
 MonoBehaviour:
@@ -3060,7 +3042,6 @@ GameObject:
   - component: {fileID: 1260427459}
   - component: {fileID: 1260427463}
   - component: {fileID: 1260427462}
-  - component: {fileID: 1260427461}
   - component: {fileID: 1260427460}
   - component: {fileID: 1260427464}
   - component: {fileID: 1260427465}
@@ -3101,24 +3082,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixedKeyCodeKeyboard1: {fileID: 1260427462}
   fixedkeyboardDisplay: {fileID: 1260427463}
---- !u!114 &1260427461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260427458}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f2ca364efe30094d9a6e6dee1fcd6e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  d: 0
-  e: 0
-  f: 0
-  g: 0
-  RythemDisplay1: {fileID: 396197124}
-  RythemDisplay2: {fileID: 1260427458}
 --- !u!114 &1260427462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5165,7 +5128,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4094233132800163816}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4fba1a54e7f2f4ab498e94a1df2db4, type: 3}
   m_Name: 

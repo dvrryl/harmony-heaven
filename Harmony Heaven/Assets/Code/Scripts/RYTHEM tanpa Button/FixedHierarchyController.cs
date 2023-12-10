@@ -58,15 +58,21 @@ public class FixedHierarchyController : MonoBehaviour
 
         while (g == 1)
         {
-            Debug.Log("sudah ada di VerifDie");
+            //Debug.Log("sudah ada di VerifDie");
             if (f == 2)
             {
                 RythemDisplay1.SetActive(false);
                 Debug.Log("matiin rythemdisplay2 di VerifDie");
             }
-            else if (e == 2 && f == 2)
+            if (e == 2)
+            {
+                RythemDisplay2.SetActive(false);
+                Debug.Log("matiin rythemdisplay1 di VerifDie");
+            }
+            if (e == 2 && f == 2)
             {
                 d = 1;
+                g = 2;
                 Debug.Log("d menjadi 1 di VerifDie");
             }
             yield break;
@@ -77,6 +83,9 @@ public class FixedHierarchyController : MonoBehaviour
        yield return new WaitForSeconds(intervalDurati);
        while(d == 1)
        {
+           g = 1;
+           f = 1;
+           e = 1;
           //Debug.Log("Update - d is 1, waiting for 2 seconds...");
           DisableGameObject();
           Debug.Log("DisableGameObject di IntervalFunction");
