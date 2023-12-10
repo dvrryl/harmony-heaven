@@ -7,18 +7,17 @@ public class ButtonPressConfirm : MonoBehaviour
     public int A = 0;
     public FixedHierarchyController pelayer1;
     public FixedHierarchyController1 pelayer2;
-    private List<KeyCode> expectedKeyCodeSequence = new List<KeyCode>(); // Urutan key code yang diharapkan
-    private List<KeyCode> currentInputSequence = new List<KeyCode>(); // Urutan key code yang sedang diinput
+
+    // Menggunakan array sederhana untuk menyimpan urutan KeyCode yang diharapkan
+    public KeyCode[] expectedKeyCodeSequence = { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
+    private KeyCode[] currentInputSequence = new KeyCode[0];
+
     public delegate void CorrectSequenceAction();
     public static event CorrectSequenceAction OnCorrectSequence;
-    public KeyCodeConfirmation keyCodeConfirmation; // Referensi ke script KeyCodeConfirmation
+    public KeyCodeConfirmation keyCodeConfirmation;
 
     private void Start()
     {
-        // Inisialisasi expectedKeyCodeSequence, misalnya dengan urutan WASD
-        expectedKeyCodeSequence = new List<KeyCode> { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
-
-        // Mengatur referensi ke KeyCodeConfirmation jika belum diatur
         if (keyCodeConfirmation == null)
         {
             keyCodeConfirmation = FindObjectOfType<KeyCodeConfirmation>();
@@ -33,7 +32,6 @@ public class ButtonPressConfirm : MonoBehaviour
     {
         if (keyCodeConfirmation != null)
         {
-            // Loop melalui setiap kode tombol yang diharapkan
             for (int i = 0; i < keyCodeConfirmation.fixedkeyCodeKeyboard.keyboardCodes.Length; i++)
             {
                 KeyCode expectedKeyCode = keyCodeConfirmation.fixedkeyCodeKeyboard.keyboardCodes[i];
@@ -53,54 +51,67 @@ public class ButtonPressConfirm : MonoBehaviour
 
     private void VerifyInput(KeyCode input)
     {
-        // Menyatakan input yang diterima
-        currentInputSequence.Add(input);
+        // Menggunakan array sederhana untuk menyimpan urutan KeyCode yang diinput
+        List<KeyCode> tempList = new List<KeyCode>(currentInputSequence);
+        tempList.Add(input);
+        currentInputSequence = tempList.ToArray();
 
-        // Debugging: Cetak urutan input saat ini dan urutan yang diharapkan
+        // Debugging: Cetak urutan input saat ini
         string currentSequenceStr = string.Join(", ", currentInputSequence);
-        string expectedSequenceStr = string.Join(", ", expectedKeyCodeSequence);
         Debug.Log("Urutan Input Saat Ini: " + currentSequenceStr);
+
+        // Debugging: Cetak urutan yang diharapkan
+        string expectedSequenceStr = string.Join(", ", expectedKeyCodeSequence);
         Debug.Log("Urutan yang Diharapkan: " + expectedSequenceStr);
 
-        // Memverifikasi apakah input yang diterima sesuai dengan urutan kode tombol yang seharusnya ditekan
-        bool isCorrectSequence = CheckSequence(currentInputSequence, expectedKeyCodeSequence);
-        Debug.Log("Urutan Benar? " + isCorrectSequence);
+        // Cetak jumlah urutan input dan yang diharapkan
+        Debug.Log("Jumlah Urutan Input: " + currentInputSequence.Length);
+        Debug.Log("Jumlah Urutan Diharapkan: " + expectedKeyCodeSequence.Length);
 
-        if (isCorrectSequence)
+        // Memverifikasi apakah jumlah urutan input dan yang diharapkan sudah sama
+        if (currentInputSequence.Length == expectedKeyCodeSequence.Length)
         {
-            A = 1;
-            // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
-            currentInputSequence.Clear();
-            Debug.Log("Urutan Benar! Resetting...");
-            if (OnCorrectSequence != null)
+            bool isCorrectSequence = CheckSequence(currentInputSequence, expectedKeyCodeSequence);
+            Debug.Log("Urutan Benar? " + isCorrectSequence);
+
+            if (isCorrectSequence)
             {
-                OnCorrectSequence();
+                A = 1;
+                // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
+                currentInputSequence = new KeyCode[0];
+                Debug.Log("Urutan Benar! Resetting...");
+                if (OnCorrectSequence != null)
+                {
+                    OnCorrectSequence();
+                }
+                currentInputSequence = new KeyCode[0];
+            }
+            else
+            {
+                A = 0;
+                // Jika salah, matikan hirarki objek yang dikendalikan
+                Debug.Log("Urutan Salah! Matikan objek-objek...");
+                pelayer1.ProcessFValue(2);
+                pelayer2.ProcessFValue(2);
+                Debug.Log("f = 2");
+                currentInputSequence = new KeyCode[0];
             }
         }
-        else
-        {
-            A = 0;
-            // Jika salah, matikan hirarki objek yang dikendalikan
-            Debug.Log("Urutan Salah! Matikan objek-objek...");
-            pelayer1.ProcessFValue(2);
-            Debug.Log("f = 1");
-        }
     }
 
-    // Metode untuk mengatur urutan key code yang diharapkan
     public void SetExpectedKeyCodeSequence(List<KeyCode> sequence)
     {
-        expectedKeyCodeSequence = sequence;
+        expectedKeyCodeSequence = sequence.ToArray();
     }
 
-    private bool CheckSequence(List<KeyCode> current, List<KeyCode> expected)
+    private bool CheckSequence(KeyCode[] current, KeyCode[] expected)
     {
-        if (current.Count != expected.Count)
+        if (current.Length != expected.Length)
         {
             return false;
         }
 
-        for (int i = 0; i < current.Count; i++)
+        for (int i = 0; i < current.Length; i++)
         {
             if (current[i] != expected[i])
             {

@@ -37,35 +37,60 @@ public class ButtonPressConfirm1 : MonoBehaviour
         // Menyatakan input yang diterima
         currentInputSequence.Add(input);
 
-        // Debugging: Cetak urutan input saat ini dan urutan yang diharapkan
+        // Debugging: Cetak urutan input saat ini
         string currentSequenceStr = string.Join(", ", currentInputSequence);
-        string expectedSequenceStr = string.Join(", ", expectedKeyCodeSequence);
         Debug.Log("Urutan Input Saat Ini: " + currentSequenceStr);
+
+        // Debugging: Cetak urutan yang diharapkan
+        string expectedSequenceStr = string.Join(", ", expectedKeyCodeSequence);
         Debug.Log("Urutan yang Diharapkan: " + expectedSequenceStr);
 
-        // Memverifikasi apakah input yang diterima sesuai dengan urutan kode tombol yang seharusnya ditekan
-        bool isCorrectSequence = CheckSequence(currentInputSequence, expectedKeyCodeSequence);
-        Debug.Log("Urutan Benar? " + isCorrectSequence);
+        // Cetak jumlah urutan input dan yang diharapkan
+        Debug.Log("Jumlah Urutan Input: " + currentInputSequence.Count);
+        Debug.Log("Jumlah Urutan yang Diharapkan: " + expectedKeyCodeSequence.Count);
 
-        if (isCorrectSequence)
+        // Jika jumlah urutan input dan yang diharapkan sudah sama, lanjutkan ke perbandingan
+        if (currentInputSequence.Count == expectedKeyCodeSequence.Count)
         {
-            A = 1;
-            // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
-            currentInputSequence.Clear();
-            Debug.Log("Urutan Benar! Resetting...");
-            if (OnCorrectSequence != null)
+            // Mengubah expectedSequenceStr dan currentSequenceStr menjadi array karakter
+            char[] expectedSequenceArray = expectedSequenceStr.ToCharArray();
+            char[] currentSequenceArray = currentSequenceStr.ToCharArray();
+
+            // Membandingkan setiap elemen array
+            bool isCorrectSequence = true;
+
+            // Memverifikasi apakah panjang array sama
+            for (int i = 0; i < expectedSequenceArray.Length; i++)
             {
-                OnCorrectSequence();
+                if (expectedSequenceArray[i] != currentSequenceArray[i])
+                {
+                    isCorrectSequence = false;
+                    break; // Jika ada perbedaan, hentikan loop
+                }
             }
-        }
-        else
-        {
-            A = 0;
-            // Jika salah, matikan hirarki objek yang dikendalikan
-            Debug.Log("Urutan Salah! Matikan objek-objek...");
-            pelayer2.ProcessEValue(2);
-            Debug.Log("e = 2");
-            
+
+            if (isCorrectSequence)
+            {
+                A = 1;
+                // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
+                currentInputSequence.Clear();
+                Debug.Log("Urutan Benar! Resetting...");
+                if (OnCorrectSequence != null)
+                {
+                    OnCorrectSequence();
+                }
+                currentInputSequence.Clear();
+            }
+            else
+            {
+                A = 0;
+                // Jika salah, matikan hirarki objek yang dikendalikan
+                Debug.Log("Urutan Salah! Matikan objek-objek...");
+                pelayer2.ProcessEValue(2);
+                pelayer1.ProcessEValue(2);
+                Debug.Log("e = 2");
+                currentInputSequence.Clear();
+            }
         }
     }
 
@@ -73,24 +98,6 @@ public class ButtonPressConfirm1 : MonoBehaviour
     public void SetExpectedKeyCodeSequence(List<KeyCode> sequence)
     {
         expectedKeyCodeSequence = sequence;
-    }
-
-    private bool CheckSequence(List<KeyCode> current, List<KeyCode> expected)
-    {
-        if (current.Count != expected.Count)
-        {
-            return false;
-        }
-
-        for (int i = 0; i < current.Count; i++)
-        {
-            if (current[i] != expected[i])
-            {
-                return false;
-            }
-        }
-
-        return true;
     }
 
     private void DeactivateObjects()
