@@ -8,6 +8,8 @@ public class FixedKeyCodeKeyboard1 : MonoBehaviour
     public FixedkeyboardDisplay keyboardDisplay;
     public KeyCode[] keyboardCodes;
     private KeyCode[] defaultKeyboardCodes = new KeyCode[5] { KeyCode.DownArrow, KeyCode.RightArrow, KeyCode.UpArrow, KeyCode.LeftArrow, KeyCode.F };
+    public int i;
+    public KeyCodeConfirmation1 pelayer2;
 
     private void Start()
     {
@@ -58,5 +60,30 @@ public class FixedKeyCodeKeyboard1 : MonoBehaviour
                     break;
             }
         }
+    }
+
+    public void ReceiveValue(int value)
+    {
+        i = value;
+        // Lakukan sesuatu dengan nilai yang diterima
+        //Debug.Log("Received value in Script i: " + i);
+        if (i == 2)
+        {
+            //Debug.Log("Received value in Script i: " + i);
+            ResetScript(); // Jika 'h' sama dengan 2, mengatur ulang sprite secara acak
+            Debug.Log("melakukan reset");
+            i = 0;
+            Debug.Log("i: " +i);
+            pelayer2.ProcessJValue(2);
+            Debug.Log("j: 2");
+        }
+    }
+    public void ResetScript()
+    {
+        InitializeKeyboardCodes(keyboardDisplay.imageSprites.Length);
+    }
+    private void Update()
+    {
+        ReceiveValue(i);
     }
 }

@@ -8,13 +8,14 @@ public class FixedkeyboardDisplay : MonoBehaviour
     public Image[] imageComponents;
     public Sprite[] imageSprites;
     private FixedKeyCodeKeyboard Rythem1;
+    private FixedKeyCodeKeyboard1 Rythem2;
     public int h;
-    public int k;
 
     private void Start()
     {
         h = 0;
         Rythem1= GameObject.Find("RythemDisplay").GetComponent<FixedKeyCodeKeyboard>();
+        Rythem2 = GameObject.Find("RythemDisplay2").GetComponent<FixedKeyCodeKeyboard1>();
         SetSpritesRandomly(); // Ganti pemanggilan ke metode yang menetapkan sprite secara acak.
     }
     public void ProcessHValue(int hValue)
@@ -33,11 +34,12 @@ public class FixedkeyboardDisplay : MonoBehaviour
     {
         // Panggil metode di Script B dan kirimkan nilai i sebagai parameter
         Rythem1.ReceiveValue(h);
+        Rythem2.ReceiveValue(h);
         
     }
 
     // Metode Update dipanggil setiap frame
-    void Update()
+    private void Update()
     {
         ProcessHValue(h); // Memanggil metode untuk memproses nilai 'h' setiap frame
         SendValueToOtherScript();

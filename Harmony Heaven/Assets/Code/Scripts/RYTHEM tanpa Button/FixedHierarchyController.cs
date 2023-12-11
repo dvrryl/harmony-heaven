@@ -49,7 +49,7 @@ public class FixedHierarchyController : MonoBehaviour
         //Debug.Log("ProcessDValue - Value of d set to: " + d);
     }
     
-    void Update()
+    private void Update()
     {
         ProcessFValue(f);
         ProcessEValue(e);

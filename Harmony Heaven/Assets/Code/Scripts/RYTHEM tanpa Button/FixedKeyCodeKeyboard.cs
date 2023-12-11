@@ -9,7 +9,7 @@ public class FixedKeyCodeKeyboard : MonoBehaviour
     public KeyCode[] keyboardCodes;
     private KeyCode[] defaultKeyboardCodes = new KeyCode[5] { KeyCode.W, KeyCode.A, KeyCode.D, KeyCode.S, KeyCode.F };
     public int i;
-    public int j;
+    public KeyCodeConfirmation pelayer1;
 
     private void Start()
     {
@@ -75,13 +75,14 @@ public class FixedKeyCodeKeyboard : MonoBehaviour
             ResetScript(); // Jika 'h' sama dengan 2, mengatur ulang sprite secara acak
             //Debug.Log("melakukan reset");
             i = 0;
+            pelayer1.ProcessJValue(2);
         }
     }
     public void ResetScript()
     {
         InitializeKeyboardCodes(keyboardDisplay.imageSprites.Length);
     }
-    void Update()
+    private void Update()
     {
         ReceiveValue(i);
     }

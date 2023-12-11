@@ -7,7 +7,7 @@ public class KeyCodeConfirmation : MonoBehaviour
 {
     public FixedkeyboardDisplay fixedkeyboardDisplay; // Referensi ke script KeyboardDisplay
     public FixedKeyCodeKeyboard fixedkeyCodeKeyboard; // Referensi ke script FixedKeyCodeKeyboard
-    
+    public int j;
 
     private List<GameObject> objectsToControl = new List<GameObject>(); // Objek-objek yang akan dikontrol
 
@@ -15,6 +15,20 @@ public class KeyCodeConfirmation : MonoBehaviour
     {
         // Panggil fungsi CompileConfirmation dengan penundaan 1 detik.
         Invoke("CompileConfirmation", 1f);
+    }
+    public void ProcessJValue(int jValue)
+    {
+        j = jValue;
+        if (j == 2)
+        {
+            Reset();
+            j = 0;
+        }
+        //Debug.Log("ProcessDValue - Value of d set to: " + d);
+    }
+    public void Reset()
+    {
+        CompileConfirmation();
     }
 
     void CompileConfirmation()
@@ -129,5 +143,8 @@ public class KeyCodeConfirmation : MonoBehaviour
         }
         return objectsToControl;
     }
-    
+    private void Update()
+    {
+        ProcessJValue(j);
+    }
 }

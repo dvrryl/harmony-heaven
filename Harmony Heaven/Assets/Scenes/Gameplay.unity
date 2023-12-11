@@ -421,7 +421,7 @@ MonoBehaviour:
   slider: {fileID: 218417005}
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0, g: 0.1654458, b: 1, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -714,6 +714,7 @@ MonoBehaviour:
   keyboardDisplay: {fileID: 396197129}
   keyboardCodes: 
   i: 0
+  j: 0
 --- !u!114 &396197129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,6 +738,7 @@ MonoBehaviour:
   - {fileID: -480586206, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
   - {fileID: -2061882434, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
   h: 0
+  k: 0
 --- !u!114 &396197130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,6 +782,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 437734931}
+  - component: {fileID: 437734933}
+  - component: {fileID: 437734932}
   m_Layer: 5
   m_Name: Player Mana Bar
   m_TagString: Untagged
@@ -808,6 +812,37 @@ RectTransform:
   m_AnchoredPosition: {x: -520, y: -38}
   m_SizeDelta: {x: 292.74, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &437734932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437734930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6322b70c8b0a5364b80daac6b9ba008e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 500
+  currentHealth: 0
+  manaBar: {fileID: 877807253}
+--- !u!114 &437734933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437734930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 799b9dd6f8d06234b800b5d6c12a8378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b: 0
+  maxHealth: 500
+  currentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,9 +2012,9 @@ MonoBehaviour:
   slider: {fileID: 877807254}
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0, g: 0.6362872, b: 1, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
+    key2: {r: 0, g: 0, b: 0, a: 1}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1994,8 +2029,8 @@ MonoBehaviour:
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 65535
-    atime2: 0
+    atime1: 33346
+    atime2: 65535
     atime3: 0
     atime4: 0
     atime5: 0
@@ -2004,7 +2039,7 @@ MonoBehaviour:
     m_Mode: 0
     m_ColorSpace: -1
     m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
+    m_NumAlphaKeys: 3
   fill: {fileID: 1916397602}
 --- !u!114 &877807254
 MonoBehaviour:
@@ -2045,7 +2080,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1916397601}
   m_HandleRect: {fileID: 0}
@@ -3121,6 +3156,7 @@ MonoBehaviour:
   - {fileID: -480586206, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
   - {fileID: -2061882434, guid: 04a8629cce3545e45aced4472947eefe, type: 3}
   h: 0
+  k: 0
 --- !u!114 &1260427464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4054,7 +4090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.9075043, b: 0.990566, a: 1}
+  m_Color: {r: 0, g: 0.8327399, b: 0.99215686, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
