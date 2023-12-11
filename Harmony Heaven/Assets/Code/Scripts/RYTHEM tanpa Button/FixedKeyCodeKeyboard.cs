@@ -8,6 +8,8 @@ public class FixedKeyCodeKeyboard : MonoBehaviour
     public FixedkeyboardDisplay keyboardDisplay;
     public KeyCode[] keyboardCodes;
     private KeyCode[] defaultKeyboardCodes = new KeyCode[5] { KeyCode.W, KeyCode.A, KeyCode.D, KeyCode.S, KeyCode.F };
+    public int i;
+    public int j;
 
     private void Start()
     {
@@ -27,15 +29,18 @@ public class FixedKeyCodeKeyboard : MonoBehaviour
             Debug.LogError("Script FixedkeyboardDisplay1 atau imageSprites tidak ditemukan atau belum diinisialisasi.");
         }
     }
-
+    
+    
     private void InitializeKeyboardCodes(int numberOfSprites)
     {
         keyboardCodes = new KeyCode[numberOfSprites];
+        //Debug.Log("masuk ke InitializeKeyboardCodes");
 
         for (int i = 0; i < numberOfSprites; i++)
         {
             // Membaca nama sprite
             string spriteName = keyboardDisplay.imageSprites[i].name;
+            //Debug.Log("masuk ke string spriteName");
 
             // Menetapkan KeyCode berdasarkan nama sprite
             switch (spriteName)
@@ -58,5 +63,26 @@ public class FixedKeyCodeKeyboard : MonoBehaviour
                     break;
             }
         }
+    }
+    public void ReceiveValue(int value)
+    {
+        i = value;
+        // Lakukan sesuatu dengan nilai yang diterima
+        //Debug.Log("Received value in Script B: " + i);
+        if (i == 2)
+        {
+            //Debug.Log("Received value in Script i: " + i);
+            ResetScript(); // Jika 'h' sama dengan 2, mengatur ulang sprite secara acak
+            //Debug.Log("melakukan reset");
+            i = 0;
+        }
+    }
+    public void ResetScript()
+    {
+        InitializeKeyboardCodes(keyboardDisplay.imageSprites.Length);
+    }
+    void Update()
+    {
+        ReceiveValue(i);
     }
 }

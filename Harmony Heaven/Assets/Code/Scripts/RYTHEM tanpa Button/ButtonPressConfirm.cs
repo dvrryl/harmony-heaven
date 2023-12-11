@@ -98,7 +98,7 @@ public class ButtonPressConfirm : MonoBehaviour
             }
         }
     }
-
+    
     public void SetExpectedKeyCodeSequence(List<KeyCode> sequence)
     {
         expectedKeyCodeSequence = sequence.ToArray();

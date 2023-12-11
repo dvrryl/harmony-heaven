@@ -12,6 +12,8 @@ public class FixedHierarchyController : MonoBehaviour
     public int g;
     public GameObject RythemDisplay1;
     public GameObject RythemDisplay2;
+    private FixedkeyboardDisplay RythemDispla1;
+    private FixedkeyboardDisplay RythemDispla2;
     private float intervalDuration = 2.0f;
     private float intervalDurati = 2.0f;
     TimeSpan duration = TimeSpan.FromSeconds(6);
@@ -19,6 +21,10 @@ public class FixedHierarchyController : MonoBehaviour
 
     private void Start()
     {
+        RythemDispla1 = GameObject.Find("RythemDisplay").GetComponent<FixedkeyboardDisplay>();
+
+        // Mendapatkan referensi ke komponen FixedkeyboardDisplay pada RythemDisplay2
+        RythemDispla2 = GameObject.Find("RythemDisplay2").GetComponent<FixedkeyboardDisplay>();
         // Jalankan coroutine untuk mengubah status hirarki setiap interval
         e = 1;
         f = 1;
@@ -67,13 +73,13 @@ public class FixedHierarchyController : MonoBehaviour
             if (e == 2)
             {
                 RythemDisplay2.SetActive(false);
-                Debug.Log("matiin rythemdisplay1 di VerifDie");
+                //Debug.Log("matiin rythemdisplay1 di VerifDie");
             }
             if (e == 2 && f == 2)
             {
                 d = 1;
                 g = 2;
-                Debug.Log("d menjadi 1 di VerifDie");
+                //Debug.Log("d menjadi 1 di VerifDie");
             }
             yield break;
             //yield return null; // Ini dibutuhkan agar coroutine dapat melanjutkan pada setiap frame
@@ -88,13 +94,13 @@ public class FixedHierarchyController : MonoBehaviour
            e = 1;
           //Debug.Log("Update - d is 1, waiting for 2 seconds...");
           DisableGameObject();
-          Debug.Log("DisableGameObject di IntervalFunction");
+          //Debug.Log("DisableGameObject di IntervalFunction");
           //Debug.Log("Update - Disabled game objects, waiting for 5 seconds...");
           yield return new WaitForSeconds(intervalDuration);
           d = 2;
           //Debug.Log("Update - Value of d set to 0");
           EnableGameObject();
-          Debug.Log("EnableGameObject di IntervalFunction");
+          //Debug.Log("EnableGameObject di IntervalFunction");
           //Debug.Log("Update - Enabled game objects");
           break;    
        }   
@@ -105,14 +111,16 @@ public class FixedHierarchyController : MonoBehaviour
         // Nonaktifkan kedua game object
         RythemDisplay1.SetActive(false);
         RythemDisplay2.SetActive(false);
-        Debug.Log("DisableGameObject - Disabled game objects");
+        //Debug.Log("DisableGameObject - Disabled game objects");
     }
 
     public void EnableGameObject()
     {
         // Aktifkan kedua game object
         RythemDisplay1.SetActive(true);
+        RythemDispla1.ProcessHValue(2);
         RythemDisplay2.SetActive(true);
-        Debug.Log("EnableGameObject - Enabled game objects");
+        RythemDispla2.ProcessHValue(2);
+        //Debug.Log("EnableGameObject - Enabled game objects");
     }
 }

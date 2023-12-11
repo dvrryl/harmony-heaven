@@ -7,6 +7,7 @@ public class KeyCodeConfirmation : MonoBehaviour
 {
     public FixedkeyboardDisplay fixedkeyboardDisplay; // Referensi ke script KeyboardDisplay
     public FixedKeyCodeKeyboard fixedkeyCodeKeyboard; // Referensi ke script FixedKeyCodeKeyboard
+    
 
     private List<GameObject> objectsToControl = new List<GameObject>(); // Objek-objek yang akan dikontrol
 
@@ -128,4 +129,5 @@ public class KeyCodeConfirmation : MonoBehaviour
         }
         return objectsToControl;
     }
+    
 }
