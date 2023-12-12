@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ProjectileScript : MonoBehaviour
 {
-    public float speed = 5f; // Adjust the speed as needed
+    public float speed = 5f;
 
     void Update()
     {
