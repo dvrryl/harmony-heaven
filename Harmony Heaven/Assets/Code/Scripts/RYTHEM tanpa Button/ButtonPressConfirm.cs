@@ -7,6 +7,7 @@ public class ButtonPressConfirm : MonoBehaviour
     public int A = 0;
     public FixedHierarchyController pelayer1;
     public FixedHierarchyController1 pelayer2;
+    public EditTextP1 score1;
 
     // Menggunakan array sederhana untuk menyimpan urutan KeyCode yang diharapkan
     public KeyCode[] expectedKeyCodeSequence = { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
@@ -77,6 +78,7 @@ public class ButtonPressConfirm : MonoBehaviour
             if (isCorrectSequence)
             {
                 A = 1;
+                score1.ProcessLValue(2);
                 // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
                 currentInputSequence = new KeyCode[0];
                 Debug.Log("Urutan Benar! Resetting...");

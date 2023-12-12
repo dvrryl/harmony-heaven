@@ -14,6 +14,7 @@ public class FixedHierarchyController : MonoBehaviour
     public GameObject RythemDisplay2;
     private FixedkeyboardDisplay RythemDispla1;
     private FixedkeyboardDisplay RythemDispla2;
+    public EditTextRound round;
     private float intervalDuration = 2.0f;
     private float intervalDurati = 2.0f;
     TimeSpan duration = TimeSpan.FromSeconds(6);
@@ -96,7 +97,7 @@ public class FixedHierarchyController : MonoBehaviour
           DisableGameObject();
           //Debug.Log("DisableGameObject di IntervalFunction");
           //Debug.Log("Update - Disabled game objects, waiting for 5 seconds...");
-          yield return new WaitForSeconds(intervalDuration);
+          //yield return new WaitForSeconds(intervalDuration);
           d = 2;
           //Debug.Log("Update - Value of d set to 0");
           EnableGameObject();
@@ -108,6 +109,7 @@ public class FixedHierarchyController : MonoBehaviour
 
     public void DisableGameObject()
     {
+        round.ProcessNValue(2);
         // Nonaktifkan kedua game object
         RythemDisplay1.SetActive(false);
         RythemDisplay2.SetActive(false);

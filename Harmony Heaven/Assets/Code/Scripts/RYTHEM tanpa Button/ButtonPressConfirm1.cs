@@ -9,6 +9,7 @@ public class ButtonPressConfirm1 : MonoBehaviour
     public FixedHierarchyController1 pelayer2;
     private List<KeyCode> expectedKeyCodeSequence = new List<KeyCode>(); // Urutan key code yang diharapkan
     private List<KeyCode> currentInputSequence = new List<KeyCode>(); // Urutan key code yang sedang diinput
+    public EditTextP2 score2;
     public delegate void CorrectSequenceAction();
     public static event CorrectSequenceAction OnCorrectSequence;
 
@@ -72,6 +73,7 @@ public class ButtonPressConfirm1 : MonoBehaviour
             if (isCorrectSequence)
             {
                 A = 1;
+                score2.ProcessMValue(2);
                 // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
                 currentInputSequence.Clear();
                 Debug.Log("Urutan Benar! Resetting...");
