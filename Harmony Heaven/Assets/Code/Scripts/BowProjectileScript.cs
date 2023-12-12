@@ -8,6 +8,6 @@ public class BowProjectileScript : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
 }
