@@ -619,6 +619,7 @@ MonoBehaviour:
   A: 0
   pelayer1: {fileID: 5973529273319954196}
   pelayer2: {fileID: 5973529274694204660}
+  score1: {fileID: 0}
   expectedKeyCodeSequence: 77000000610000007300000064000000
   keyCodeConfirmation: {fileID: 396197126}
 --- !u!114 &396197131
@@ -3061,6 +3062,7 @@ MonoBehaviour:
   A: 0
   pelayer1: {fileID: 5973529273319954196}
   pelayer2: {fileID: 5973529274694204660}
+  score2: {fileID: 0}
 --- !u!114 &1260427465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5151,6 +5153,7 @@ MonoBehaviour:
   g: 0
   RythemDisplay1: {fileID: 396197124}
   RythemDisplay2: {fileID: 1260427458}
+  round: {fileID: 0}
 --- !u!224 &5973529274694204658
 RectTransform:
   m_ObjectHideFlags: 0
