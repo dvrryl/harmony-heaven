@@ -9,6 +9,7 @@ public class ScenePlayLoader : MonoBehaviour
     public GameObject Multiplayer;
     public GameObject Training;
 
+
     // Diaktifkan secara otomatis saat tombol diinspeksi di Editor Unity
     void OnEnable()
     {
