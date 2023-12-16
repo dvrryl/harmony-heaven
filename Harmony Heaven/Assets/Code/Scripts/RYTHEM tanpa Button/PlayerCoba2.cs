@@ -8,6 +8,7 @@ public class PlayerCoba2 : MonoBehaviour
     public int maxHealth = 500;
     public int currentHealth;
     public HealthBar healthBar;
+    public Animator animator;
 
     void Start()
     {
@@ -18,16 +19,22 @@ public class PlayerCoba2 : MonoBehaviour
     public void ProcessCValue(int cValue)
     {
         c = cValue;
+        // Trigger animation when c is set to 1
+        if (c == 1)
+        {
+            animator.SetTrigger("TakeDamage");
+            c = 0;
+        }
     }
 
-    void Update()
+/*    void Update()
     {
         if (c == 1)
         {
             TakeDamage(20);
             c = 0;
         }
-    }
+    }*/
 
     void TakeDamage(int damage)
     {   
