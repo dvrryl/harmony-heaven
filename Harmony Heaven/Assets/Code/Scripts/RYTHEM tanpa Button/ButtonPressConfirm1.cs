@@ -88,7 +88,7 @@ public class ButtonPressConfirm1 : MonoBehaviour
                 A = 0;
                 // Jika salah, matikan hirarki objek yang dikendalikan
                 Debug.Log("Urutan Salah! Matikan objek-objek...");
-                pelayer2.ProcessEValue(2);
+                //pelayer2.ProcessEValue(2);
                 pelayer1.ProcessEValue(2);
                 Debug.Log("e = 2");
                 currentInputSequence.Clear();

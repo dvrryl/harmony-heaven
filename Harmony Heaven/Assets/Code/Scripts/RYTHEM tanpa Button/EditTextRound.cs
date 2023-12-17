@@ -13,7 +13,7 @@ public class EditTextRound : MonoBehaviour
 
     void Start()
     {
-        m = 0;
+        m = 1;
         // Pastikan objek textMeshProComponent telah ditetapkan sebelum menggunakannya
         if (textMeshProComponent == null)
         {

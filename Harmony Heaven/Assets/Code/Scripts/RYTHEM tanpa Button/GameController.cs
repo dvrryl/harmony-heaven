@@ -31,10 +31,13 @@ public class GameController : MonoBehaviour
         Debug.Log("Player 1 A: " + RythemDisplay.GetComponent<ButtonPressConfirm>().A + " - Waktu: " + timestampPlayer1);
 
         // Lakukan verifikasi atau logika lainnya untuk pemain 1
-        CheckAndDeactivatePlayers(timestampPlayer1, RythemDisplay, RythemDisplay1);
-        pc2.ProcessCValue(1);
+        Debug.Log("ada di gamecontrol 1");
         die.ProcessDValue(1);
-        
+        CheckAndDeactivatePlayers(timestampPlayer1, RythemDisplay, RythemDisplay1);
+        Debug.Log("ada di gamecontrol12");
+        pc2.ProcessCValue(1);
+        Debug.Log("Update - d is 1");
+
     }
 
     void HandleCorrectSequencePlayer2()
@@ -43,13 +46,16 @@ public class GameController : MonoBehaviour
         Debug.Log("Player 2 A: " + RythemDisplay1.GetComponent<ButtonPressConfirm1>().A + " - Waktu: " + timestampPlayer2);
 
         // Lakukan verifikasi atau logika lainnya untuk pemain 2
-        CheckAndDeactivatePlayers(timestampPlayer2, RythemDisplay1, RythemDisplay);
-        pc1.ProcessBValue(1);
+        Debug.Log("ada di gamecontrol2");
         die.ProcessDValue(1);
+        CheckAndDeactivatePlayers(timestampPlayer2, RythemDisplay1, RythemDisplay);
+        Debug.Log("ada di gamecontrol21");
+        pc1.ProcessBValue(1);
+        Debug.Log("Update - d is 1");
 
 
         // Panggil event OnCorrectSequencePlayer2
-        
+
     }
 
     void CheckAndDeactivatePlayers(float timestamp, GameObject winner, GameObject loser)

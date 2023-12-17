@@ -23,6 +23,7 @@ public class PlayerCoba1 : MonoBehaviour
         // Trigger animation when b is set to 1
         if (b == 1)
         {
+            TakeDamage(20);
             animator.SetTrigger("TakeDamageTrigger");
             //audioSource.Play();
             b = 0;

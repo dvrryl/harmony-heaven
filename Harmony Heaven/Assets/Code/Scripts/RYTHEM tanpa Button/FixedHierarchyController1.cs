@@ -58,7 +58,7 @@ public class FixedHierarchyController1 : MonoBehaviour
 
         while (g == 1)
         {
-            Debug.Log("sudah ada di VerifDie");
+            //Debug.Log("sudah ada di VerifDie");
             if (e == 2)
             {
                 RythemDisplay2.SetActive(false);
@@ -68,6 +68,7 @@ public class FixedHierarchyController1 : MonoBehaviour
             {
                 d = 1;
                 Debug.Log("d menjadi 1 di VerifDie");
+                g = 2;
             }
             yield break;
             //yield return null; // Ini dibutuhkan agar coroutine dapat melanjutkan pada setiap frame
@@ -77,8 +78,11 @@ public class FixedHierarchyController1 : MonoBehaviour
        yield return new WaitForSeconds(intervalDurati);
        while(d == 1)
        {
-          //Debug.Log("Update - d is 1, waiting for 2 seconds...");
-          DisableGameObject();
+            g = 1;
+            f = 1;
+            e = 1;
+            //Debug.Log("Update - d is 1, waiting for 2 seconds...");
+            DisableGameObject();
           Debug.Log("DisableGameObject di IntervalFunction");
           //Debug.Log("Update - Disabled game objects, waiting for 5 seconds...");
           yield return new WaitForSeconds(intervalDuration);

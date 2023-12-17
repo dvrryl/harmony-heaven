@@ -94,7 +94,7 @@ public class ButtonPressConfirm : MonoBehaviour
                 // Jika salah, matikan hirarki objek yang dikendalikan
                 Debug.Log("Urutan Salah! Matikan objek-objek...");
                 pelayer1.ProcessFValue(2);
-                pelayer2.ProcessFValue(2);
+                //pelayer2.ProcessFValue(2);
                 Debug.Log("f = 2");
                 currentInputSequence = new KeyCode[0];
             }
