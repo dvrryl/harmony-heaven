@@ -51,7 +51,7 @@ public class PlayerCoba1 : MonoBehaviour
             TakeDamage(20);
             ProcessPValue(p);
             b = 0;
-            animator.SetTrigger("TakeDamageTrigger");
+            animator.SetTrigger("BasicAttack");
             ResetTrigger();
         }
     }
@@ -64,6 +64,6 @@ public class PlayerCoba1 : MonoBehaviour
 
     public void ResetTrigger()
     {
-        animator.ResetTrigger("TakeDamageTrigger");
+        animator.ResetTrigger("BasicAttack");
     }
 }
