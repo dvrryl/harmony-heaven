@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -39,4 +39,39 @@ public class playerTwoController : MonoBehaviour
         // Destroy the projectile after a certain time to prevent clutter
         Destroy(projectile, 3f);
     }
+}*/
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class playerTwoController : MonoBehaviour
+{
+    private Animator animator;
+    public float bulletSpeed = 10f;
+
+    void Start()
+    {
+        // Get the Animator component from the GameObject
+        animator = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
+
+        if (Input.GetKeyDown(KeyCode.Slash))
+        {
+            // Trigger the slash animation
+            animator.SetTrigger("SlashTrigger");
+        }
+    }
+
+    // Remove the ThrowProjectile method
+
+    // You can add additional logic here or in a separate method if needed
 }
+
