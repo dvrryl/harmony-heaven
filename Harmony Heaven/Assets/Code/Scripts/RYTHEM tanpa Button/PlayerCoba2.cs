@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCoba2 : MonoBehaviour
 {
     public int c = 0;
+    public int p = 0;
     public int maxHealth = 500;
     public int currentHealth;
     public HealthBar healthBar;
@@ -20,17 +21,6 @@ public class PlayerCoba2 : MonoBehaviour
     public void ProcessCValue(int cValue)
     {
         c = cValue;
-        // Trigger animation when c is set to 1
-/*        if (c == 1)
-        {
-            TakeDamage(20);
-            c = 0;
-            //animator.SetTrigger("TakeDamage");
-        }*/
-    }
-
-    void Update()
-    {
         if (c == 1)
         {
             P2.ProcessoOValue(2);
@@ -38,6 +28,28 @@ public class PlayerCoba2 : MonoBehaviour
             c = 0;
             animator.SetTrigger("TakeDamage");
         }
+        // Trigger animation when c is set to 1
+        /*        if (c == 1)
+                {
+                    TakeDamage(20);
+                    c = 0;
+                    //animator.SetTrigger("TakeDamage");
+                }*/
+    }
+    public void ProcessPValue(int pValue)
+    {
+        p = pValue;
+        if (p == 3)
+        {
+            TakeDamage(100);
+            p = 0;
+        }
+        //Debug.Log("ProcessDValue - Value of d set to: " + d);
+    }
+    private void Update()
+    {
+        ProcessCValue(c);
+        ProcessPValue(p);
     }
 
     void TakeDamage(int damage)

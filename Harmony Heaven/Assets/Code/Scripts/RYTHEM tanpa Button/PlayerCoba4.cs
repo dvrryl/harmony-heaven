@@ -8,6 +8,7 @@ public class PlayerCoba4 : MonoBehaviour
     public int maxMana = 500;
     public int currentMana;
     public ManaBar manabar;
+    public PlayerCoba2 P2;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +27,18 @@ public class PlayerCoba4 : MonoBehaviour
         if (o == 2)
         {
             TakeDamage(170);
+            Ulti();
             o = 1;
         }
         //Debug.Log("ProcessDValue - Value of d set to: " + d);
+    }
+    public void Ulti()
+    {
+        if (currentMana >= 500)
+        {
+            P2.ProcessPValue(3);
+            currentMana = 0;
+        }
     }
     // Update is called once per frame
     private void Update()

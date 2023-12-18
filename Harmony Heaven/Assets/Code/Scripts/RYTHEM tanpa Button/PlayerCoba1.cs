@@ -42,10 +42,10 @@ public class PlayerCoba1 : MonoBehaviour
     public void ProcessPValue(int pValue)
     {
         p = pValue;
-        if (p == 2)
+        if (p == 3)
         {
             TakeDamage(100);
-            //p = 0;
+            p = 0;
         }
         //Debug.Log("ProcessDValue - Value of d set to: " + d);
     }
