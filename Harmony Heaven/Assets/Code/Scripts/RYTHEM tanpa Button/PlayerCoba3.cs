@@ -39,6 +39,7 @@ public class PlayerCoba3 : MonoBehaviour
         if (currentMana >= 500)
         {
             P1.ProcessPValue(3);
+            currentMana = 0;
         }
     }
     // Update is called once per frame
