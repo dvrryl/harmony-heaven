@@ -8,7 +8,7 @@ public class PlayerCoba1 : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
     public Animator animator;
-    private AudioSource audioSource;
+    //private AudioSource audioSource;
     void Start()
     {
         currentHealth = maxHealth;
@@ -21,25 +21,26 @@ public class PlayerCoba1 : MonoBehaviour
         b = bValue;
 
         // Trigger animation when b is set to 1
-        if (b == 1)
-        {
-            TakeDamage(20);
-            animator.SetTrigger("TakeDamageTrigger");
-            //audioSource.Play();
-            b = 0;
-        }
-    }
+        /*        if (b == 1)
+                {
+                    TakeDamage(20);
+                    //audioSource.Play();
+                    b = 0;
+                    animator.SetTrigger("TakeDamageTrigger");
+                }*/
+            }
 
- /*   void Update()
-    {
-        if (b == 1)
+        void Update()
         {
-            TakeDamage(20);
-            b = 0;
+            if (b == 1)
+            {
+                TakeDamage(20);
+                b = 0;
+                animator.SetTrigger("TakeDamageTrigger");
+            }
         }
-    }*/
 
-    void TakeDamage(int damage)
+        void TakeDamage(int damage)
     {   
       currentHealth -= damage;
       healthBar.SetHealth(currentHealth);

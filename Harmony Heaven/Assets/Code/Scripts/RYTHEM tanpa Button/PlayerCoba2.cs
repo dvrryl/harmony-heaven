@@ -20,22 +20,23 @@ public class PlayerCoba2 : MonoBehaviour
     {
         c = cValue;
         // Trigger animation when c is set to 1
-        if (c == 1)
+/*        if (c == 1)
         {
             TakeDamage(20);
-            animator.SetTrigger("TakeDamage");
             c = 0;
-        }
+            //animator.SetTrigger("TakeDamage");
+        }*/
     }
 
-/*    void Update()
+    void Update()
     {
         if (c == 1)
         {
             TakeDamage(20);
             c = 0;
+            animator.SetTrigger("TakeDamage");
         }
-    }*/
+    }
 
     void TakeDamage(int damage)
     {   
