@@ -1403,7 +1403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   A: 0
   pelayer1: {fileID: 5973529273319954196}
-  pelayer2: {fileID: 5973529274694204660}
+  pelayer2: {fileID: 0}
   score1: {fileID: 941093713}
   expectedKeyCodeSequence: 77000000610000007300000064000000
   keyCodeConfirmation: {fileID: 396197126}
@@ -1491,7 +1491,7 @@ MonoBehaviour:
   maxMana: 500
   currentMana: 0
   manabar: {fileID: 877807253}
-  P1: {fileID: 0}
+  P1: {fileID: 5973529274694204659}
 --- !u!1 &501222203
 GameObject:
   m_ObjectHideFlags: 0
@@ -4903,7 +4903,7 @@ MonoBehaviour:
   maxMana: 500
   currentMana: 0
   manabar: {fileID: 501222205}
-  P2: {fileID: 0}
+  P2: {fileID: 5097435358249388297}
 --- !u!1 &1104621001
 GameObject:
   m_ObjectHideFlags: 0
@@ -5777,7 +5777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   A: 0
   pelayer1: {fileID: 5973529273319954196}
-  pelayer2: {fileID: 5973529274694204660}
+  pelayer2: {fileID: 0}
   score2: {fileID: 204061818}
 --- !u!114 &1260427465
 MonoBehaviour:
@@ -8753,7 +8753,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5973529274694204658}
   - component: {fileID: 5973529274694204659}
-  - component: {fileID: 5973529274694204660}
   - component: {fileID: 5973529274694204661}
   m_Layer: 5
   m_Name: Player2HealthBar
@@ -8820,7 +8819,7 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 3899598570931886337}
   animator: {fileID: 600235890}
-  P1: {fileID: 0}
+  P1: {fileID: 1104532051}
 --- !u!114 &5166818348494242133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9160,25 +9159,7 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 3899598570833933024}
   animator: {fileID: 4728808154009460164}
-  P2: {fileID: 0}
---- !u!114 &5973529274694204660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4094233132800163816}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d4fba1a54e7f2f4ab498e94a1df2db4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  d: 0
-  e: 0
-  f: 0
-  g: 0
-  RythemDisplay1: {fileID: 396197124}
-  RythemDisplay2: {fileID: 1260427458}
+  P2: {fileID: 437734934}
 --- !u!82 &5973529274694204661
 AudioSource:
   m_ObjectHideFlags: 0
