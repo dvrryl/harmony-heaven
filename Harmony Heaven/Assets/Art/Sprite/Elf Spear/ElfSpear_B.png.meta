@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b373bf95ed98b7d42b8bc04af63c6f63
+guid: b1bdbdd0aed4abe47bd27327b38a53f2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ElfSpear_AttackB_0
+      name: ElfSpear_B_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91508bd5f691ef64d8de2952f39c3c31
-      internalID: 102924764
+      spriteID: 77815c1f8917d674fa4908c2ffbf7942
+      internalID: 1413811975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_1
+      name: ElfSpear_B_1
       rect:
         serializedVersion: 2
         x: 128
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9c214e4a0ce57b4490f2074018600c4
-      internalID: -494514462
+      spriteID: ee436c079b30617479bdc9397cc1b128
+      internalID: 1552737443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_2
+      name: ElfSpear_B_2
       rect:
         serializedVersion: 2
         x: 256
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbc5f97c65dc549428a3c8b3b2437492
-      internalID: 970590587
+      spriteID: 731d5f0b96929c547a6e9235536a667a
+      internalID: 2108586956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_3
+      name: ElfSpear_B_3
       rect:
         serializedVersion: 2
         x: 384
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc4fd2bfccdc2954a95e22ab41580972
-      internalID: -748230826
+      spriteID: 28e1238a0c7f0dd46944d269ca81d21e
+      internalID: -1560602216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_4
+      name: ElfSpear_B_4
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0aee771e15cb6340bc25c9c519b4f6a
-      internalID: -1336776036
+      spriteID: cb6e5e028d54e844ab35d1932f4281b8
+      internalID: -299598316
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_5
+      name: ElfSpear_B_5
       rect:
         serializedVersion: 2
         x: 128
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ea49a8458d8bf04c997c69681665acd
-      internalID: -660778020
+      spriteID: f85d8ba0192958d4e895f1a51a6245bd
+      internalID: 2096959221
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_6
+      name: ElfSpear_B_6
       rect:
         serializedVersion: 2
         x: 256
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 798bd43e85dfd874eb9a051a8454e3e6
-      internalID: -686358499
+      spriteID: ca82c5b5074de8047929d2c5b95c69d1
+      internalID: -1367410860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_7
+      name: ElfSpear_B_7
       rect:
         serializedVersion: 2
         x: 384
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 048f3de89b24e9e4db8b33a10b233366
-      internalID: 354126856
+      spriteID: 9199cb125070ed844b53b1c2e1e00589
+      internalID: 711462394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_8
+      name: ElfSpear_B_8
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51bf0b76ee48b4a4b93b23c667717433
-      internalID: 866919998
+      spriteID: 199612538ee8dfd4a9ca6b63bc75c0cd
+      internalID: -1340033564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_9
+      name: ElfSpear_B_9
       rect:
         serializedVersion: 2
         x: 128
@@ -313,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c3b0ec9c25f82f4598b99759434ccbd
-      internalID: 1739247654
+      spriteID: f141906a15a2f7f4089a1722a5e31a4c
+      internalID: -28742328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_10
+      name: ElfSpear_B_10
       rect:
         serializedVersion: 2
         x: 256
@@ -334,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17f3bc292ffb9414a8dd1a6c156878de
-      internalID: 1496631588
+      spriteID: 8d5d5e1be417a0841822ecc65655bf20
+      internalID: -1605875882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_11
+      name: ElfSpear_B_11
       rect:
         serializedVersion: 2
         x: 384
@@ -355,14 +355,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c7d64b3c3915a1429fb8413e6a19b30
-      internalID: 2021657328
+      spriteID: eaa055ffecd422a4aa01d1e924196734
+      internalID: 2111771688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_12
+      name: ElfSpear_B_12
       rect:
         serializedVersion: 2
         x: 0
@@ -376,14 +376,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24c443293fc4fea468f97b783772fa14
-      internalID: -158855804
+      spriteID: 48e29fbfed66eb9408e95e57f3073866
+      internalID: -1698276283
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_13
+      name: ElfSpear_B_13
       rect:
         serializedVersion: 2
         x: 128
@@ -397,14 +397,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d05dd97019cfce42b5b5c05248e0ce9
-      internalID: -1898962915
+      spriteID: 384d452346b7edc46abb94f62b5bd15f
+      internalID: -1344560769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_14
+      name: ElfSpear_B_14
       rect:
         serializedVersion: 2
         x: 256
@@ -418,14 +418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a5f7894daab7e4478a8483ef724729c
-      internalID: -1766038487
+      spriteID: a51b9592765b18743a2860dc21d86b2a
+      internalID: 530387000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_15
+      name: ElfSpear_B_15
       rect:
         serializedVersion: 2
         x: 384
@@ -439,14 +439,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e2e8b5f695d373468365a62c3bd8be2
-      internalID: 881919226
+      spriteID: 979ad37e9a517434698c4a9c1b7e3d51
+      internalID: 1390790963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfSpear_AttackB_16
+      name: ElfSpear_B_16
       rect:
         serializedVersion: 2
         x: 0
@@ -460,8 +460,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88ffc0ad8028f1242a4f46b6e5917892
-      internalID: -954245244
+      spriteID: 6d893cf42904ed549af87574c10a0365
+      internalID: -1680847763
       vertices: []
       indices: 
       edges: []
@@ -477,23 +477,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ElfSpear_AttackB_0: 102924764
-      ElfSpear_AttackB_1: -494514462
-      ElfSpear_AttackB_10: 1496631588
-      ElfSpear_AttackB_11: 2021657328
-      ElfSpear_AttackB_12: -158855804
-      ElfSpear_AttackB_13: -1898962915
-      ElfSpear_AttackB_14: -1766038487
-      ElfSpear_AttackB_15: 881919226
-      ElfSpear_AttackB_16: -954245244
-      ElfSpear_AttackB_2: 970590587
-      ElfSpear_AttackB_3: -748230826
-      ElfSpear_AttackB_4: -1336776036
-      ElfSpear_AttackB_5: -660778020
-      ElfSpear_AttackB_6: -686358499
-      ElfSpear_AttackB_7: 354126856
-      ElfSpear_AttackB_8: 866919998
-      ElfSpear_AttackB_9: 1739247654
+      ElfSpear_B_0: 1413811975
+      ElfSpear_B_1: 1552737443
+      ElfSpear_B_10: -1605875882
+      ElfSpear_B_11: 2111771688
+      ElfSpear_B_12: -1698276283
+      ElfSpear_B_13: -1344560769
+      ElfSpear_B_14: 530387000
+      ElfSpear_B_15: 1390790963
+      ElfSpear_B_16: -1680847763
+      ElfSpear_B_2: 2108586956
+      ElfSpear_B_3: -1560602216
+      ElfSpear_B_4: -299598316
+      ElfSpear_B_5: 2096959221
+      ElfSpear_B_6: -1367410860
+      ElfSpear_B_7: 711462394
+      ElfSpear_B_8: -1340033564
+      ElfSpear_B_9: -28742328
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

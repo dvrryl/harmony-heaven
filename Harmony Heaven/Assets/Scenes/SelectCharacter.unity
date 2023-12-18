@@ -154,8 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sr: {fileID: 2562463671538624569}
   characters:
-  - {fileID: -540516826, guid: d4cd08d975f8ea44d8e86c9ca0373bf9, type: 3}
-  - {fileID: 1496631588, guid: b373bf95ed98b7d42b8bc04af63c6f63, type: 3}
+  - {fileID: 1735167691, guid: 518660f0b20b13840bc68585d83d6351, type: 3}
+  - {fileID: 2096959221, guid: b1bdbdd0aed4abe47bd27327b38a53f2, type: 3}
   playerCharacter: {fileID: 2562463671538624570}
 --- !u!4 &233388845
 Transform:
@@ -953,6 +953,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 517620335575936007, guid: d0ee81edced207443a23f061ff2cdb4e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1735167691, guid: 518660f0b20b13840bc68585d83d6351, type: 3}
     - target: {fileID: 2391069401205477046, guid: d0ee81edced207443a23f061ff2cdb4e, type: 3}
       propertyPath: m_Name
       value: SelectChar
@@ -963,11 +967,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5117111604481343449, guid: d0ee81edced207443a23f061ff2cdb4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.27
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 5117111604481343449, guid: d0ee81edced207443a23f061ff2cdb4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 0.94
       objectReference: {fileID: 0}
     - target: {fileID: 5117111604481343449, guid: d0ee81edced207443a23f061ff2cdb4e, type: 3}
       propertyPath: m_LocalPosition.z
