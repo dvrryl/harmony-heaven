@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCoba3 : MonoBehaviour
 {
+    public int o;
     public int maxMana = 500;
     public int currentMana;
     public ManaBar manabar;
@@ -20,15 +21,26 @@ public class PlayerCoba3 : MonoBehaviour
         currentMana = 0;
     }
 
+    public void ProcessoOValue(int oValue)
+    {
+        o = oValue;
+        if (o == 2)
+        {
+            TakeDamage(170);
+            o = 1;
+        }
+        //Debug.Log("ProcessDValue - Value of d set to: " + d);
+    }
     // Update is called once per frame
     private void Update()
     {
+        ProcessoOValue(o);
         //manabar.SetMaxHealth(currentHealth);
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            // Panggil fungsi TakeDamage dan tambahkan 20 ke currentHealth
-            TakeDamage(170);
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        // Panggil fungsi TakeDamage dan tambahkan 20 ke currentHealth
+        //  TakeDamage(170);
+        // }
     }
 
     void TakeDamage(int damageAmount)
