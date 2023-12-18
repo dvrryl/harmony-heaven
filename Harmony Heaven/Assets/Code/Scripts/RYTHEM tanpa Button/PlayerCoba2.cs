@@ -10,7 +10,7 @@ public class PlayerCoba2 : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
     public Animator animator;
-    public PlayerCoba4 P2;
+    public PlayerCoba3 P2;
 
     void Start()
     {
@@ -21,13 +21,7 @@ public class PlayerCoba2 : MonoBehaviour
     public void ProcessCValue(int cValue)
     {
         c = cValue;
-        if (c == 1)
-        {
-            P2.ProcessoOValue(2);
-            TakeDamage(20);
-            c = 0;
-            animator.SetTrigger("TakeDamage");
-        }
+        
         // Trigger animation when c is set to 1
         /*        if (c == 1)
                 {
@@ -48,14 +42,20 @@ public class PlayerCoba2 : MonoBehaviour
     }
     private void Update()
     {
-        ProcessCValue(c);
-        ProcessPValue(p);
+        if (c == 1)
+        {
+            P2.ProcessoOValue(2);
+            TakeDamage(20);
+            ProcessPValue(p);
+            c = 0;
+            animator.SetTrigger("TakeDamage");
+        }
     }
 
     void TakeDamage(int damage)
-    {   
-      currentHealth -= damage;
-      healthBar.SetHealth(currentHealth);
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
 
     public void ResetTrigger()

@@ -9,7 +9,7 @@ public class PlayerCoba1 : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
     public Animator animator;
-    public PlayerCoba3 P1;
+    public PlayerCoba4 P1;
     //private AudioSource audioSource;
     void Start()
     {
@@ -21,15 +21,8 @@ public class PlayerCoba1 : MonoBehaviour
     public void ProcessBValue(int bValue)
     {
         b = bValue;
-        if (b == 1)
-        {
-            P1.ProcessoOValue(2);
-            TakeDamage(20);
-            b = 0;
-            animator.SetTrigger("TakeDamageTrigger");
-            ResetTrigger();
-        }
         
+
         // Trigger animation when b is set to 1
         /*        if (b == 1)
                 {
@@ -52,14 +45,21 @@ public class PlayerCoba1 : MonoBehaviour
 
     private void Update()
     {
-        ProcessBValue(b);
-        ProcessPValue(p);
+        if (b == 1)
+        {
+            P1.ProcessoOValue(2);
+            TakeDamage(20);
+            ProcessPValue(p);
+            b = 0;
+            animator.SetTrigger("TakeDamageTrigger");
+            ResetTrigger();
+        }
     }
 
-        void TakeDamage(int damage)
-    {   
-      currentHealth -= damage;
-      healthBar.SetHealth(currentHealth);
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
 
     public void ResetTrigger()

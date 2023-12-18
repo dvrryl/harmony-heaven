@@ -9,7 +9,7 @@ public class PlayerCoba3 : MonoBehaviour
     public int maxMana = 500;
     public int currentMana;
     public ManaBar manabar;
-    public PlayerCoba1 P1;
+    public PlayerCoba2 P1;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +27,7 @@ public class PlayerCoba3 : MonoBehaviour
         o = oValue;
         if (o == 2)
         {
-            TakeDamage(170);
+            TakeDamage(85);
             o = 1;
             Ulti();
             Debug.Log("hmm");
