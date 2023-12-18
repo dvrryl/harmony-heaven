@@ -42,4 +42,9 @@ public class PlayerCoba2 : MonoBehaviour
       currentHealth -= damage;
       healthBar.SetHealth(currentHealth);
     }
+
+    public void ResetTrigger()
+    {
+        animator.ResetTrigger("TakeDamage");
+    }
 }
