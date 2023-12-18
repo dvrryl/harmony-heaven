@@ -953,6 +953,7 @@ GameObject:
   - component: {fileID: 437734931}
   - component: {fileID: 437734933}
   - component: {fileID: 437734932}
+  - component: {fileID: 437734934}
   m_Layer: 5
   m_Name: Player Mana Bar
   m_TagString: Untagged
@@ -1000,7 +1001,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437734930}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 799b9dd6f8d06234b800b5d6c12a8378, type: 3}
   m_Name: 
@@ -1010,6 +1011,21 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 0}
   animator: {fileID: 0}
+--- !u!114 &437734934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437734930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e8a2610bcf28e40ad0682ca39587f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMana: 500
+  currentMana: 0
+  manabar: {fileID: 877807253}
 --- !u!1 &501222203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,7 +1082,7 @@ MonoBehaviour:
   gradient:
     serializedVersion: 2
     key0: {r: 0, g: 0.6362872, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 0, g: 0.061891317, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 1}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1093,7 +1109,7 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 3
-  fill: {fileID: 0}
+  fill: {fileID: 1797739788}
 --- !u!114 &501222206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1135,9 +1151,9 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
-  m_FillRect: {fileID: 0}
+  m_FillRect: {fileID: 1797739787}
   m_HandleRect: {fileID: 0}
-  m_Direction: 0
+  m_Direction: 1
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
@@ -2437,7 +2453,7 @@ MonoBehaviour:
   gradient:
     serializedVersion: 2
     key0: {r: 0, g: 0.6362872, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 0.001513958, g: 0, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 1}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -2464,7 +2480,7 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 3
-  fill: {fileID: 0}
+  fill: {fileID: 1861554182}
 --- !u!114 &877807254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2508,7 +2524,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1861554181}
   m_HandleRect: {fileID: 0}
-  m_Direction: 0
+  m_Direction: 1
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
@@ -3300,6 +3316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1104532050}
+  - component: {fileID: 1104532051}
   m_Layer: 5
   m_Name: Player2 Mana Bar
   m_TagString: Untagged
@@ -3328,6 +3345,21 @@ RectTransform:
   m_AnchoredPosition: {x: 520, y: -38}
   m_SizeDelta: {x: 292.74, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1104532051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104532049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6e8a2610bcf28e40ad0682ca39587f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMana: 500
+  currentMana: 0
+  manabar: {fileID: 501222205}
 --- !u!1 &1181987092
 GameObject:
   m_ObjectHideFlags: 0
@@ -3938,7 +3970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: -2}
+  m_AnchoredPosition: {x: -12, y: -2}
   m_SizeDelta: {x: 259, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1286282928
@@ -4112,7 +4144,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: -2}
+  m_AnchoredPosition: {x: -12, y: -2}
   m_SizeDelta: {x: 259, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425052950
@@ -4542,8 +4574,8 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12, y: -2}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -12, y: -2}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1797739788
@@ -4567,10 +4599,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 38b247114e7f4904280265c543f38667, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -4854,7 +4886,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 12.000008, y: -1.999999}
+  m_AnchoredPosition: {x: -12, y: -1.999999}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1861554182
@@ -4878,10 +4910,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 38b247114e7f4904280265c543f38667, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
