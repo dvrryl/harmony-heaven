@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,5 +38,35 @@ public class PlayerController : MonoBehaviour
 
         // Destroy the projectile after a certain time to prevent clutter
         Destroy(projectile, 2f);
+    }
+}*/
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class playerController : MonoBehaviour
+{
+    private Animator animator;
+    public float bulletSpeed = 10f;
+
+    void Start()
+    {
+        // Get the Animator component from the GameObject
+        animator = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            // Trigger the slash animation
+            animator.SetTrigger("SpaceTrigger");
+        }
     }
 }
