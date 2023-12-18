@@ -8,6 +8,7 @@ public class PlayerCoba1 : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
     public Animator animator;
+    public PlayerCoba3 P1;
     //private AudioSource audioSource;
     void Start()
     {
@@ -28,17 +29,19 @@ public class PlayerCoba1 : MonoBehaviour
                     b = 0;
                     animator.SetTrigger("TakeDamageTrigger");
                 }*/
-            }
+    }
 
-        void Update()
+    void Update()
+    {
+        if (b == 1)
         {
-            if (b == 1)
-            {
-                TakeDamage(20);
-                b = 0;
-                animator.SetTrigger("TakeDamageTrigger");
-            }
+            P1.ProcessoOValue(2);
+            TakeDamage(20);
+            b = 0;
+            animator.SetTrigger("TakeDamageTrigger");
+            ResetTrigger();
         }
+    }
 
         void TakeDamage(int damage)
     {   

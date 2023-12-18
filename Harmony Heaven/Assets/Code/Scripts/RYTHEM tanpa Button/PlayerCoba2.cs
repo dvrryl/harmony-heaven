@@ -9,6 +9,7 @@ public class PlayerCoba2 : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
     public Animator animator;
+    public PlayerCoba3 P1;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class PlayerCoba2 : MonoBehaviour
     {
         if (c == 1)
         {
+            //P1.ProcessoOValue(2);
             TakeDamage(20);
             c = 0;
             animator.SetTrigger("TakeDamage");
