@@ -7,28 +7,39 @@ using UnityEngine.UI;
 
 public class ChangeColor : MonoBehaviour
 {
-    // Array untuk menyimpan referensi ke komponen Image pada GameObject yang ingin diubah warnanya
+    public int q;
     public Image[] imageComponents;
 
-    // Array untuk menyimpan nilai hexadecimal yang sesuai dengan jumlah GameObject
-    public string[] hexColors;
+    // Define two arrays for hex colors
+    public string[] hexColorsArray1;
+    public string[] hexColorsArray2;
 
     void Start()
     {
-        // Pastikan jumlah GameObject dan jumlah nilai hexadecimal sama
-        if (imageComponents.Length != hexColors.Length)
+        // Choose the appropriate hex color array based on the value of q
+        string[] selectedHexColors = (q == 2) ? hexColorsArray1 : (q == 3) ? hexColorsArray2 : null;
+
+        // Check if the selected hex color array is valid
+        if (selectedHexColors == null)
+        {
+            Debug.LogError("Nilai q tidak sesuai dengan kondisi yang diharapkan!");
+            return;
+        }
+
+        // Check if the length of the selected hex color array matches the length of imageComponents
+        if (imageComponents.Length != selectedHexColors.Length)
         {
             Debug.LogError("Jumlah GameObject dan jumlah nilai hexadecimal tidak sama!");
             return;
         }
 
-        // Panggil fungsi untuk mengubah warna pada setiap GameObject Image
-        ChangeImageColors();
+        // Call the function to change colors based on the selected hex color array
+        ChangeImageColors(selectedHexColors);
     }
 
-    void ChangeImageColors()
+    void ChangeImageColors(string[] hexColors)
     {
-        // Set warna untuk setiap GameObject Image sesuai dengan nilai hexadecimal yang bersesuaian
+        // Set color for each Image GameObject based on the corresponding hex color value
         for (int i = 0; i < imageComponents.Length; i++)
         {
             try
@@ -45,7 +56,7 @@ public class ChangeColor : MonoBehaviour
 
     Color HexToColor(string hex)
     {
-        // Parse nilai hexadecimal dan kembalikan sebagai Color
+        // Parse hexadecimal value and return as Color
         Color color;
         if (ColorUtility.TryParseHtmlString(hex, out color))
         {
@@ -53,7 +64,7 @@ public class ChangeColor : MonoBehaviour
         }
         else
         {
-            // Tampilkan nilai hexadecimal yang bermasalah
+            // Display problematic hexadecimal value
             Debug.LogError("Gagal mengonversi nilai hexadecimal ke warna! Hex: " + hex);
             throw new Exception("Gagal mengonversi nilai hexadecimal ke warna!");
         }
