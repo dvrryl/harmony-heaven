@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class ButtonPressConfirm3 : MonoBehaviour
 {
+    // Variabel publik untuk menyimpan nilai A, controller pemain, dan skor pemain
     public int A = 0;
     public FixedHierarchyController pelayer1;
     public FixedHierarchyController1 pelayer2;
     public EditTextP1 score1;
 
-    // Menggunakan array sederhana untuk menyimpan urutan KeyCode yang diharapkan
+    // Urutan tombol kunci yang diharapkan
     public KeyCode[] expectedKeyCodeSequence = { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
     private List<KeyCode> currentInputSequence = new List<KeyCode>();
 
+    // Event yang dipanggil ketika urutan tombol kunci benar
     public delegate void CorrectSequenceAction();
     public static event CorrectSequenceAction OnCorrectSequence;
     public KeyCodeConfirmation keyCodeConfirmation;
 
     private void Start()
     {
+        // Cari objek KeyCodeConfirmation jika belum diinisialisasi
         if (keyCodeConfirmation == null)
         {
             keyCodeConfirmation = FindObjectOfType<KeyCodeConfirmation>();
@@ -31,16 +34,46 @@ public class ButtonPressConfirm3 : MonoBehaviour
 
     private void Update()
     {
+        // Periksa apakah objek KeyCodeConfirmation telah diinisialisasi
         if (keyCodeConfirmation != null)
         {
+            // Loop melalui tombol kunci yang diharapkan
             for (int i = 0; i < keyCodeConfirmation.fixedkeyCodeKeyboard.keyboardCodes.Length; i++)
             {
                 KeyCode expectedKeyCode = keyCodeConfirmation.fixedkeyCodeKeyboard.keyboardCodes[i];
 
+                // Periksa apakah tombol kunci yang diharapkan ditekan
                 if (Input.GetKeyDown(expectedKeyCode))
                 {
                     Debug.Log("Input diterima: " + expectedKeyCode);
                     VerifyInput(expectedKeyCode);
+                }
+            }
+
+            // Pindahkan logika pengecekan urutan ke sini
+            if (currentInputSequence.Count == expectedKeyCodeSequence.Length)
+            {
+                bool isCorrectSequence = CheckSequence(currentInputSequence.ToArray(), expectedKeyCodeSequence);
+                if (isCorrectSequence)
+                {
+                    // Urutan input benar
+                    Debug.Log("Urutan Benar! Resetting...");
+                    A = 1;
+                    score1.ProcessLValue(2);
+                    currentInputSequence.Clear();
+                    if (OnCorrectSequence != null)
+                    {
+                        OnCorrectSequence();
+                    }
+                }
+                else
+                {
+                    // Urutan input salah
+                    Debug.Log("Urutan Salah! Matikan objek-objek...");
+                    A = 0;
+                    pelayer1.ProcessFValue(2);
+                    currentInputSequence.Clear();
+                    Debug.Log("f = 2");
                 }
             }
         }
@@ -50,60 +83,45 @@ public class ButtonPressConfirm3 : MonoBehaviour
         }
     }
 
+    // Metode untuk memverifikasi input tombol kunci
     private void VerifyInput(KeyCode input)
     {
+        Debug.Log("Urutan yang Diharapkan Sebelum Verifikasi: " + string.Join(", ", expectedKeyCodeSequence));
+        Debug.Log("Jumlah Urutan Input Sebelum Verifikasi: " + currentInputSequence.Count);
+
         if (currentInputSequence.Count < expectedKeyCodeSequence.Length)
         {
-            // Cek input dengan kode yang diharapkan pada index yang sesuai
             if (input == expectedKeyCodeSequence[currentInputSequence.Count])
             {
-                // Jika benar, tambahkan ke dalam currentInputSequence
                 currentInputSequence.Add(input);
                 Debug.Log("Input Benar: " + input);
+                Debug.Log("Jumlah Urutan Input Setelah Penambahan Input: " + currentInputSequence.Count);
             }
             else
             {
-                // Jika salah, keluar debug input salah
                 Debug.Log("Input Salah: " + input);
+                currentInputSequence.Add(input);
             }
         }
 
-        // Jika jumlah currentInputSequence sudah mencapai panjang expectedKeyCodeSequence
-        if (currentInputSequence.Count == expectedKeyCodeSequence.Length)
-        {
-            bool isCorrectSequence = CheckSequence(currentInputSequence.ToArray(), expectedKeyCodeSequence);
-            Debug.Log("Urutan Benar? " + isCorrectSequence);
-
-            if (isCorrectSequence)
-            {
-                A = 1;
-                score1.ProcessLValue(2);
-                // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
-                currentInputSequence.Clear();
-                Debug.Log("Urutan Benar! Resetting...");
-                if (OnCorrectSequence != null)
-                {
-                    OnCorrectSequence();
-                }
-            }
-            else
-            {
-                A = 0;
-                // Jika salah, matikan hirarki objek yang dikendalikan
-                Debug.Log("Urutan Salah! Matikan objek-objek...");
-                pelayer1.ProcessFValue(2);
-                //pelayer2.ProcessFValue(2);
-                Debug.Log("f = 2");
-                currentInputSequence.Clear();
-            }
-        }
+        Debug.Log("Jumlah Urutan Input Setelah Verifikasi: " + currentInputSequence.Count);
     }
 
-    public void SetExpectedKeyCodeSequence(List<KeyCode> sequence)
+    // Metode untuk mendapatkan indeks yang tidak sesuai dalam urutan tombol kunci
+    private string GetMismatchedIndices(KeyCode[] current, KeyCode[] expected)
     {
-        expectedKeyCodeSequence = sequence.ToArray();
+        List<string> mismatchedIndices = new List<string>();
+        for (int i = 0; i < current.Length; i++)
+        {
+            if (current[i] != expected[i])
+            {
+                mismatchedIndices.Add(i.ToString());
+            }
+        }
+        return string.Join(", ", mismatchedIndices.ToArray());
     }
 
+    // Metode untuk memeriksa apakah urutan tombol kunci benar
     private bool CheckSequence(KeyCode[] current, KeyCode[] expected)
     {
         if (current.Length != expected.Length)
@@ -120,10 +138,5 @@ public class ButtonPressConfirm3 : MonoBehaviour
         }
 
         return true;
-    }
-
-    private void DeactivateObjects()
-    {
-        // Matikan hirarki objek yang dikendalikan
     }
 }
