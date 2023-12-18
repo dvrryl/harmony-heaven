@@ -951,7 +951,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 437734931}
-  - component: {fileID: 437734933}
   - component: {fileID: 437734932}
   - component: {fileID: 437734934}
   m_Layer: 5
@@ -994,23 +993,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6322b70c8b0a5364b80daac6b9ba008e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &437734933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 437734930}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 799b9dd6f8d06234b800b5d6c12a8378, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  b: 0
-  maxHealth: 500
-  currentHealth: 0
-  healthBar: {fileID: 0}
-  animator: {fileID: 0}
 --- !u!114 &437734934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,9 +1005,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e8a2610bcf28e40ad0682ca39587f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  o: 0
   maxMana: 500
   currentMana: 0
   manabar: {fileID: 877807253}
+  P1: {fileID: 5097435358249388297}
 --- !u!1 &501222203
 GameObject:
   m_ObjectHideFlags: 0
@@ -3354,9 +3338,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1104532049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6e8a2610bcf28e40ad0682ca39587f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b6a07c59dc34df498345041e95f1d7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  o: 0
   maxMana: 500
   currentMana: 0
   manabar: {fileID: 501222205}
@@ -6030,10 +6015,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   b: 0
+  p: 0
   maxHealth: 500
   currentHealth: 0
   healthBar: {fileID: 3899598570931886337}
   animator: {fileID: 0}
+  P1: {fileID: 437734934}
 --- !u!114 &5166818348494242133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6320,6 +6307,7 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 3899598570833933024}
   animator: {fileID: 0}
+  P2: {fileID: 1104532051}
 --- !u!114 &5973529274694204660
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,15 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PlayerCoba3 : MonoBehaviour
+public class PlayerCoba4 : MonoBehaviour
 {
     public int o;
     public int maxMana = 500;
     public int currentMana;
     public ManaBar manabar;
-    public PlayerCoba1 P1;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,22 +27,19 @@ public class PlayerCoba3 : MonoBehaviour
         {
             TakeDamage(170);
             o = 1;
-            Ulti();
-            Debug.Log("hmm");
         }
         //Debug.Log("ProcessDValue - Value of d set to: " + d);
-    }
-    public void Ulti()
-    {
-        if (currentMana >= 500)
-        {
-            P1.ProcessPValue(3);
-        }
     }
     // Update is called once per frame
     private void Update()
     {
         ProcessoOValue(o);
+        //manabar.SetMaxHealth(currentHealth);
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        // Panggil fungsi TakeDamage dan tambahkan 20 ke currentHealth
+        //  TakeDamage(170);
+        // }
     }
 
     void TakeDamage(int damageAmount)
