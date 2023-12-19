@@ -11,6 +11,7 @@ public class PlayerCoba1 : MonoBehaviour
     public Animator animator;
     public PlayerCoba4 P1;
     public playerTwoController animasiP2;
+    public GameObject gameOverText;
     //private AudioSource audioSource;
     void Start()
     {
@@ -45,6 +46,11 @@ public class PlayerCoba1 : MonoBehaviour
             b = 0;
             animator.SetTrigger("BasicAttack");
             ResetTrigger();
+        }
+        if (currentHealth <= 0)
+        {
+            // Trigger game over
+            GameManager.Instance.GameOver();
         }
     }
 

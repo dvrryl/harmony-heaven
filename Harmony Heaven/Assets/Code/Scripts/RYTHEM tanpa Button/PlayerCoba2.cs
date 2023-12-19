@@ -12,6 +12,7 @@ public class PlayerCoba2 : MonoBehaviour
     public Animator animator;
     public PlayerCoba3 P2;
     public playerController animasiP1;
+    public GameObject gameOverText;
 
     void Start()
     {
@@ -51,6 +52,11 @@ public class PlayerCoba2 : MonoBehaviour
             ProcessPValue(p);
             c = 0;
             animator.SetTrigger("TakeDamage");
+        }
+        if (currentHealth <= 0)
+        {
+            // Trigger game over
+            GameManager.Instance.GameOver();
         }
     }
 

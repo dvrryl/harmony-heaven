@@ -2551,8 +2551,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -80, y: 200}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.000030518, y: 142}
+  m_SizeDelta: {x: 710.8415, y: 137.4413}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &650346516
 MonoBehaviour:
@@ -2574,7 +2574,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WINNER
+  m_text: GAME OVER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8640f23ff819f394a894f872b00232a5, type: 2}
   m_sharedMaterial: {fileID: 2937891724371324825, guid: 8640f23ff819f394a894f872b00232a5, type: 2}
@@ -2637,7 +2637,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -211.55334, w: -115.349525}
+  m_margin: {x: 0, y: 0, z: -4.4556885, w: 4.3069687}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5732,6 +5732,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1248545433}
   - component: {fileID: 1248545432}
+  - component: {fileID: 1248545434}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5767,6 +5768,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1248545434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248545431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234be156e0d0cda4b91dbf1b346f5e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverText: {fileID: 1250592220}
+  gameOverDisplayTime: 5
 --- !u!1 &1250592220
 GameObject:
   m_ObjectHideFlags: 0
@@ -5780,7 +5795,7 @@ GameObject:
   - component: {fileID: 1250592222}
   - component: {fileID: 1250592221}
   m_Layer: 5
-  m_Name: Winner
+  m_Name: P1Winner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9043,6 +9058,7 @@ MonoBehaviour:
   animator: {fileID: 600235890}
   P1: {fileID: 1104532051}
   animasiP2: {fileID: 600235888}
+  gameOverText: {fileID: 0}
 --- !u!114 &5166818348494242133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9384,6 +9400,7 @@ MonoBehaviour:
   animator: {fileID: 4728808154009460164}
   P2: {fileID: 437734934}
   animasiP1: {fileID: 1086707719068850977}
+  gameOverText: {fileID: 0}
 --- !u!82 &5973529274694204661
 AudioSource:
   m_ObjectHideFlags: 0
