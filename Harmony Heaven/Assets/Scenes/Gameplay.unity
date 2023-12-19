@@ -1401,6 +1401,7 @@ GameObject:
   - component: {fileID: 396197126}
   - component: {fileID: 396197130}
   - component: {fileID: 396197131}
+  - component: {fileID: 396197132}
   m_Layer: 0
   m_Name: RythemDisplay
   m_TagString: Untagged
@@ -1513,6 +1514,30 @@ MonoBehaviour:
   pc1: {fileID: 5097435358249388297}
   pc2: {fileID: 5973529274694204659}
   die: {fileID: 5973529273319954196}
+--- !u!114 &396197132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396197124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db0d29ef632b6714f84072aec744da14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  A: 0
+  pelayer1: {fileID: 5973529273319954196}
+  pelayer2: {fileID: 0}
+  expectedKeyCodeSequence: 77000000610000007300000064000000
+  keyCodeConfirmation: {fileID: 396197126}
+  correctColor: {r: 1, g: 0.91, b: 0, a: 1}
+  wrongColor: {r: 1, g: 0, b: 0, a: 1}
+  imageComponents:
+  - {fileID: 1032150159}
+  - {fileID: 862572042}
+  - {fileID: 1801160323}
+  - {fileID: 738025060}
 --- !u!1 &437734930
 GameObject:
   m_ObjectHideFlags: 0
@@ -9307,9 +9332,15 @@ MonoBehaviour:
   A: 0
   pelayer1: {fileID: 5973529273319954196}
   pelayer2: {fileID: 0}
-  score1: {fileID: 941093713}
   expectedKeyCodeSequence: 77000000610000007300000064000000
   keyCodeConfirmation: {fileID: 396197126}
+  correctColor: {r: 1, g: 0.91, b: 0, a: 1}
+  wrongColor: {r: 1, g: 0, b: 0, a: 1}
+  imageComponents:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!224 &5973529274694204658
 RectTransform:
   m_ObjectHideFlags: 0

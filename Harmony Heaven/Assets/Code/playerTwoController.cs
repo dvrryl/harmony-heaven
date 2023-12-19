@@ -56,7 +56,7 @@ public class playerTwoController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");

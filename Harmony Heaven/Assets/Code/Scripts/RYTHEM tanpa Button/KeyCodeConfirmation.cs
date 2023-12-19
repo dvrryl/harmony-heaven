@@ -122,9 +122,11 @@ public class KeyCodeConfirmation : MonoBehaviour
     {
         // Mengirim urutan key code yang diharapkan ke ButtonPressConfirm
         ButtonPressConfirm buttonPressConfirm = FindObjectOfType<ButtonPressConfirm>();
+        ButtonPressConfirm3 buttonPressConfirm3 = FindObjectOfType<ButtonPressConfirm3>();
         if (buttonPressConfirm != null)
         {
             buttonPressConfirm.SetExpectedKeyCodeSequence(sequence);
+            buttonPressConfirm3.SetExpectedKeyCodeSequence(sequence);
         }
         else
         {

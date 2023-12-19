@@ -16,30 +16,41 @@ public class ChangeColor : MonoBehaviour
 
     void Start()
     {
-        // Choose the appropriate hex color array based on the value of q
-        string[] selectedHexColors = (q == 2) ? hexColorsArray1 : (q == 3) ? hexColorsArray2 : null;
+        change();
 
-        // Check if the selected hex color array is valid
-        if (selectedHexColors == null)
+        
+    }
+    private void change()
+    {
+        string[] selectedHexColors;
+        // Pilih array hexColors berdasarkan nilai q
+        if (q == 2)
+        {
+            selectedHexColors = hexColorsArray1;
+        }
+        else if (q == 3)
+        {
+            selectedHexColors = hexColorsArray2;
+        }
+        else
         {
             Debug.LogError("Nilai q tidak sesuai dengan kondisi yang diharapkan!");
             return;
         }
 
-        // Check if the length of the selected hex color array matches the length of imageComponents
+        // Periksa apakah panjang array hexColors yang dipilih sesuai dengan panjang imageComponents
         if (imageComponents.Length != selectedHexColors.Length)
         {
             Debug.LogError("Jumlah GameObject dan jumlah nilai hexadecimal tidak sama!");
             return;
         }
 
-        // Call the function to change colors based on the selected hex color array
+        // Panggil fungsi untuk mengubah warna berdasarkan array hexColors yang dipilih
         ChangeImageColors(selectedHexColors);
     }
-
     void ChangeImageColors(string[] hexColors)
     {
-        // Set color for each Image GameObject based on the corresponding hex color value
+        // Set warna untuk setiap GameObject Image berdasarkan nilai hex color yang sesuai
         for (int i = 0; i < imageComponents.Length; i++)
         {
             try
@@ -56,7 +67,7 @@ public class ChangeColor : MonoBehaviour
 
     Color HexToColor(string hex)
     {
-        // Parse hexadecimal value and return as Color
+        // Parse nilai hexadecimal dan kembalikan sebagai Color
         Color color;
         if (ColorUtility.TryParseHtmlString(hex, out color))
         {
@@ -64,9 +75,13 @@ public class ChangeColor : MonoBehaviour
         }
         else
         {
-            // Display problematic hexadecimal value
+            // Tampilkan nilai hexadecimal yang bermasalah
             Debug.LogError("Gagal mengonversi nilai hexadecimal ke warna! Hex: " + hex);
             throw new Exception("Gagal mengonversi nilai hexadecimal ke warna!");
         }
+    }
+    private void Update()
+    {
+        change();
     }
 }
