@@ -12,6 +12,7 @@ public class PlayerCoba1 : MonoBehaviour
     public PlayerCoba4 P1;
     public playerTwoController animasiP2;
     public GameObject gameOverText;
+    public SetTriggerAnimation sta;
     //private AudioSource audioSource;
     void Start()
     {
@@ -44,8 +45,11 @@ public class PlayerCoba1 : MonoBehaviour
             TakeDamage(20);
             ProcessPValue(p);
             b = 0;
-            animator.SetTrigger("BasicAttack");
-            ResetTrigger();
+            //animator.SetTrigger("BasicAttack");
+            //Debug.Log("SetTrigger");
+            //ResetTrigger();
+            sta.SetAnim("BasicAttack");
+            
         }
         if (currentHealth <= 0)
         {
