@@ -49,11 +49,16 @@ public class playerTwoController : MonoBehaviour
 {
     private Animator animator;
     public float bulletSpeed = 10f;
+    public int r;
 
     void Start()
     {
         // Get the Animator component from the GameObject
         animator = GetComponent<Animator>();
+    }
+    public void ProcessRValue(int rValue)
+    {
+        r = rValue;
     }
 
     private void Update()
@@ -62,12 +67,17 @@ public class playerTwoController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
-
-        if (Input.GetKeyDown(KeyCode.Slash))
+        if (r == 2)
         {
             // Trigger the slash animation
             animator.SetTrigger("SlashTrigger");
+            r = 0;
         }
+        /*if (Input.GetKeyDown(KeyCode.Slash))
+        {
+            // Trigger the slash animation
+            animator.SetTrigger("SlashTrigger");
+        }*/
     }
 
     // Remove the ThrowProjectile method

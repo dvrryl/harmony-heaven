@@ -11,6 +11,7 @@ public class PlayerCoba2 : MonoBehaviour
     public HealthBar healthBar;
     public Animator animator;
     public PlayerCoba3 P2;
+    public playerController animasiP1;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class PlayerCoba2 : MonoBehaviour
         p = pValue;
         if (p == 3)
         {
+            animasiP1.ProcessRValue(2);
             TakeDamage(100);
             p = 0;
         }

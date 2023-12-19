@@ -10,6 +10,7 @@ public class PlayerCoba1 : MonoBehaviour
     public HealthBar healthBar;
     public Animator animator;
     public PlayerCoba4 P1;
+    public playerTwoController animasiP2;
     //private AudioSource audioSource;
     void Start()
     {
@@ -21,22 +22,13 @@ public class PlayerCoba1 : MonoBehaviour
     public void ProcessBValue(int bValue)
     {
         b = bValue;
-        
-
-        // Trigger animation when b is set to 1
-        /*        if (b == 1)
-                {
-                    TakeDamage(20);
-                    //audioSource.Play();
-                    b = 0;
-                    animator.SetTrigger("TakeDamageTrigger");
-                }*/
     }
     public void ProcessPValue(int pValue)
     {
         p = pValue;
         if (p == 3)
         {
+            animasiP2.ProcessRValue(2);
             TakeDamage(100);
             p = 0;
         }

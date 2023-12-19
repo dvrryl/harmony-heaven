@@ -2092,6 +2092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 0
+  r: 0
 --- !u!212 &600235889
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8646,6 +8647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ec543e288cb7046a5e0fc6fba345bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  r: 0
   bulletSpeed: 0
 --- !u!114 &1344394629925096583
 MonoBehaviour:
@@ -9040,6 +9042,7 @@ MonoBehaviour:
   healthBar: {fileID: 3899598570931886337}
   animator: {fileID: 600235890}
   P1: {fileID: 1104532051}
+  animasiP2: {fileID: 600235888}
 --- !u!114 &5166818348494242133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9380,6 +9383,7 @@ MonoBehaviour:
   healthBar: {fileID: 3899598570833933024}
   animator: {fileID: 4728808154009460164}
   P2: {fileID: 437734934}
+  animasiP1: {fileID: 1086707719068850977}
 --- !u!82 &5973529274694204661
 AudioSource:
   m_ObjectHideFlags: 0

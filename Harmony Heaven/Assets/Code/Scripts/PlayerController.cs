@@ -47,6 +47,7 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+    public int r;
     private Animator animator;
     public float bulletSpeed = 10f;
 
@@ -55,6 +56,10 @@ public class playerController : MonoBehaviour
         // Get the Animator component from the GameObject
         animator = GetComponent<Animator>();
     }
+    public void ProcessRValue(int rValue)
+    {
+        r = rValue;
+    }
 
     void Update()
     {
@@ -62,11 +67,17 @@ public class playerController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput) + Mathf.Abs(verticalInput));
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (r == 2)
         {
             // Trigger the slash animation
             animator.SetTrigger("SpaceTrigger");
+            r = 0;
         }
+
+        /* if (Input.GetKeyDown(KeyCode.Space))
+         {
+             // Trigger the slash animation
+             animator.SetTrigger("SpaceTrigger");
+         }*/
     }
 }
