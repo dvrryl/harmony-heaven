@@ -74,9 +74,12 @@ public class KeyCodeConfirmation1 : MonoBehaviour
 
             // Setelah selesai, berikan urutan key code yang diharapkan ke ButtonPressConfirm1
             ButtonPressConfirm1 buttonPressConfirm1 = FindObjectOfType<ButtonPressConfirm1>();
+            ButtonPressConfirm4 buttonPressConfirm4 = FindObjectOfType<ButtonPressConfirm4>();
             if (buttonPressConfirm1 != null)
             {
                 buttonPressConfirm1.SetExpectedKeyCodeSequence(expectedKeyCodeSequence);
+
+                buttonPressConfirm4.SetExpectedKeyCodeSequence(expectedKeyCodeSequence);
             }
             else
             {
@@ -123,5 +126,6 @@ public class KeyCodeConfirmation1 : MonoBehaviour
     private void Update()
     {
         ProcessJValue(j);
+        CompileConfirmation();
     }
 }
