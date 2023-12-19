@@ -2072,6 +2072,7 @@ GameObject:
   - component: {fileID: 600235890}
   - component: {fileID: 600235889}
   - component: {fileID: 600235888}
+  - component: {fileID: 600235892}
   m_Layer: 0
   m_Name: elfbow
   m_TagString: Untagged
@@ -2182,6 +2183,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &600235892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600235887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2544d8ca1151a448737f1d950cd6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &611725908
 GameObject:
   m_ObjectHideFlags: 0
@@ -4909,7 +4922,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1090808946
@@ -9059,6 +9072,7 @@ MonoBehaviour:
   P1: {fileID: 1104532051}
   animasiP2: {fileID: 600235888}
   gameOverText: {fileID: 0}
+  sta: {fileID: 600235892}
 --- !u!114 &5166818348494242133
 MonoBehaviour:
   m_ObjectHideFlags: 0
