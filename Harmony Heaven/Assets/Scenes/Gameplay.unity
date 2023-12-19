@@ -5883,6 +5883,7 @@ GameObject:
   - component: {fileID: 1260427460}
   - component: {fileID: 1260427464}
   - component: {fileID: 1260427465}
+  - component: {fileID: 1260427466}
   m_Layer: 0
   m_Name: RythemDisplay2
   m_TagString: Untagged
@@ -5993,6 +5994,29 @@ MonoBehaviour:
   pc1: {fileID: 5097435358249388297}
   pc2: {fileID: 5973529274694204659}
   die: {fileID: 5973529273319954196}
+--- !u!114 &1260427466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260427458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c7b3e6201e8a1d4389e368323cc50bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  A: 0
+  pelayer1: {fileID: 5973529273319954196}
+  pelayer2: {fileID: 0}
+  score2: {fileID: 204061818}
+  correctColor: {r: 1, g: 0.91, b: 0, a: 1}
+  wrongColor: {r: 1, g: 0, b: 0, a: 1}
+  imageComponents:
+  - {fileID: 2015089127}
+  - {fileID: 1879763835}
+  - {fileID: 1533779894}
+  - {fileID: 1460820261}
 --- !u!1 &1286282926
 GameObject:
   m_ObjectHideFlags: 0
@@ -8969,7 +8993,6 @@ GameObject:
   - component: {fileID: 5097435358249388297}
   - component: {fileID: 5973529273319954196}
   - component: {fileID: 5973529273319954197}
-  - component: {fileID: 5973529273319954198}
   m_Layer: 5
   m_Name: PlayerHealthBar
   m_TagString: Untagged
@@ -9317,30 +9340,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5973529273319954198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4094233134241502217}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db0d29ef632b6714f84072aec744da14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  A: 0
-  pelayer1: {fileID: 5973529273319954196}
-  pelayer2: {fileID: 0}
-  expectedKeyCodeSequence: 77000000610000007300000064000000
-  keyCodeConfirmation: {fileID: 396197126}
-  correctColor: {r: 1, g: 0.91, b: 0, a: 1}
-  wrongColor: {r: 1, g: 0, b: 0, a: 1}
-  imageComponents:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!224 &5973529274694204658
 RectTransform:
   m_ObjectHideFlags: 0
