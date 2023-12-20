@@ -133,7 +133,6 @@ public class ButtonPressConfirm4 : MonoBehaviour
             else
             {
                 ResetAllColorsData();
-                expectedKeyCodeSequence.Clear();
                 currentInputSequence.Clear();
             }
         }
