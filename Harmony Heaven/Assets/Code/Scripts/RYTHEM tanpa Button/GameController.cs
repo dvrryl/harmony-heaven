@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    //public int B = 0; // Menambah variabel B
+    public int B = 0; // Menambah variabel B
     public GameObject RythemDisplay;
     public GameObject RythemDisplay1;
     public PlayerCoba1 pc1;
@@ -29,7 +29,7 @@ public class GameController : MonoBehaviour
     {
         timestampPlayer1 = Time.time;
         Debug.Log("Player 1 A: " + RythemDisplay.GetComponent<ButtonPressConfirm>().A + " - Waktu: " + timestampPlayer1);
-
+        B = RythemDisplay.GetComponent<ButtonPressConfirm>().A * 2;
         // Lakukan verifikasi atau logika lainnya untuk pemain 1
         Debug.Log("ada di gamecontrol 1");
         die.ProcessDValue(1);
@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
     {
         timestampPlayer2 = Time.time;
         Debug.Log("Player 2 A: " + RythemDisplay1.GetComponent<ButtonPressConfirm1>().A + " - Waktu: " + timestampPlayer2);
-
+        B = RythemDisplay.GetComponent<ButtonPressConfirm>().A * 3;
         // Lakukan verifikasi atau logika lainnya untuk pemain 2
         Debug.Log("ada di gamecontrol2");
         die.ProcessDValue(1);

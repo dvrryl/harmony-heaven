@@ -23,18 +23,13 @@ public class FixedkeyboardDisplay : MonoBehaviour
         h = hValue; // Memperbarui nilai 'h'
         
         // Memeriksa apakah nilai 'h' sama dengan 2
-        if (h == 2)
-        {
-            SendValueToOtherScript();
-            SetSpritesRandomly(); // Jika 'h' sama dengan 2, mengatur ulang sprite secara acak
-            h = 0;
-        }
+        
     }
     public void SendValueToOtherScript()
     {
         // Panggil metode di Script B dan kirimkan nilai i sebagai parameter
-        Rythem1.ReceiveValue(h);
-        Rythem2.ReceiveValue(h);
+        Rythem1.ReceiveValue(2);
+        Rythem2.ReceiveValue(2);
         
     }
 
@@ -42,7 +37,12 @@ public class FixedkeyboardDisplay : MonoBehaviour
     private void Update()
     {
         ProcessHValue(h); // Memanggil metode untuk memproses nilai 'h' setiap frame
-        SendValueToOtherScript();
+        if (h == 2)
+        {
+            h = 0;
+            SendValueToOtherScript();
+            SetSpritesRandomly(); // Jika 'h' sama dengan 2, mengatur ulang sprite secara acak
+        }
     }
 
     private void SetSpritesRandomly()

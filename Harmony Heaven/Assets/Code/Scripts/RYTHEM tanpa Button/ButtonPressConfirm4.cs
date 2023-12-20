@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class ButtonPressConfirm4 : MonoBehaviour
 {
-    public int A = 0;
-    public FixedHierarchyController pelayer1;
-    public FixedHierarchyController1 pelayer2;
+    private int t = 0;
     private List<KeyCode> expectedKeyCodeSequence = new List<KeyCode>();
     private List<KeyCode> currentInputSequence = new List<KeyCode>();
-    public EditTextP2 score2;
     public delegate void CorrectSequenceAction();
     public static event CorrectSequenceAction OnCorrectSequence;
+    public KeyCodeConfirmation1 keyCodeConfirmation1;
 
     // Warna ketika benar
     public Color correctColor = new Color(1f, 0.91f, 0f); // #FFE900
@@ -35,35 +33,48 @@ public class ButtonPressConfirm4 : MonoBehaviour
         {
             if (Input.GetKeyDown(expectedKeyCode))
             {
-                Debug.Log("Input diterima: " + expectedKeyCode);
+               // Debug.Log("Input diterima: " + expectedKeyCode);
                 VerifyInput(expectedKeyCode);
             }
         }
-
+        if (t == 1)
+        {
+            t = 3;
+            ResetAllColorsData();
+            expectedKeyCodeSequence.Clear();
+            currentInputSequence.Clear();
+        }
+        if (t == 2)
+        {
+            t = 3;
+            ResetAllColorsData();
+            expectedKeyCodeSequence.Clear();
+            currentInputSequence.Clear();
+        }
         // Pengecekan menggunakan perbandingan string
-        CheckStringComparison();
+        //CheckStringComparison();
 
         // ... (existing logic)
-    }
-
+    } 
+    
     // Metode untuk memverifikasi input tombol kunci
     private void VerifyInput(KeyCode input)
     {
-        Debug.Log("Urutan yang Diharapkan Sebelum Verifikasi: " + string.Join(", ", expectedKeyCodeSequence));
-        Debug.Log("Jumlah Urutan Input Sebelum Verifikasi: " + currentInputSequence.Count);
+       // Debug.Log("Urutan yang Diharapkan Sebelum Verifikasi: " + string.Join(", ", expectedKeyCodeSequence));
+        //Debug.Log("Jumlah Urutan Input Sebelum Verifikasi: " + currentInputSequence.Count);
 
         if (currentInputSequence.Count < expectedKeyCodeSequence.Count)
         {
             if (input == expectedKeyCodeSequence[currentInputSequence.Count])
             {
                 currentInputSequence.Add(input);
-                Debug.Log("Input Benar: " + input);
+               // Debug.Log("Input Benar: " + input);
                 ChangeSingleColorBenar();
-                Debug.Log("Jumlah Urutan Input Setelah Penambahan Input: " + currentInputSequence.Count);
+                //Debug.Log("Jumlah Urutan Input Setelah Penambahan Input: " + currentInputSequence.Count);
             }
             else
             {
-                Debug.Log("Input Salah: " + input);
+                //Debug.Log("Input Salah: " + input);
                 int wrongIndex = currentInputSequence.Count; // Index yang salah adalah panjang sebelumnya
                 ChangeSingleColor(wrongIndex, wrongColor);
                 currentInputSequence.Capacity = currentInputSequence.Count + 1;
@@ -72,7 +83,7 @@ public class ButtonPressConfirm4 : MonoBehaviour
             }
         }
 
-        Debug.Log("Jumlah Urutan Input Setelah Verifikasi: " + currentInputSequence.Count);
+        //Debug.Log("Jumlah Urutan Input Setelah Verifikasi: " + currentInputSequence.Count);
     }
 
     // Metode untuk mendapatkan indeks yang tidak sesuai dalam urutan tombol kunci
@@ -89,23 +100,7 @@ public class ButtonPressConfirm4 : MonoBehaviour
     }
 
     // Metode untuk memeriksa apakah urutan tombol kunci benar
-    private bool CheckSequence(List<KeyCode> current, List<KeyCode> expected)
-    {
-        if (current.Count != expected.Count)
-        {
-            return false;
-        }
-
-        for (int i = 0; i < current.Count; i++)
-        {
-            if (current[i] != expected[i])
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
+    
 
     // Metode untuk mengatur urutan key code yang diharapkan
     public void SetExpectedKeyCodeSequence(List<KeyCode> sequence)
@@ -113,10 +108,6 @@ public class ButtonPressConfirm4 : MonoBehaviour
         expectedKeyCodeSequence = sequence;
     }
 
-    private void DeactivateObjects()
-    {
-        // Matikan hirarki objek yang dikendalikan
-    }
 
     // Pengecekan menggunakan perbandingan string
     private void CheckStringComparison()
@@ -128,26 +119,17 @@ public class ButtonPressConfirm4 : MonoBehaviour
 
             if (currentSequenceStr.Equals(expectedSequenceStr))
             {
-                //A = 1;
-                //score2.ProcessMValue(2);
-                currentInputSequence.Clear();
-                //Debug.Log("Urutan Benar! Resetting...");
-                expectedKeyCodeSequence.Clear();
-                ResetAllColorsData();
+                Debug.Log("Urutan Benar! Resetting...");
+                t = 1;
                 if (OnCorrectSequence != null)
                 {
                     OnCorrectSequence();
                 }
-                currentInputSequence.Clear();
             }
             else
             {
-                //A = 0;
-                //Debug.Log("Urutan Salah! Matikan objek-objek...");
-                //pelayer1.ProcessEValue(2);
-                ResetAllColorsData();
-                expectedKeyCodeSequence.Clear();
-                currentInputSequence.Clear();
+                t = 2;
+                Debug.Log("Urutan Salah! Matikan objek-objek...");
             }
         }
     }

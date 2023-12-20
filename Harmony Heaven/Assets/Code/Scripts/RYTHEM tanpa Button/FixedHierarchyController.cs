@@ -90,15 +90,16 @@ public class FixedHierarchyController : MonoBehaviour
        yield return new WaitForSeconds(intervalDurati);
        while(d == 1)
        {
-           g = 1;
+           d = 2;
            f = 1;
            e = 1;
+           g = 1;
           Debug.Log("Update - d is 1, waiting for 2 seconds...");
           DisableGameObject();
+          Invoke("EnableGameObject", 1f);
           //Debug.Log("DisableGameObject di IntervalFunction");
           //Debug.Log("Update - Disabled game objects, waiting for 5 seconds...");
           //yield return new WaitForSeconds(intervalDuration);
-          d = 2;
           //Debug.Log("Update - Value of d set to 0");
           EnableGameObject();
           //Debug.Log("EnableGameObject di IntervalFunction");

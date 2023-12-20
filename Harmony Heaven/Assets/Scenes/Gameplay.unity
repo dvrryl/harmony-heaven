@@ -1509,6 +1509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a11283eca767a4ca8212862e3c94dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  B: 0
   RythemDisplay: {fileID: 396197124}
   RythemDisplay1: {fileID: 1260427458}
   pc1: {fileID: 5097435358249388297}
@@ -6018,6 +6019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a11283eca767a4ca8212862e3c94dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  B: 0
   RythemDisplay: {fileID: 396197124}
   RythemDisplay1: {fileID: 1260427458}
   pc1: {fileID: 5097435358249388297}
@@ -6035,10 +6037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7b3e6201e8a1d4389e368323cc50bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  A: 0
-  pelayer1: {fileID: 5973529273319954196}
-  pelayer2: {fileID: 0}
-  score2: {fileID: 204061818}
+  keyCodeConfirmation1: {fileID: 1260427460}
   correctColor: {r: 1, g: 0.91, b: 0, a: 1}
   wrongColor: {r: 1, g: 0, b: 0, a: 1}
   imageComponents:

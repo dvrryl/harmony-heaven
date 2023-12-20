@@ -67,16 +67,7 @@ public class FixedKeyCodeKeyboard1 : MonoBehaviour
         i = value;
         // Lakukan sesuatu dengan nilai yang diterima
         //Debug.Log("Received value in Script i: " + i);
-        if (i == 2)
-        {
-            //Debug.Log("Received value in Script i: " + i);
-            ResetScript(); // Jika 'h' sama dengan 2, mengatur ulang sprite secara acak
-            Debug.Log("melakukan reset");
-            i = 0;
-            Debug.Log("i: " +i);
-            pelayer2.ProcessJValue(2);
-            Debug.Log("j: 2");
-        }
+        
     }
     public void ResetScript()
     {
@@ -85,5 +76,15 @@ public class FixedKeyCodeKeyboard1 : MonoBehaviour
     private void Update()
     {
         ReceiveValue(i);
+        if (i == 2)
+        {
+            i = 0;
+            //Debug.Log("Received value in Script i: " + i);
+            ResetScript(); // Jika 'h' sama dengan 2, mengatur ulang sprite secara acak
+            Debug.Log("melakukan reset");
+            Debug.Log("i: " + i);
+            pelayer2.ProcessJValue(2);
+            Debug.Log("j: 2");
+        }
     }
 }

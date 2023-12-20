@@ -32,6 +32,15 @@ public class ButtonPressConfirm1 : MonoBehaviour
             }
         }
     }
+    public void SetExpectedKeyCodeSequence(List<KeyCode> sequence)
+    {
+        expectedKeyCodeSequence = sequence;
+    }
+    public void Reset()
+    {
+        currentInputSequence.Clear();
+        expectedKeyCodeSequence.Clear();
+    }
 
     private void VerifyInput(KeyCode input)
     {
@@ -74,14 +83,15 @@ public class ButtonPressConfirm1 : MonoBehaviour
             {
                 A = 1;
                 score2.ProcessMValue(2);
+                pelayer1.ProcessDValue(2);
                 // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
                 currentInputSequence.Clear();
+                expectedKeyCodeSequence.Clear();
                 Debug.Log("Urutan Benar! Resetting...");
                 if (OnCorrectSequence != null)
                 {
                     OnCorrectSequence();
                 }
-                currentInputSequence.Clear();
             }
             else
             {
@@ -92,15 +102,13 @@ public class ButtonPressConfirm1 : MonoBehaviour
                 pelayer1.ProcessEValue(2);
                 Debug.Log("e = 2");
                 currentInputSequence.Clear();
+                expectedKeyCodeSequence.Clear();
             }
         }
     }
 
     // Metode untuk mengatur urutan key code yang diharapkan
-    public void SetExpectedKeyCodeSequence(List<KeyCode> sequence)
-    {
-        expectedKeyCodeSequence = sequence;
-    }
+    
 
     private void DeactivateObjects()
     {

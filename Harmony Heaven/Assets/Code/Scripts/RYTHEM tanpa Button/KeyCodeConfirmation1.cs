@@ -19,11 +19,7 @@ public class KeyCodeConfirmation1 : MonoBehaviour
     public void ProcessJValue(int jValue)
     {
         j = jValue;
-        if (j == 2)
-        {
-            Reset();
-            j = 0;
-        }
+        
         //Debug.Log("ProcessDValue - Value of d set to: " + d);
     }
     public void Reset()
@@ -126,6 +122,11 @@ public class KeyCodeConfirmation1 : MonoBehaviour
     private void Update()
     {
         ProcessJValue(j);
-        CompileConfirmation();
+        if (j == 2)
+        {
+            j = 0;
+            Reset();
+        }
+        //CompileConfirmation();
     }
 }
