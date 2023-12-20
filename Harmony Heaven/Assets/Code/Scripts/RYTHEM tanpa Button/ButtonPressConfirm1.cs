@@ -35,6 +35,7 @@ public class ButtonPressConfirm1 : MonoBehaviour
     public void SetExpectedKeyCodeSequence(List<KeyCode> sequence)
     {
         expectedKeyCodeSequence = sequence;
+        currentInputSequence.Clear();
     }
     public void Reset()
     {

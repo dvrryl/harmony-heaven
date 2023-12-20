@@ -44,7 +44,9 @@ public class ButtonPressConfirm3 : MonoBehaviour
 
     public void SetExpectedKeyCodeSequence(List<KeyCode> sequence)
     {
+        ResetAllColorsData();
         expectedKeyCodeSequence = sequence.ToArray();
+        currentInputSequence = new KeyCode[0];
     }
 
     private void Update()

@@ -104,6 +104,7 @@ public class ButtonPressConfirm : MonoBehaviour
     public void SetExpectedKeyCodeSequence(List<KeyCode> sequence)
     {
         expectedKeyCodeSequence = sequence.ToArray();
+        currentInputSequence = new KeyCode[0];
     }
 
     private bool CheckSequence(KeyCode[] current, KeyCode[] expected)

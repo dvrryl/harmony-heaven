@@ -52,7 +52,7 @@ public class ButtonPressConfirm4 : MonoBehaviour
             currentInputSequence.Clear();
         }
         // Pengecekan menggunakan perbandingan string
-        //CheckStringComparison();
+        CheckStringComparison();
 
         // ... (existing logic)
     } 
@@ -105,7 +105,10 @@ public class ButtonPressConfirm4 : MonoBehaviour
     // Metode untuk mengatur urutan key code yang diharapkan
     public void SetExpectedKeyCodeSequence(List<KeyCode> sequence)
     {
+        ResetAllColorsData();
         expectedKeyCodeSequence = sequence;
+        currentInputSequence.Clear();
+        ResetAllColorsData();
     }
 
 
@@ -120,7 +123,8 @@ public class ButtonPressConfirm4 : MonoBehaviour
             if (currentSequenceStr.Equals(expectedSequenceStr))
             {
                 Debug.Log("Urutan Benar! Resetting...");
-                t = 1;
+                ResetAllColorsData();
+                currentInputSequence.Clear();
                 if (OnCorrectSequence != null)
                 {
                     OnCorrectSequence();
@@ -128,8 +132,9 @@ public class ButtonPressConfirm4 : MonoBehaviour
             }
             else
             {
-                t = 2;
-                Debug.Log("Urutan Salah! Matikan objek-objek...");
+                ResetAllColorsData();
+                expectedKeyCodeSequence.Clear();
+                currentInputSequence.Clear();
             }
         }
     }
