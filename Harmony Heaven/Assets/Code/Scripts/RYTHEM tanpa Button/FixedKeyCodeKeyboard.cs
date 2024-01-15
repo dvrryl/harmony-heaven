@@ -26,7 +26,7 @@ public class FixedKeyCodeKeyboard : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Script FixedkeyboardDisplay1 atau imageSprites tidak ditemukan atau belum diinisialisasi.");
+            //Debug.LogError("Script FixedkeyboardDisplay1 atau imageSprites tidak ditemukan atau belum diinisialisasi.");
         }
     }
     

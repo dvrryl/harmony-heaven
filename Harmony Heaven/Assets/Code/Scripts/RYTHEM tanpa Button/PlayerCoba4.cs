@@ -12,12 +12,12 @@ public class PlayerCoba4 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("B");
+        //Debug.Log("B");
         manabar.SetMaxHealth(maxMana);
-        Debug.Log("C");
+        //Debug.Log("C");
         manabar.SetHealth(currentMana);
-        Debug.Log("D");
-        Debug.Log("A");
+        //Debug.Log("D");
+        //Debug.Log("A");
         currentMana = 0;
     }
 

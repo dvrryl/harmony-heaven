@@ -122,7 +122,7 @@ public class ButtonPressConfirm4 : MonoBehaviour
 
             if (currentSequenceStr.Equals(expectedSequenceStr))
             {
-                Debug.Log("Urutan Benar! Resetting...");
+                //Debug.Log("Urutan Benar! Resetting...");
                 ResetAllColorsData();
                 currentInputSequence.Clear();
                 if (OnCorrectSequence != null)
@@ -195,7 +195,7 @@ public class ButtonPressConfirm4 : MonoBehaviour
              KeyCode expectedKeyCode = expectedKeyCodeSequence[i];
              if (Input.GetKeyDown(expectedKeyCode))
              {
-                 Debug.Log("Input diterima: " + expectedKeyCode);
+                 //Debug.Log("Input diterima: " + expectedKeyCode);
                  VerifyInput(expectedKeyCode);
              }
          }

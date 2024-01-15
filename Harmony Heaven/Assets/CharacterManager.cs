@@ -11,6 +11,11 @@ public class CharacterManager : MonoBehaviour
     private int selectedChar = 0;
     public GameObject playerCharacter;
 
+    void Start()
+    {
+        sr.sprite = characters[selectedChar];
+    }
+
     public void NextOption()
     {
         selectedChar = selectedChar + 1;
@@ -24,12 +29,15 @@ public class CharacterManager : MonoBehaviour
 
     public void BackOption()
     {
+        Debug.Log("Selected Character Index: " + selectedChar);
         selectedChar = selectedChar - 1;
-        if (selectedChar < 0)
+        if (selectedChar > 0)
         {
+            Debug.Log("Selected Character Indexdi if: " + selectedChar);
             selectedChar = characters.Count -1;
 
         }
+        Debug.Log("Selected Character Index setelah if: " + selectedChar);
         sr.sprite = characters[selectedChar];
     }
 

@@ -74,7 +74,7 @@ public class FixedkeyboardDisplay : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Jumlah imageComponents tidak sesuai dengan jumlah imageSprites. Sesuaikan elemen-elemen ini dengan benar.");
+            //Debug.LogError("Jumlah imageComponents tidak sesuai dengan jumlah imageSprites. Sesuaikan elemen-elemen ini dengan benar.");
         }
     }
 }

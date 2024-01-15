@@ -37,7 +37,7 @@ public class ButtonPressConfirm3 : MonoBehaviour
             keyCodeConfirmation = FindObjectOfType<KeyCodeConfirmation>();
             if (keyCodeConfirmation == null)
             {
-                Debug.LogError("Script KeyCodeConfirmation tidak ditemukan.");
+                //Debug.LogError("Script KeyCodeConfirmation tidak ditemukan.");
             }
         }
     }
@@ -62,7 +62,7 @@ public class ButtonPressConfirm3 : MonoBehaviour
                 // Periksa apakah tombol kunci yang diharapkan ditekan
                 if (Input.GetKeyDown(expectedKeyCode))
                 {
-                    Debug.Log("Input diterima: " + expectedKeyCode);
+                    //Debug.Log("Input diterima: " + expectedKeyCode);
                     VerifyInput(expectedKeyCode);
                 }
             }
@@ -74,7 +74,7 @@ public class ButtonPressConfirm3 : MonoBehaviour
                 if (isCorrectSequence)
                 {
                     // Urutan input benar
-                    Debug.Log("Urutan Benar! Resetting...");
+                    //Debug.Log("Urutan Benar! Resetting...");
                     A = 1;
                     //ChangeColors(correctColor);
                     ResetAllColorsData();
@@ -88,7 +88,7 @@ public class ButtonPressConfirm3 : MonoBehaviour
                 else
                 {
                     // Urutan input salah
-                    Debug.Log("Urutan Salah! Matikan objek-objek...");
+                    //Debug.Log("Urutan Salah! Matikan objek-objek...");
                     A = 0;
                     int wrongIndex = FindWrongIndex(currentInputSequence, expectedKeyCodeSequence);
                     if (wrongIndex != -1)
@@ -103,7 +103,7 @@ public class ButtonPressConfirm3 : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Script KeyCodeConfirmation tidak ditemukan.");
+            //Debug.LogError("Script KeyCodeConfirmation tidak ditemukan.");
         }
     }
     private void ResetExpectedKeyCodeSequence()
@@ -113,8 +113,8 @@ public class ButtonPressConfirm3 : MonoBehaviour
     // Metode untuk memverifikasi input tombol kunci
     private void VerifyInput(KeyCode input)
     {
-        Debug.Log("Urutan yang Diharapkan Sebelum Verifikasi: " + string.Join(", ", expectedKeyCodeSequence));
-        Debug.Log("Jumlah Urutan Input Sebelum Verifikasi: " + currentInputSequence.Length);
+        //Debug.Log("Urutan yang Diharapkan Sebelum Verifikasi: " + string.Join(", ", expectedKeyCodeSequence));
+        //Debug.Log("Jumlah Urutan Input Sebelum Verifikasi: " + currentInputSequence.Length);
 
         if (currentInputSequence.Length < expectedKeyCodeSequence.Length)
         {
@@ -124,13 +124,13 @@ public class ButtonPressConfirm3 : MonoBehaviour
                 System.Array.Resize(ref currentInputSequence, currentInputSequence.Length + 1);
                 currentInputSequence[currentInputSequence.Length - 1] = input;
 
-                Debug.Log("Input Benar: " + input);
+                //Debug.Log("Input Benar: " + input);
                 ChangeSingleColorBenar();
-                Debug.Log("Jumlah Urutan Input Setelah Penambahan Input: " + currentInputSequence.Length);
+                //Debug.Log("Jumlah Urutan Input Setelah Penambahan Input: " + currentInputSequence.Length);
             }
             else
             {
-                Debug.Log("Input Salah: " + input);
+                //Debug.Log("Input Salah: " + input);
                 int wrongIndex = currentInputSequence.Length; // Index yang salah adalah panjang sebelumnya
                 ChangeSingleColor(wrongIndex, wrongColor); // Mengubah warna langsung pada index yang salah
                 // Gunakan Array.Resize untuk menambahkan elemen ke array
@@ -139,7 +139,7 @@ public class ButtonPressConfirm3 : MonoBehaviour
             }
         }
 
-        Debug.Log("Jumlah Urutan Input Setelah Verifikasi: " + currentInputSequence.Length);
+        //Debug.Log("Jumlah Urutan Input Setelah Verifikasi: " + currentInputSequence.Length);
     }
 
     // Metode untuk mendapatkan indeks yang tidak sesuai dalam urutan tombol kunci

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerCoba2 : MonoBehaviour
 {
+    public ScoreManagerP1 scoreManagerP1;
     public int c = 0;
     public int p = 0;
     public int maxHealth = 500;
@@ -55,8 +56,19 @@ public class PlayerCoba2 : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
+            Managerscore();
             // Trigger game over
             GameManager.Instance.GameOver();
+            currentHealth = 1;
+        }
+    }
+    void Managerscore()
+    {
+        ScoreManagerP1 scoreManager = FindObjectOfType<ScoreManagerP1>();
+
+        if (scoreManager != null)
+        {
+            scoreManager.ReadAndUpdateScoreFromTextMeshProUGUI();
         }
     }
 

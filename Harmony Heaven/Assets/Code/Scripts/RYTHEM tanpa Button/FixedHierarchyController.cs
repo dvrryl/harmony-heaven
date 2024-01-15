@@ -69,7 +69,7 @@ public class FixedHierarchyController : MonoBehaviour
             if (f == 2)
             {
                 RythemDisplay1.SetActive(false);
-                Debug.Log("matiin rythemdisplay2 di VerifDie");
+                //Debug.Log("matiin rythemdisplay2 di VerifDie");
             }
             if (e == 2)
             {
@@ -94,7 +94,7 @@ public class FixedHierarchyController : MonoBehaviour
            f = 1;
            e = 1;
            g = 1;
-          Debug.Log("Update - d is 1, waiting for 2 seconds...");
+          //Debug.Log("Update - d is 1, waiting for 2 seconds...");
           DisableGameObject();
           Invoke("EnableGameObject", 1f);
           //Debug.Log("DisableGameObject di IntervalFunction");

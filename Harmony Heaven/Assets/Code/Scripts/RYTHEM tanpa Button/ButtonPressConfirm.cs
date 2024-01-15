@@ -24,7 +24,7 @@ public class ButtonPressConfirm : MonoBehaviour
             keyCodeConfirmation = FindObjectOfType<KeyCodeConfirmation>();
             if (keyCodeConfirmation == null)
             {
-                Debug.LogError("Script KeyCodeConfirmation tidak ditemukan.");
+                //Debug.LogError("Script KeyCodeConfirmation tidak ditemukan.");
             }
         }
     }
@@ -39,14 +39,14 @@ public class ButtonPressConfirm : MonoBehaviour
 
                 if (Input.GetKeyDown(expectedKeyCode))
                 {
-                    Debug.Log("Input diterima: " + expectedKeyCode);
+                    //Debug.Log("Input diterima: " + expectedKeyCode);
                     VerifyInput(expectedKeyCode);
                 }
             }
         }
         else
         {
-            Debug.LogError("Script KeyCodeConfirmation tidak ditemukan.");
+            //Debug.LogError("Script KeyCodeConfirmation tidak ditemukan.");
         }
     }
 
@@ -59,21 +59,21 @@ public class ButtonPressConfirm : MonoBehaviour
 
         // Debugging: Cetak urutan input saat ini
         string currentSequenceStr = string.Join(", ", currentInputSequence);
-        Debug.Log("Urutan Input Saat Ini: " + currentSequenceStr);
+        //Debug.Log("Urutan Input Saat Ini: " + currentSequenceStr);
 
         // Debugging: Cetak urutan yang diharapkan
         string expectedSequenceStr = string.Join(", ", expectedKeyCodeSequence);
-        Debug.Log("Urutan yang Diharapkan: " + expectedSequenceStr);
+        //Debug.Log("Urutan yang Diharapkan: " + expectedSequenceStr);
 
         // Cetak jumlah urutan input dan yang diharapkan
-        Debug.Log("Jumlah Urutan Input: " + currentInputSequence.Length);
-        Debug.Log("Jumlah Urutan Diharapkan: " + expectedKeyCodeSequence.Length);
+        //Debug.Log("Jumlah Urutan Input: " + currentInputSequence.Length);
+        //Debug.Log("Jumlah Urutan Diharapkan: " + expectedKeyCodeSequence.Length);
 
         // Memverifikasi apakah jumlah urutan input dan yang diharapkan sudah sama
         if (currentInputSequence.Length == expectedKeyCodeSequence.Length)
         {
             bool isCorrectSequence = CheckSequence(currentInputSequence, expectedKeyCodeSequence);
-            Debug.Log("Urutan Benar? " + isCorrectSequence);
+            //Debug.Log("Urutan Benar? " + isCorrectSequence);
 
             if (isCorrectSequence)
             {
@@ -81,7 +81,7 @@ public class ButtonPressConfirm : MonoBehaviour
                 score1.ProcessLValue(2);
                 // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
                 currentInputSequence = new KeyCode[0];
-                Debug.Log("Urutan Benar! Resetting...");
+                //Debug.Log("Urutan Benar! Resetting...");
                 if (OnCorrectSequence != null)
                 {
                     OnCorrectSequence();
@@ -92,10 +92,10 @@ public class ButtonPressConfirm : MonoBehaviour
             {
                 A = 0;
                 // Jika salah, matikan hirarki objek yang dikendalikan
-                Debug.Log("Urutan Salah! Matikan objek-objek...");
+                //Debug.Log("Urutan Salah! Matikan objek-objek...");
                 pelayer1.ProcessFValue(2);
                 //pelayer2.ProcessFValue(2);
-                Debug.Log("f = 2");
+                //Debug.Log("f = 2");
                 currentInputSequence = new KeyCode[0];
             }
         }

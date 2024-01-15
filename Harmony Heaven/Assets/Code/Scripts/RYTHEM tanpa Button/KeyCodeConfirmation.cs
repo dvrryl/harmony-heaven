@@ -36,9 +36,9 @@ public class KeyCodeConfirmation : MonoBehaviour
         if (fixedkeyboardDisplay != null && fixedkeyCodeKeyboard != null)
         {
             // Debugging: Mendapatkan informasi ImageComponent
-            Debug.Log("Mendapatkan informasi ImageComponent...");
+            //Debug.Log("Mendapatkan informasi ImageComponent...");
             int numberOfImageComponents = fixedkeyboardDisplay.imageComponents.Length;
-            Debug.Log("Jumlah ImageComponent: " + numberOfImageComponents);
+            //Debug.Log("Jumlah ImageComponent: " + numberOfImageComponents);
 
             List<KeyCode> expectedKeyCodeSequence = new List<KeyCode>();
 
@@ -48,31 +48,31 @@ public class KeyCodeConfirmation : MonoBehaviour
                 Sprite imageSprite = imageComponent.sprite;
 
                 // Debugging: Mengecek ImageSprite pada ImageComponent
-                Debug.Log("Mengecek ImageSprite pada ImageComponent " + i + "...");
+                //Debug.Log("Mengecek ImageSprite pada ImageComponent " + i + "...");
                 string imageSpriteName = FindSpriteName(imageSprite);
                 if (!string.IsNullOrEmpty(imageSpriteName))
                 {
                     // Debugging: Nama Sprite yang ditemukan
-                    Debug.Log("Nama Sprite: " + imageSpriteName);
+                    //Debug.Log("Nama Sprite: " + imageSpriteName);
                     
                     int spriteIndex = FindSpriteIndex(imageSpriteName);
                     if (spriteIndex != -1)
                     {
                         KeyCode keyCode = FindKeyCode(spriteIndex);
                         // Debugging: Keycode yang ditemukan
-                        Debug.Log("ImageSprite " + i + " - Keycode: " + keyCode);
+                      //  Debug.Log("ImageSprite " + i + " - Keycode: " + keyCode);
 
                         // Menambahkan ke urutan key code yang diharapkan
                         expectedKeyCodeSequence.Add(keyCode);
                     }
                     else
                     {
-                        Debug.LogWarning("Tidak ada KeyCode yang sesuai untuk ImageSprite " + i);
+                        //Debug.LogWarning("Tidak ada KeyCode yang sesuai untuk ImageSprite " + i);
                     }
                 }
                 else
                 {
-                    Debug.LogWarning("Nama Sprite tidak ditemukan untuk ImageSprite " + i);
+                   // Debug.LogWarning("Nama Sprite tidak ditemukan untuk ImageSprite " + i);
                 }
             }
 
@@ -81,7 +81,7 @@ public class KeyCodeConfirmation : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Script KeyboardDisplay atau KeyCodeKeyboard tidak ditemukan.");
+           // Debug.LogError("Script KeyboardDisplay atau KeyCodeKeyboard tidak ditemukan.");
         }
     }
 
@@ -112,7 +112,7 @@ public class KeyCodeConfirmation : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Indeks sprite tidak valid: " + spriteIndex);
+            //Debug.LogWarning("Indeks sprite tidak valid: " + spriteIndex);
             return KeyCode.None; // Kode tombol default jika indeks tidak valid
         }
     }
@@ -130,7 +130,7 @@ public class KeyCodeConfirmation : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Script ButtonPressConfirm tidak ditemukan.");
+            //Debug.LogError("Script ButtonPressConfirm tidak ditemukan.");
         }
     }
 

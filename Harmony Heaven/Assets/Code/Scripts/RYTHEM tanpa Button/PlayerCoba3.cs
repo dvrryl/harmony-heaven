@@ -13,12 +13,12 @@ public class PlayerCoba3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("B");
+        //Debug.Log("B");
         manabar.SetMaxHealth(maxMana);
-        Debug.Log("C");
+       // Debug.Log("C");
         manabar.SetHealth(currentMana);
-        Debug.Log("D");
-        Debug.Log("A");
+       // Debug.Log("D");
+       // Debug.Log("A");
         currentMana = 0;
     }
 
@@ -30,7 +30,7 @@ public class PlayerCoba3 : MonoBehaviour
             TakeDamage(85);
             o = 1;
             Ulti();
-            Debug.Log("hmm");
+            //Debug.Log("hmm");
         }
         //Debug.Log("ProcessDValue - Value of d set to: " + d);
     }

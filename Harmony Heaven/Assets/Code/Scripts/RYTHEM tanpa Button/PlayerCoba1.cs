@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCoba1 : MonoBehaviour
 {
+    public ScoreManagerP2 scoreManagerP2;
     public int b = 0;
     public int p = 0;
     public int maxHealth = 500;
@@ -53,11 +54,22 @@ public class PlayerCoba1 : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
+            Managerscore();
             // Trigger game over
             GameManager.Instance.GameOver();
+            currentHealth = 1;
         }
     }
 
+    void Managerscore()
+    {
+        ScoreManagerP2 scoreManager = FindObjectOfType<ScoreManagerP2>();
+
+        if (scoreManager != null)
+        {
+            scoreManager.ReadAndUpdateScoreFromTextMeshProUGUI();
+        }
+    }
     void TakeDamage(int damage)
     {
         currentHealth -= damage;

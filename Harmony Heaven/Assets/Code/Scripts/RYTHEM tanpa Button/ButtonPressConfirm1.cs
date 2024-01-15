@@ -27,7 +27,7 @@ public class ButtonPressConfirm1 : MonoBehaviour
             // Jika kode tombol diharapkan ditekan, verifikasi input
             if (Input.GetKeyDown(expectedKeyCode))
             {
-                Debug.Log("Input diterima: " + expectedKeyCode);
+                //Debug.Log("Input diterima: " + expectedKeyCode);
                 VerifyInput(expectedKeyCode);
             }
         }
@@ -50,15 +50,15 @@ public class ButtonPressConfirm1 : MonoBehaviour
 
         // Debugging: Cetak urutan input saat ini
         string currentSequenceStr = string.Join(", ", currentInputSequence);
-        Debug.Log("Urutan Input Saat Ini: " + currentSequenceStr);
+        //Debug.Log("Urutan Input Saat Ini: " + currentSequenceStr);
 
         // Debugging: Cetak urutan yang diharapkan
         string expectedSequenceStr = string.Join(", ", expectedKeyCodeSequence);
-        Debug.Log("Urutan yang Diharapkan: " + expectedSequenceStr);
+        //Debug.Log("Urutan yang Diharapkan: " + expectedSequenceStr);
 
         // Cetak jumlah urutan input dan yang diharapkan
-        Debug.Log("Jumlah Urutan Input: " + currentInputSequence.Count);
-        Debug.Log("Jumlah Urutan yang Diharapkan: " + expectedKeyCodeSequence.Count);
+        //Debug.Log("Jumlah Urutan Input: " + currentInputSequence.Count);
+        //Debug.Log("Jumlah Urutan yang Diharapkan: " + expectedKeyCodeSequence.Count);
 
         // Jika jumlah urutan input dan yang diharapkan sudah sama, lanjutkan ke perbandingan
         if (currentInputSequence.Count == expectedKeyCodeSequence.Count)
@@ -88,7 +88,7 @@ public class ButtonPressConfirm1 : MonoBehaviour
                 // Jika benar, kembali ke langkah 1 dengan membersihkan `currentInputSequence`.
                 currentInputSequence.Clear();
                 expectedKeyCodeSequence.Clear();
-                Debug.Log("Urutan Benar! Resetting...");
+                //Debug.Log("Urutan Benar! Resetting...");
                 if (OnCorrectSequence != null)
                 {
                     OnCorrectSequence();
@@ -98,10 +98,10 @@ public class ButtonPressConfirm1 : MonoBehaviour
             {
                 A = 0;
                 // Jika salah, matikan hirarki objek yang dikendalikan
-                Debug.Log("Urutan Salah! Matikan objek-objek...");
+                //Debug.Log("Urutan Salah! Matikan objek-objek...");
                 //pelayer2.ProcessEValue(2);
                 pelayer1.ProcessEValue(2);
-                Debug.Log("e = 2");
+                //Debug.Log("e = 2");
                 currentInputSequence.Clear();
                 expectedKeyCodeSequence.Clear();
             }
