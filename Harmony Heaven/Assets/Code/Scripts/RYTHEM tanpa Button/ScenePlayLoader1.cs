@@ -7,7 +7,7 @@ public class ScenePlayLoader1 : MonoBehaviour
 {
     public void LoadGameplayScene()
     {
-        SceneManager.LoadScene("Gameplay");
-        Debug.Log("Gameplay");
+        SceneManager.LoadScene("SelectCharacter");
+        Debug.Log("uhuy");
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class P1Choose : MonoBehaviour
+public class P2Backbutton : MonoBehaviour
 {
 
     public GameObject StartButton;
@@ -43,20 +43,20 @@ public class P1Choose : MonoBehaviour
     public void DisableGameObject()
     {
         // Nonaktifkan kedua game object
-        StartButton.SetActive(false);
-        BGP1.SetActive(false);
-        P1.SetActive(false);
-        p1name.SetActive(false);
+        StartButton2.SetActive(false);
+        BGP2.SetActive(false);
+        P2.SetActive(false);
+        P2Back.SetActive(false);
+        p2name.SetActive(false);
 
     }
 
     public void EnableGameObject()
     {
         // Aktifkan kedua game object
-        StartButton2.SetActive(true);
-        BGP2.SetActive(true);
-        P2.SetActive(true);
-        P2Back.SetActive(true);
-        p2name.SetActive(true);
+        StartButton.SetActive(true);
+        BGP1.SetActive(true);
+        P1.SetActive(true);
+        p1name.SetActive(true);
     }
 }

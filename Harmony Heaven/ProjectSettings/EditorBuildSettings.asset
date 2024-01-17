@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gameplay.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/SelectCharacter.unity
+    guid: 35a3ded4ed08bd54f9d009e5559702d4
   - enabled: 0
     path: Assets/Scenes/Pause Menu.unity
     guid: 3907823ef78cb944eb6139a0660d930b
