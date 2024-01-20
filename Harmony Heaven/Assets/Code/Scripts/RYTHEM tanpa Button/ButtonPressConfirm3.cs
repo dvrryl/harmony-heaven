@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonPressConfirm3 : MonoBehaviour
 {
+    public AudioSource audioSource;
     // Variabel publik untuk menyimpan nilai A, controller pemain, dan skor pemain
     public int A = 0;
     public FixedHierarchyController pelayer1;
@@ -31,6 +32,7 @@ public class ButtonPressConfirm3 : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         // Cari objek KeyCodeConfirmation jika belum diinisialisasi
         if (keyCodeConfirmation == null)
         {
@@ -123,7 +125,7 @@ public class ButtonPressConfirm3 : MonoBehaviour
                 // Gunakan Array.Resize untuk menambahkan elemen ke array
                 System.Array.Resize(ref currentInputSequence, currentInputSequence.Length + 1);
                 currentInputSequence[currentInputSequence.Length - 1] = input;
-
+                audioSource.Stop();
                 //Debug.Log("Input Benar: " + input);
                 ChangeSingleColorBenar();
                 //Debug.Log("Jumlah Urutan Input Setelah Penambahan Input: " + currentInputSequence.Length);
@@ -206,6 +208,7 @@ public class ButtonPressConfirm3 : MonoBehaviour
         {
             if (i < expectedKeyCodeSequence.Length && currentInputSequence[i] == expectedKeyCodeSequence[i])
             {
+                audioSource.Play();
                 ChangeSingleColor(i, correctColor);
             }
         }

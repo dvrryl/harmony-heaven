@@ -97,6 +97,7 @@ public class FixedHierarchyController : MonoBehaviour
           //Debug.Log("Update - d is 1, waiting for 2 seconds...");
           DisableGameObject();
           Invoke("EnableGameObject", 1f);
+          d = 2;
           //Debug.Log("DisableGameObject di IntervalFunction");
           //Debug.Log("Update - Disabled game objects, waiting for 5 seconds...");
           //yield return new WaitForSeconds(intervalDuration);

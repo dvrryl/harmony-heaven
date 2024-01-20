@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonPressConfirm4 : MonoBehaviour
 {
+    public AudioSource audioSource;
     private int t = 0;
     private List<KeyCode> expectedKeyCodeSequence = new List<KeyCode>();
     private List<KeyCode> currentInputSequence = new List<KeyCode>();
@@ -22,6 +23,7 @@ public class ButtonPressConfirm4 : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         // Inisialisasi expectedKeyCodeSequence, misalnya dengan urutan WASD
         expectedKeyCodeSequence = new List<KeyCode> { KeyCode.W, KeyCode.A, KeyCode.S, KeyCode.D };
     }
@@ -68,6 +70,7 @@ public class ButtonPressConfirm4 : MonoBehaviour
             if (input == expectedKeyCodeSequence[currentInputSequence.Count])
             {
                 currentInputSequence.Add(input);
+                audioSource.Stop();
                // Debug.Log("Input Benar: " + input);
                 ChangeSingleColorBenar();
                 //Debug.Log("Jumlah Urutan Input Setelah Penambahan Input: " + currentInputSequence.Count);
@@ -175,6 +178,7 @@ public class ButtonPressConfirm4 : MonoBehaviour
     // Metode untuk mengubah warna saat urutan benar
     private void ChangeSingleColorBenar()
     {
+        audioSource.Play();
         // Implementasi untuk mengubah warna setiap index yang sesuai dengan urutan input benar ke warna #FFE900
         for (int i = 0; i < currentInputSequence.Count; i++)
         {
