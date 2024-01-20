@@ -4034,6 +4034,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7807462599458088666, guid: 0ade22b5ea73a2b45b3f1bc9a375ac87, type: 3}
   m_PrefabInstance: {fileID: 1587247161}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &922484803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922484797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ec543e288cb7046a5e0fc6fba345bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  r: 0
+  bulletSpeed: 10
 --- !u!1 &935647181
 GameObject:
   m_ObjectHideFlags: 0
@@ -6828,6 +6842,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2735668277242165885, guid: 7e496f30595326d4895f5970718c2ed5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4412552421756961330, guid: 7e496f30595326d4895f5970718c2ed5, type: 3}
       propertyPath: m_Name
       value: elfSpear (1)
@@ -6835,13 +6853,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4412552421756961330, guid: 7e496f30595326d4895f5970718c2ed5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1501661191}
   m_SourcePrefab: {fileID: 100100000, guid: 7e496f30595326d4895f5970718c2ed5, type: 3}
 --- !u!224 &1501661187 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 975049552760705877, guid: 7e496f30595326d4895f5970718c2ed5, type: 3}
   m_PrefabInstance: {fileID: 1501661186}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1501661191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870551752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01dd4a373fc91c4094ffedb1f2cc8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletSpeed: 10
+  r: 0
 --- !u!1 &1533779891
 GameObject:
   m_ObjectHideFlags: 0
@@ -7085,6 +7120,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1325517604}
     m_Modifications:
+    - target: {fileID: 333574995111898792, guid: 0ade22b5ea73a2b45b3f1bc9a375ac87, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7807462599458088666, guid: 0ade22b5ea73a2b45b3f1bc9a375ac87, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -7152,7 +7191,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8694373444338375243, guid: 0ade22b5ea73a2b45b3f1bc9a375ac87, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 922484803}
   m_SourcePrefab: {fileID: 100100000, guid: 0ade22b5ea73a2b45b3f1bc9a375ac87, type: 3}
 --- !u!1001 &1593168563
 PrefabInstance:
