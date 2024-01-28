@@ -5361,6 +5361,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3989793808614888161, guid: f14b25d7b47a56a42bedaf28f3398d62, type: 3}
   m_PrefabInstance: {fileID: 1593168563}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1127465192 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7876356453343301919, guid: f14b25d7b47a56a42bedaf28f3398d62, type: 3}
+  m_PrefabInstance: {fileID: 1593168563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127465190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ec543e288cb7046a5e0fc6fba345bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1127465193 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 664115456103564034, guid: f14b25d7b47a56a42bedaf28f3398d62, type: 3}
+  m_PrefabInstance: {fileID: 1593168563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1181987092
 GameObject:
   m_ObjectHideFlags: 0
@@ -6662,6 +6678,22 @@ PrefabInstance:
 --- !u!4 &1375248882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7807462599458088666, guid: 0ade22b5ea73a2b45b3f1bc9a375ac87, type: 3}
+  m_PrefabInstance: {fileID: 1375248881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1375248884 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 333574995111898792, guid: 0ade22b5ea73a2b45b3f1bc9a375ac87, type: 3}
+  m_PrefabInstance: {fileID: 1375248881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318885419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01dd4a373fc91c4094ffedb1f2cc8ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1375248886 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4609963505450654812, guid: 0ade22b5ea73a2b45b3f1bc9a375ac87, type: 3}
   m_PrefabInstance: {fileID: 1375248881}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1425052948
@@ -9865,9 +9897,9 @@ MonoBehaviour:
   maxHealth: 500
   currentHealth: 0
   healthBar: {fileID: 3899598570931886337}
-  animator: {fileID: 600235890}
+  animator: {fileID: 1375248886}
   P1: {fileID: 1104532051}
-  animasiP2: {fileID: 600235888}
+  animasiP2: {fileID: 1375248884}
   gameOverText: {fileID: 0}
   sta: {fileID: 600235892}
 --- !u!114 &5166818348494242133
@@ -10222,9 +10254,9 @@ MonoBehaviour:
   maxHealth: 500
   currentHealth: 0
   healthBar: {fileID: 3899598570833933024}
-  animator: {fileID: 4728808154009460164}
+  animator: {fileID: 1127465193}
   P2: {fileID: 437734934}
-  animasiP1: {fileID: 1086707719068850977}
+  animasiP1: {fileID: 1127465192}
   gameOverText: {fileID: 0}
 --- !u!82 &5973529274694204661
 AudioSource:
